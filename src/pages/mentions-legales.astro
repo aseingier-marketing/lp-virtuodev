@@ -1,0 +1,151 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/tokens.css';
+import '../styles/global.css';
+---
+
+<Base
+  title="Mentions légales — VirtuoDev"
+  description="Mentions légales de VirtuoDev, agence digitale spécialisée dans la création de sites internet."
+>
+  <main class="legal-page">
+    <div class="legal-container">
+      <a href="/" class="legal-back">← Retour</a>
+
+      <h1 class="legal-title">Mentions légales</h1>
+
+      <section class="legal-section">
+        <h2>Éditeur du site</h2>
+        <p>
+          Le présent site est édité par :<br><br>
+          <strong>Antoine SEINGIER</strong><br>
+          Entrepreneur individuel exerçant sous le nom commercial <strong>VirtuoDev</strong><br>
+          2 rue de Lille<br>
+          59350 Saint-André-lez-Lille<br>
+          France<br><br>
+          SIREN : 878 332 519<br>
+          SIRET : 878 332 519 00023<br>
+          Numéro de TVA intracommunautaire : FR38878332519<br>
+          Code APE/NAF : 6201Z — Programmation informatique<br>
+          Convention collective applicable : SYNTEC (IDCC 1486)<br><br>
+          Contact : <a href="mailto:contact@virtuodev.com">contact@virtuodev.com</a>
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Hébergement</h2>
+        <p>
+          Ce site est hébergé par :<br><br>
+          <strong>Hostinger International Ltd</strong><br>
+          61 Lordou Vironos Street<br>
+          6023 Larnaca, Chypre
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, sons, logiciels…) est la propriété exclusive de VirtuoDev ou de ses partenaires, et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.
+        </p>
+        <p>
+          Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès par écrit de VirtuoDev.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Limitation de responsabilité</h2>
+        <p>
+          VirtuoDev s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site. Toutefois, VirtuoDev ne peut garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition sur ce site et décline toute responsabilité pour les imprécisions, inexactitudes ou omissions portant sur des informations disponibles sur ce site.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Liens hypertextes</h2>
+        <p>
+          Le site peut contenir des liens vers d'autres sites internet. VirtuoDev n'est pas responsable du contenu de ces sites tiers ni des pratiques de confidentialité qu'ils appliquent.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Droit applicable</h2>
+        <p>
+          Les présentes mentions légales sont régies par le droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux français seront seuls compétents.
+        </p>
+      </section>
+
+      <p class="legal-date">Dernière mise à jour : mars 2026</p>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .legal-page {
+    background: var(--bg-light);
+    min-height: 100vh;
+    padding: 80px 24px;
+  }
+
+  .legal-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .legal-back {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: color 0.2s;
+  }
+  .legal-back:hover { color: var(--accent-hover); }
+
+  .legal-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--noir-900);
+    letter-spacing: -0.025em;
+    margin-bottom: 48px;
+  }
+
+  .legal-section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .legal-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .legal-section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--noir-900);
+    margin-bottom: 16px;
+  }
+
+  .legal-section p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--gris-700);
+    margin-bottom: 12px;
+  }
+  .legal-section p:last-child { margin-bottom: 0; }
+
+  .legal-section a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .legal-section a:hover { text-decoration: underline; }
+
+  .legal-date {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--gris-500);
+    margin-top: 48px;
+  }
+</style>

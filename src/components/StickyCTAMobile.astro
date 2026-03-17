@@ -1,0 +1,26 @@
+---
+---
+<div class="sticky-mobile" id="sticky-mobile">
+  <button onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})">
+    Demander sa place &rarr;
+  </button>
+</div>
+
+<script>
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    const trigger = document.getElementById('section-pourquoi');
+    const bar = document.getElementById('sticky-mobile');
+    if (trigger && bar) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            bar.classList.add('is-visible');
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+      observer.observe(trigger);
+    }
+  }
+</script>

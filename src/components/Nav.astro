@@ -1,0 +1,42 @@
+---
+---
+<header class="site-header">
+  <a href="#" class="nav-logo">
+    <img src="/images/virtuodev-logo.png" alt="Virtuodev" class="nav-logo-img" />
+  </a>
+</header>
+
+<style>
+  .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 48px;
+  }
+
+  .nav-logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-logo-img {
+    height: 56px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  @media (max-width: 768px) {
+    .site-header {
+      padding: 16px 20px;
+    }
+    .nav-logo-img {
+      height: 40px;
+    }
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+---
+<section id="section-faq" class="section-light section-pad">
+  <div class="section-inner">
+    <div class="label-caps gs-hidden" data-gs="s10" data-gs-delay="0" style="color:var(--accent);margin-bottom:20px;text-align:center;">Questions fr&eacute;quentes</div>
+    <h2 class="h1 gs-hidden" data-gs="s10" data-gs-delay="0.1" style="color:var(--text-light-primary);max-width:500px;margin-left:auto;margin-right:auto;text-align:center;">On r&eacute;pond &agrave; tout.</h2>
+
+    <div class="gs-hidden" data-gs="s10" data-gs-delay="0.2" style="margin-top:48px;max-width:720px;margin-left:auto;margin-right:auto;">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>Est-ce que votre syst&egrave;me fonctionne avec mon logiciel de devis&nbsp;?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Nous sommes compatibles avec la grande majorit&eacute; des logiciels de devis utilis&eacute;s par les artisans et TPE. Certains outils tr&egrave;s ferm&eacute;s peuvent poser des limitations &mdash; c&rsquo;est pourquoi nous v&eacute;rifions &ccedil;a ensemble lors du rendez-vous de pr&eacute;sentation, avant tout engagement de votre part.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>Mes clients n&rsquo;aiment pas quand on les relance</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Ce qui agace les clients, c&rsquo;est d&rsquo;&ecirc;tre contact&eacute; au mauvais moment, avec un message g&eacute;n&eacute;rique. Nos relances sont personnalis&eacute;es avec le nom du client, le d&eacute;tail du devis, et envoy&eacute;es au moment o&ugrave; la r&eacute;flexion est encore fra&icirc;che. R&eacute;sultat&nbsp;: vos clients per&ccedil;oivent &ccedil;a comme du s&eacute;rieux et du professionnalisme, pas comme du harc&egrave;lement.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>Quels sont les changements pour mon entreprise&nbsp;?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Aucun changement dans votre fa&ccedil;on de travailler. Vous continuez &agrave; envoyer vos devis comme avant &mdash; c&rsquo;est nous qui prenons le relais ensuite. Nous nous adaptons &agrave; votre logiciel, &agrave; votre processus de vente, et &agrave; votre fa&ccedil;on de communiquer avec vos clients.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>Est-ce que je peux d&eacute;cider des relances qui sont envoy&eacute;es&nbsp;?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Oui, vous avez la main sur chaque message. Vous pouvez les modifier, les valider, ou les bloquer. Cela dit, nos textes sont r&eacute;dig&eacute;s pour convertir &mdash; la plupart de nos clients les gardent tels quels et obtiennent de tr&egrave;s bons r&eacute;sultats.</p></div>
+      </div>
+      <div class="faq-item" style="border-bottom:none;">
+        <button class="faq-question" onclick="toggleFaq(this)"><span>Comment se passe la mise en place&nbsp;?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>C&rsquo;est rapide et sans friction. Apr&egrave;s l&rsquo;appel de confirmation, nous vous envoyons un lien s&eacute;curis&eacute; qui nous permet de nous connecter &agrave; votre logiciel de devis. On configure tout ensemble, et le syst&egrave;me est op&eacute;rationnel dans la journ&eacute;e.</p></div>
+      </div>
+    </div>
+
+    <p class="gs-hidden" data-gs="s10" data-gs-delay="0.3" style="text-align:center;margin-top:40px;font-size:14px;color:var(--gris-600);">Une question ? Contactez-nous &agrave; <a href="mailto:contact@virtuodev.com" style="color:var(--text-light-primary);text-decoration:underline;text-underline-offset:3px;" rel="noopener noreferrer">contact@virtuodev.com</a></p>
+  </div>
+</section>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+  window.toggleFaq = toggleFaq;
+</script>

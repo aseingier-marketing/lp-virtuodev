@@ -1,0 +1,46 @@
+---
+---
+<section class="section-dark section-pad" style="background:#0C1222;border-top:1px solid rgba(29,95,191,0.15);">
+  <div class="section-inner" style="text-align:center;max-width:640px;">
+    <div class="gs-hidden" data-gs="s11" data-gs-delay="0">
+      <!-- Version générique (par défaut) -->
+      <h2 class="display-l" id="final-cta-generic" style="color:var(--text-dark-primary);">Arr&ecirc;tez de laisser<br>vos devis sans suivi</h2>
+      <!-- Version personnalisée si le quiz a été complété -->
+      <h2 class="display-l" id="final-cta-quiz-recall" style="color:var(--text-dark-primary);display:none;">Vous pourriez r&eacute;cup&eacute;rer<br><span id="final-cta-amount" style="background:linear-gradient(90deg,#7FB0FF,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"></span></h2>
+
+      <div style="margin-top:28px;">
+        <p class="lead" style="color:var(--text-dark-secondary);">Profitez de l&rsquo;offre exclusive avec 100 autres entreprises</p>
+      </div>
+
+      <button class="btn-primary btn-primary-accent btn-primary-big" style="margin-top:36px;" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})">
+        Demander sa place &rarr;
+      </button>
+      <div style="font-size:12px;color:var(--text-dark-muted);margin-top:14px;">
+        Places limit&eacute;es
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // FINAL CTA — affiche le montant quiz si disponible, au moment où la section devient visible
+  const finalCtaEl = document.querySelector('[data-gs="s11"]');
+  if (finalCtaEl) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        if (window.quizResult && window.quizResult > 0) {
+          const recallEl = document.getElementById('final-cta-quiz-recall');
+          const genericEl = document.getElementById('final-cta-generic');
+          const amountEl = document.getElementById('final-cta-amount');
+          if (recallEl && genericEl && amountEl) {
+            amountEl.textContent = window.quizResult.toLocaleString('fr-FR') + '\u00A0\u20AC\u00A0/ an';
+            recallEl.style.display = 'block';
+            genericEl.style.display = 'none';
+          }
+        }
+        observer.disconnect();
+      }
+    }, { threshold: 0.1 });
+    observer.observe(finalCtaEl);
+  }
+</script>

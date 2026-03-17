@@ -1,0 +1,16 @@
+{
+  "name": "soarly-landing",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/node": "^8.3.4",
+    "@notionhq/client": "^5.13.0",
+    "astro": "^5.0.0",
+    "resend": "^6.9.4"
+  }
+}

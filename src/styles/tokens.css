@@ -1,0 +1,64 @@
+/* ========================================
+   DESIGN SYSTEM — TOKENS & FOUNDATIONS
+   ======================================== */
+:root {
+  /* Fonts */
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Noir — dark backgrounds (blue-tinted) */
+  --noir-900: #07090D;
+  --noir-800: #0C1222;
+  --noir-700: #11141C;
+  --noir-600: #1C2230;
+
+  /* Blanc */
+  --blanc-100: #FFFFFF;
+  --blanc-200: #FCFCFD;
+  --blanc-300: #F5F7FB;
+  --blanc-400: #E6EAF2;
+
+  /* Gris */
+  --gris-200: #E6EAF2;
+  --gris-300: #C8D0E0;
+  --gris-500: #8899B0;
+  --gris-600: #475467;
+  --gris-700: #344054;
+
+  /* Brand Blue — Primary */
+  --accent: #1D5FBF;
+  --accent-hover: #174EA6;
+  --accent-dim: rgba(29,95,191,0.10);
+  --accent-border: rgba(29,95,191,0.25);
+  --accent-light: #DCE9FF;
+
+  /* Success Green — résultats / gains */
+  --success: #12B76A;
+  --success-dim: rgba(18,183,106,0.10);
+  --success-border: rgba(18,183,106,0.25);
+
+  /* Danger Red — problèmes / pertes */
+  --danger: #F04438;
+  --danger-dim: rgba(240,68,56,0.08);
+  --danger-border: rgba(240,68,56,0.20);
+
+  /* Semantic — Dark */
+  --bg-dark: #07090D;
+  --bg-dark-elevated: #0C1222;
+  --bg-dark-card: #11141C;
+  --border-dark: rgba(255,255,255,0.08);
+  --border-dark-hover: rgba(255,255,255,0.15);
+  --text-dark-primary: #FFFFFF;
+  --text-dark-secondary: #C8D0E0;
+  --text-dark-muted: #6B7FA0;
+
+  /* Semantic — Light */
+  --bg-light: #FCFCFD;
+  --bg-light-alt: #F5F7FB;
+  --bg-light-card: #FFFFFF;
+  --border-light: #E6EAF2;
+  --border-light-hover: #C8D0E0;
+  --text-light-primary: #101828;
+  --text-light-secondary: #475467;
+  --text-light-muted: #8899B0;
+}

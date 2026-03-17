@@ -1,0 +1,245 @@
+---
+---
+<section id="section-quiz" class="section-dark section-pad" style="background:#0C1222;border-top:1px solid rgba(29,95,191,0.15);">
+  <div class="section-inner">
+
+    <div class="gs-hidden" data-gs="s3" data-gs-delay="0" style="text-align: center; margin-bottom: 20px;">
+      <span style="display:inline-block;background:rgba(29,95,191,0.15);border:1px solid rgba(29,95,191,0.4);border-radius:8px;padding:8px 24px;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);">Simulateur</span>
+    </div>
+
+    <h2 class="h1 gs-hidden" data-gs="s3" data-gs-delay="0.1" style="color: var(--text-dark-primary); max-width: 650px; margin-left: auto; margin-right: auto; text-align: center;">
+      Combien de chiffre d'affaires cach&eacute; se trouve dans vos devis&nbsp;?
+    </h2>
+
+    <p class="lead gs-hidden" data-gs="s3" data-gs-delay="0.15" style="color: var(--text-dark-secondary); max-width: 480px; margin-top: 16px; margin-left: auto; margin-right: auto; text-align: center;">
+      Estimez en 30 secondes l'opportunit&eacute; pour votre entreprise.
+    </p>
+
+    <div class="gs-hidden" data-gs="s3" data-gs-delay="0.2" style="margin-top: 48px; max-width: 640px; margin-left: auto; margin-right: auto;">
+
+      <!-- Progress bar -->
+      <div class="quiz-progress-track">
+        <div class="quiz-progress-bar" id="quiz-progress"></div>
+      </div>
+
+      <!-- Step 1 — Secteur -->
+      <div class="quiz-step" id="quiz-step-1" data-step="1">
+        <p class="quiz-question">Dans quel secteur exercez-vous&nbsp;?</p>
+        <div class="quiz-grid-2x2">
+          <button class="quiz-option-card" data-value="btp" onclick="quizSelectStep1(this)">
+            <span class="quiz-option-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h1"/><path d="M9 13h1"/><path d="M9 17h1"/></svg></span>
+            <span class="quiz-option-label">BTP</span>
+          </button>
+          <button class="quiz-option-card" data-value="services" onclick="quizSelectStep1(this)">
+            <span class="quiz-option-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <span class="quiz-option-label">Services</span>
+          </button>
+          <button class="quiz-option-card" data-value="commerce" onclick="quizSelectStep1(this)">
+            <span class="quiz-option-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M3 9l2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg></span>
+            <span class="quiz-option-label">Commerce</span>
+          </button>
+          <button class="quiz-option-card" data-value="autre" onclick="quizSelectStep1(this)">
+            <span class="quiz-option-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></span>
+            <span class="quiz-option-label">Autre</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2 — Volume -->
+      <div class="quiz-step" id="quiz-step-2" data-step="2" style="display:none;">
+        <p class="quiz-question">Combien de devis envoyez-vous par mois&nbsp;?</p>
+        <div class="quiz-grid-2x2">
+          <button class="quiz-volume-card" data-value="12" onclick="quizSelectStep2(this)">
+            <span class="quiz-volume-number">5-20</span>
+            <span class="quiz-volume-label">devis / mois</span>
+          </button>
+          <button class="quiz-volume-card" data-value="35" onclick="quizSelectStep2(this)">
+            <span class="quiz-volume-number">20-50</span>
+            <span class="quiz-volume-label">devis / mois</span>
+          </button>
+          <button class="quiz-volume-card" data-value="75" onclick="quizSelectStep2(this)">
+            <span class="quiz-volume-number">50-100</span>
+            <span class="quiz-volume-label">devis / mois</span>
+          </button>
+          <button class="quiz-volume-card" data-value="130" onclick="quizSelectStep2(this)">
+            <span class="quiz-volume-number">+100</span>
+            <span class="quiz-volume-label">devis / mois</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3 — Panier moyen -->
+      <div class="quiz-step" id="quiz-step-3" data-step="3" style="display:none;">
+        <p class="quiz-question">Quel est le montant moyen d'un devis&nbsp;?</p>
+        <div class="quiz-grid-2x2">
+          <button class="quiz-option-card" data-value="3500" onclick="quizSelectStep3(this)">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--text-dark-primary);letter-spacing:-0.02em;">2-5k</span>
+            <span class="quiz-option-label">&euro;</span>
+          </button>
+          <button class="quiz-option-card" data-value="7500" onclick="quizSelectStep3(this)">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--text-dark-primary);letter-spacing:-0.02em;">5-10k</span>
+            <span class="quiz-option-label">&euro;</span>
+          </button>
+          <button class="quiz-option-card" data-value="12500" onclick="quizSelectStep3(this)">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--text-dark-primary);letter-spacing:-0.02em;">10-15k</span>
+            <span class="quiz-option-label">&euro;</span>
+          </button>
+          <button class="quiz-option-card" data-value="20000" onclick="quizSelectStep3(this)">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--text-dark-primary);letter-spacing:-0.02em;">+15k</span>
+            <span class="quiz-option-label">&euro;</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 4 — Taux de transformation -->
+      <div class="quiz-step" id="quiz-step-4" data-step="4" style="display:none;">
+        <p class="quiz-question">Quel est votre taux de transformation actuel&nbsp;?</p>
+        <div class="quiz-grid-2x2">
+          <button class="quiz-option-card" data-value="20" onclick="quizSelectStep4(this)">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--text-dark-primary);letter-spacing:-0.02em;">20%</span>
+            <span class="quiz-option-label">de mes devis sign&eacute;s</span>
+          </button>
+          <button class="quiz-option-card" data-value="30" onclick="quizSelectStep4(this)">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--text-dark-primary);letter-spacing:-0.02em;">30%</span>
+            <span class="quiz-option-label">de mes devis sign&eacute;s</span>
+          </button>
+          <button class="quiz-option-card" data-value="40" onclick="quizSelectStep4(this)">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--text-dark-primary);letter-spacing:-0.02em;">40%</span>
+            <span class="quiz-option-label">de mes devis sign&eacute;s</span>
+          </button>
+          <button class="quiz-option-card" data-value="55" onclick="quizSelectStep4(this)">
+            <span style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--text-dark-primary);letter-spacing:-0.02em;">+50%</span>
+            <span class="quiz-option-label">de mes devis sign&eacute;s</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Résultat Page 1 -->
+      <div class="quiz-step" id="quiz-result" data-step="result" style="display:none;">
+        <div style="text-align:center;padding:20px 0;">
+          <div style="font-size:14px;color:var(--text-dark-muted);margin-bottom:12px;">Sur la base de vos r&eacute;ponses</div>
+<div class="label-caps" style="color:var(--text-dark-secondary);margin-bottom:10px;">Votre chiffre d'affaires estim&eacute; par an</div>
+          <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(32px,4.5vw,48px);letter-spacing:-0.03em;color:var(--text-dark-primary);" id="quiz-result-signe">0 &euro;</div>
+          <div style="width:60px;height:1px;background:var(--border-dark-hover);margin:32px auto;"></div>
+          <div style="font-size:17px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--danger);margin-bottom:12px;">Le chiffre d'affaires non sign&eacute; perdu chaque ann&eacute;e</div>
+          <div class="stat-number" id="quiz-result-perdu" style="color:#F87171;font-size:clamp(48px,6vw,72px);">0 &euro;</div>
+          <div style="font-size:18px;color:var(--text-dark-secondary);margin-top:20px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.6;">Une partie de ce chiffre peut-&ecirc;tre r&eacute;cup&eacute;r&eacute;e.</div>
+          <button class="btn-primary btn-primary-accent btn-primary-big" style="margin-top:48px;" onclick="quizGoStep('result2')">R&eacute;cup&eacute;rer mon chiffre d'affaires &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Résultat Page 2 -->
+      <div class="quiz-step" id="quiz-result-2" data-step="result2" style="display:none;">
+        <div style="text-align:center;padding:20px 0;">
+          <div class="label-caps" style="color:var(--success);margin-bottom:12px;">Un taux de transformation de + 10% permet de r&eacute;cup&eacute;rer</div>
+          <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(44px,6vw,72px);letter-spacing:-0.04em;color:var(--success);line-height:1;" id="quiz-result-recoverable">0 &euro;</div>
+          <div style="font-size:20px;font-weight:600;color:var(--text-dark-primary);margin-top:32px;">Soit environ par mois</div>
+
+          <div style="margin-top:16px;display:inline-block;">
+            <div style="background:var(--bg-dark-card);border:1px solid var(--border-dark);border-radius:10px;padding:24px 48px;text-align:center;">
+              <div style="font-family:var(--font-display);font-weight:800;font-size:36px;color:var(--text-dark-primary);letter-spacing:-0.02em;" id="quiz-result-monthly">0 &euro;</div>
+            </div>
+          </div>
+
+          <div style="margin-top:40px;max-width:480px;margin-left:auto;margin-right:auto;">
+            <p style="font-size:15px;color:var(--text-dark-primary);line-height:1.65;">Ce chiffre d'affaires est possible en optimisant votre syst&egrave;me commercial.</p>
+          </div>
+
+          <button style="display:inline-flex;align-items:center;justify-content:center;padding:16px 32px;border-radius:8px;font-family:var(--font-body);font-weight:600;font-size:15px;cursor:pointer;border:none;background:#1D5FBF;color:#FFFFFF;transition:background 0.2s ease,transform 0.2s ease,box-shadow 0.2s ease;box-shadow:0 0 32px rgba(29,95,191,0.35);margin-top:32px;" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})" onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)'">
+            Je veux en b&eacute;n&eacute;ficier &rarr;
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  // ========================================
+  // QUIZ-CALCULATEUR LOGIC
+  // ========================================
+  const quizState = { step: 1, secteur: null, volume: null, montant: 2000, taux: 30 };
+
+  function quizGoStep(stepNum) {
+    document.querySelectorAll('.quiz-step').forEach(s => s.style.display = 'none');
+    if (stepNum === 'result') {
+      document.getElementById('quiz-result').style.display = 'block';
+      quizShowResult();
+    } else if (stepNum === 'result2') {
+      document.getElementById('quiz-result-2').style.display = 'block';
+      quizShowResult2();
+    } else {
+      document.getElementById('quiz-step-' + stepNum).style.display = 'block';
+    }
+    const progressMap = { 1: 25, 2: 50, 3: 75, 4: 100, 'result': 100, 'result2': 100 };
+    document.getElementById('quiz-progress').style.width = (progressMap[stepNum] || 100) + '%';
+    quizState.step = stepNum;
+  }
+
+  function quizSelectStep1(btn) {
+    document.querySelectorAll('#quiz-step-1 .quiz-option-card').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    quizState.secteur = btn.dataset.value;
+    setTimeout(() => quizGoStep(2), 400);
+  }
+  function quizSelectStep2(btn) {
+    document.querySelectorAll('#quiz-step-2 .quiz-volume-card').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    quizState.volume = parseInt(btn.dataset.value);
+    setTimeout(() => quizGoStep(3), 400);
+  }
+  function quizSelectStep3(btn) {
+    document.querySelectorAll('#quiz-step-3 .quiz-option-card').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    quizState.montant = parseInt(btn.dataset.value);
+    setTimeout(() => quizGoStep(4), 400);
+  }
+  function quizSelectStep4(btn) {
+    document.querySelectorAll('#quiz-step-4 .quiz-option-card').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    quizState.taux = parseInt(btn.dataset.value);
+    setTimeout(() => quizGoStep('result'), 400);
+  }
+
+  function quizShowResult() {
+    const volume = quizState.volume || 20;
+    const montant = quizState.montant || 2000;
+    const taux = quizState.taux || 30;
+    const caTotal = volume * montant * 12;
+    const caSigne = Math.round(caTotal * (taux / 100));
+    const caPerdu = Math.round(caTotal * ((100 - taux) / 100));
+    window.quizCaSigne = caSigne;
+    window.quizCaPerdu = caPerdu;
+    window.quizResult = caPerdu;
+
+    const signeEl = document.getElementById('quiz-result-signe');
+    gsap.to({ val: 0 }, { val: caSigne, duration: 1.2, ease: 'power2.out',
+      onUpdate: function() { signeEl.innerHTML = Math.round(this.targets()[0].val).toLocaleString('fr-FR') + ' \u20AC'; }
+    });
+    const perduEl = document.getElementById('quiz-result-perdu');
+    gsap.to({ val: 0 }, { val: caPerdu, duration: 1.8, delay: 0.3, ease: 'power2.out',
+      onUpdate: function() { perduEl.innerHTML = Math.round(this.targets()[0].val).toLocaleString('fr-FR') + ' \u20AC'; }
+    });
+  }
+
+  function quizShowResult2() {
+    const caPerdu = window.quizCaPerdu || 0;
+    const recoverable = Math.round(caPerdu * 0.10);
+    const monthly = Math.round(recoverable / 12);
+
+    gsap.to({ val: 0 }, { val: recoverable, duration: 1.6, delay: 0.2, ease: 'power2.out',
+      onUpdate: function() { document.getElementById('quiz-result-recoverable').innerHTML = Math.round(this.targets()[0].val).toLocaleString('fr-FR') + ' \u20AC'; }
+    });
+    gsap.to({ val: 0 }, { val: monthly, duration: 1.4, delay: 0.5, ease: 'power2.out',
+      onUpdate: function() { document.getElementById('quiz-result-monthly').innerHTML = Math.round(this.targets()[0].val).toLocaleString('fr-FR') + ' \u20AC'; }
+    });
+  }
+
+  // Expose to global scope for onclick handlers
+  window.quizGoStep = quizGoStep;
+  window.quizSelectStep1 = quizSelectStep1;
+  window.quizSelectStep2 = quizSelectStep2;
+  window.quizSelectStep3 = quizSelectStep3;
+  window.quizSelectStep4 = quizSelectStep4;
+</script>
