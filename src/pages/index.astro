@@ -21,7 +21,6 @@ import '../styles/global.css';
 <Base
   title="Prévente Fondateur — Système de relance automatique de devis"
   description="On construit le système qui relance automatiquement vos devis. Pour les entreprises B2C qui envoient des devis et veulent structurer leur suivi jusqu'à la signature."
-  ogUrl="https://votre-domaine.fr"
   ogImage="/images/og-image.png"
 >
   <Nav />
@@ -56,10 +55,11 @@ import '../styles/global.css';
 
   <!-- GSAP scroll animations — initialized after GSAP deferred scripts load -->
   <script>
-    // Wait for GSAP to be available (loaded deferred)
+    // Wait for GSAP to be available (loaded deferred) — max 50 retries (5s)
+    let gsapRetries = 0;
     function initGSAP() {
       if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-        setTimeout(initGSAP, 100);
+        if (++gsapRetries < 50) setTimeout(initGSAP, 100);
         return;
       }
       gsap.registerPlugin(ScrollTrigger);

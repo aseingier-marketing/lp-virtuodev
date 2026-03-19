@@ -215,7 +215,6 @@
     const caPerdu = Math.round(caTotal * ((100 - taux) / 100));
     window.quizCaSigne = caSigne;
     window.quizCaPerdu = caPerdu;
-    window.quizResult = caPerdu;
 
     const signeEl = document.getElementById('quiz-result-signe');
     quizAnimateCount(signeEl, caSigne, 1.2, 0, v => v.toLocaleString('fr-FR') + ' \u20AC');
@@ -228,6 +227,9 @@
     const caPerdu = window.quizCaPerdu || 0;
     const recoverable = Math.round(caPerdu * 0.10);
     const monthly = Math.round(recoverable / 12);
+
+    window.quizResultFinal = recoverable;
+    document.dispatchEvent(new CustomEvent('quiz-complete', { detail: { amount: recoverable } }));
 
     quizAnimateCount(
       document.getElementById('quiz-result-recoverable'),

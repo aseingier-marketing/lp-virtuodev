@@ -25,6 +25,16 @@ function sanitize(str: unknown): string {
   return str.trim().replace(/[<>]/g, '');
 }
 
+// Encodage HTML pour l'injection dans le template email (évite la corruption HTML)
+function h(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 function json(data: object, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -95,14 +105,14 @@ export const POST: APIRoute = async ({ request }) => {
           <h2 style="color:#1D5FBF;margin-bottom:4px;">Nouveau lead reçu</h2>
           <p style="color:#666;font-size:13px;margin-top:0;">${displayDate}</p>
           <table style="width:100%;border-collapse:collapse;margin-top:16px;">
-            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;width:130px;">Prénom</td><td style="padding:10px 0;font-weight:600;">${prenom}</td></tr>
-            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Nom</td><td style="padding:10px 0;font-weight:600;">${nom}</td></tr>
-            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Société</td><td style="padding:10px 0;font-weight:600;">${societe}</td></tr>
-            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Email</td><td style="padding:10px 0;"><a href="mailto:${email}" style="color:#1D5FBF;">${email}</a></td></tr>
-            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Téléphone</td><td style="padding:10px 0;"><a href="tel:${tel}" style="color:#1D5FBF;">${tel}</a></td></tr>
-            ${message ? `<tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Message</td><td style="padding:10px 0;">${message}</td></tr>` : ''}
-            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Source</td><td style="padding:10px 0;">${source}</td></tr>
-            ${utmSource ? `<tr><td style="padding:10px 0;color:#666;">UTM</td><td style="padding:10px 0;font-size:13px;">${utmSource} / ${utmMedium} / ${utmCampaign}</td></tr>` : ''}
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;width:130px;">Prénom</td><td style="padding:10px 0;font-weight:600;">${h(prenom)}</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Nom</td><td style="padding:10px 0;font-weight:600;">${h(nom)}</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Société</td><td style="padding:10px 0;font-weight:600;">${h(societe)}</td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Email</td><td style="padding:10px 0;"><a href="mailto:${h(email)}" style="color:#1D5FBF;">${h(email)}</a></td></tr>
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Téléphone</td><td style="padding:10px 0;"><a href="tel:${h(tel)}" style="color:#1D5FBF;">${h(tel)}</a></td></tr>
+            ${message ? `<tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Message</td><td style="padding:10px 0;">${h(message)}</td></tr>` : ''}
+            <tr style="border-bottom:1px solid #eee;"><td style="padding:10px 0;color:#666;">Source</td><td style="padding:10px 0;">${h(source)}</td></tr>
+            ${utmSource ? `<tr><td style="padding:10px 0;color:#666;">UTM</td><td style="padding:10px 0;font-size:13px;">${h(utmSource)} / ${h(utmMedium)} / ${h(utmCampaign)}</td></tr>` : ''}
           </table>
         </div>
       `,

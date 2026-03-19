@@ -23,21 +23,30 @@
 </section>
 
 <script>
-  // FINAL CTA — affiche le montant quiz si disponible, au moment où la section devient visible
+  // FINAL CTA — affiche le montant récupérable (dernière phase du quiz)
+  function updateFinalCTA(amount) {
+    if (!amount || amount <= 0) return;
+    const recallEl = document.getElementById('final-cta-quiz-recall');
+    const genericEl = document.getElementById('final-cta-generic');
+    const amountEl = document.getElementById('final-cta-amount');
+    if (recallEl && genericEl && amountEl) {
+      amountEl.textContent = amount.toLocaleString('fr-FR') + '\u00A0\u20AC\u00A0/ an';
+      recallEl.style.display = 'block';
+      genericEl.style.display = 'none';
+    }
+  }
+
+  // Cas 1 : le quiz se termine APRÈS que la section est visible
+  document.addEventListener('quiz-complete', (e) => {
+    updateFinalCTA(e.detail.amount);
+  });
+
+  // Cas 2 : l'utilisateur fait le quiz AVANT de scroller jusqu'ici
   const finalCtaEl = document.querySelector('[data-gs="s11"]');
   if (finalCtaEl) {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
-        if (window.quizResult && window.quizResult > 0) {
-          const recallEl = document.getElementById('final-cta-quiz-recall');
-          const genericEl = document.getElementById('final-cta-generic');
-          const amountEl = document.getElementById('final-cta-amount');
-          if (recallEl && genericEl && amountEl) {
-            amountEl.textContent = window.quizResult.toLocaleString('fr-FR') + '\u00A0\u20AC\u00A0/ an';
-            recallEl.style.display = 'block';
-            genericEl.style.display = 'none';
-          }
-        }
+        updateFinalCTA(window.quizResultFinal);
         observer.disconnect();
       }
     }, { threshold: 0.1 });
