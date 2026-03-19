@@ -8,7 +8,7 @@
 
 <script>
   if (window.matchMedia('(max-width: 768px)').matches) {
-    const trigger = document.getElementById('section-pourquoi');
+    const trigger = document.querySelector('[data-gs="t1"]');
     const bar = document.getElementById('sticky-mobile');
     if (trigger && bar) {
       const observer = new IntersectionObserver(

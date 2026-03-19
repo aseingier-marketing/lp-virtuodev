@@ -11,7 +11,7 @@ import Confirmation from './Confirmation.astro';
       <div class="badge-pill offer-badge" style="background:rgba(59,130,246,0.12);border-color:rgba(96,165,250,0.28);">
         <span class="dot"></span>
         <span style="color:#93C5FD;font-weight:500;">
-          <span id="founder-count" style="color:#FFFFFF;font-weight:700;">3</span> / 100 entreprises fondatrices
+          <span id="founder-count" style="color:#FFFFFF;font-weight:700;">—</span> / 100 entreprises fondatrices
         </span>
       </div>
       <h2 class="offer-title">
@@ -23,54 +23,9 @@ import Confirmation from './Confirmation.astro';
     </div>
 
     <!-- ==============================
-         GRILLE 60 / 40
+         FORMULAIRE CENTRÉ
          ============================== -->
-    <div class="offer-layout">
-
-      <!-- COLONNE GAUCHE — contenu -->
-      <div class="offer-left">
-
-        <div class="gs-hidden offer-cards-label" data-gs="s8" data-gs-delay="0.1">
-          Ce que comprend l&rsquo;offre fondatrice
-        </div>
-
-        <!-- Carte principale -->
-        <div class="gs-hidden founder-card-main" data-gs="s8" data-gs-delay="0.15">
-          <div class="founder-card-label">Acc&egrave;s</div>
-          <div class="founder-card-divider"></div>
-          <div class="founder-card-title">365 jours d&rsquo;acc&egrave;s</div>
-          <p class="founder-card-text">Les entreprises fondatrices b&eacute;n&eacute;ficient du syst&egrave;me pendant 1 an.</p>
-        </div>
-
-        <!-- Cartes secondaires -->
-        <div class="gs-hidden founder-secondary-grid" data-gs="s8" data-gs-delay="0.2">
-          <div class="founder-card-secondary">
-            <div class="founder-card-label">Visibilit&eacute;</div>
-            <div class="founder-card-divider"></div>
-            <div class="founder-card-title">Du contenu pour votre visibilit&eacute;</div>
-            <p class="founder-card-text">Contenus et publications pour alimenter vos r&eacute;seaux sociaux.</p>
-          </div>
-          <div class="founder-card-secondary">
-            <div class="founder-card-label">Analyse</div>
-            <div class="founder-card-divider"></div>
-            <div class="founder-card-title">Un bilan commercial complet</div>
-            <p class="founder-card-text">Devis, fid&eacute;lisation, suivi&nbsp;: une analyse compl&egrave;te transmise.</p>
-          </div>
-        </div>
-
-        <!-- Bloc bonus -->
-        <div class="gs-hidden offer-bonus" data-gs="s8" data-gs-delay="0.25">
-          <p class="offer-bonus-title">Bonus entreprises fondatrices</p>
-          <p class="offer-bonus-text">
-            Vos anciens devis de <strong style="color:#FFFFFF;font-weight:600;">0 &agrave; 2 ans</strong> seront relanc&eacute;s gratuitement avec une s&eacute;quence personnalis&eacute;e.
-          </p>
-        </div>
-
-      </div><!-- /offer-left -->
-
-
-      <!-- COLONNE DROITE — formulaire -->
-      <div class="offer-right">
+    <div class="offer-form-wrapper">
         <div id="section-callback" class="offer-form-card gs-hidden" data-gs="s8" data-gs-delay="0.12">
 
           <div id="offer-form-container">
@@ -87,6 +42,9 @@ import Confirmation from './Confirmation.astro';
               <span style="font-size:17px;flex-shrink:0;">&#128222;</span>
               <span>Appel de qualification de <strong>15 minutes</strong> pour valider votre acc&egrave;s.</span>
             </div>
+
+            <!-- Honeypot anti-spam — ne pas remplir -->
+            <input type="text" id="offer-trap" name="_trap" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;pointer-events:none;" />
 
             <div class="form-fields">
               <div class="form-row">
@@ -118,6 +76,7 @@ import Confirmation from './Confirmation.astro';
                 </label>
               </div>
               <button class="form-submit" onclick="submitOfferForm()">Demander sa place &rarr;</button>
+              <div style="text-align:center;font-size:13px;color:#111827;margin-top:8px;">Pr&eacute;ventes ouvertes jusqu'au <strong style="color:#111827;">17/04/26</strong></div>
               <div class="form-reassurance">
                 <div><span class="form-check">&#10003;</span><span>Aucun engagement.</span></div>
                 <div><span class="form-check">&#10003;</span><span>Nous v&eacute;rifions si le syst&egrave;me correspond &agrave; votre activit&eacute;.</span></div>
@@ -132,9 +91,7 @@ import Confirmation from './Confirmation.astro';
           <Confirmation />
 
         </div>
-      </div><!-- /offer-right -->
-
-    </div><!-- /offer-layout -->
+    </div><!-- /offer-form-wrapper -->
   </div>
 </section>
 
@@ -187,130 +144,15 @@ import Confirmation from './Confirmation.astro';
   }
 
   /* ================================
-     GRILLE 60 / 40
+     FORMULAIRE CENTRÉ
      ================================ */
-  .offer-layout {
-    display: grid;
-    grid-template-columns: 60fr 40fr;
-    gap: 96px;
-    align-items: start;
-  }
-
-  .offer-right {
-    position: sticky;
-    top: 88px;
+  .offer-form-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   /* ================================
-     COLONNE GAUCHE — cartes
-     ================================ */
-  .offer-cards-label {
-    font-family: var(--font-display);
-    font-size: clamp(22px, 2.4vw, 34px);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    text-transform: none;
-    color: #93C5FD;
-    margin-bottom: 28px;
-    margin-top: 48px;
-    text-align: center;
-  }
-
-  .founder-card-main {
-    background: linear-gradient(160deg, #0D1829 0%, #0A1020 100%);
-    border: 1px solid rgba(96,165,250,0.3);
-    border-top: 1px solid rgba(96,165,250,0.6);
-    border-radius: 18px;
-    padding: 32px;
-    box-shadow: 0 20px 50px rgba(2,6,23,0.4), inset 0 1px 0 rgba(96,165,250,0.12);
-    text-align: center;
-  }
-
-  .founder-secondary-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 14px;
-  }
-
-  .founder-card-secondary {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.09);
-    border-top: 1px solid rgba(255,255,255,0.18);
-    border-radius: 18px;
-    padding: 24px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    text-align: center;
-  }
-  .founder-card-secondary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
-  }
-
-  .founder-card-label {
-    font-family: var(--font-body);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #93C5FD;
-    opacity: 0.85;
-  }
-
-  .founder-card-divider {
-    width: 40px;
-    height: 1px;
-    background: rgba(255,255,255,0.15);
-    margin: 14px auto;
-  }
-
-  .founder-card-title {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(18px, 1.6vw, 22px);
-    color: #FFFFFF;
-    letter-spacing: -0.015em;
-    line-height: 1.25;
-  }
-
-  .founder-card-text {
-    font-family: var(--font-body);
-    font-size: 15px;
-    color: #FFFFFF;
-    margin-top: 10px;
-    line-height: 1.7;
-  }
-
-  .offer-bonus {
-    margin-top: 18px;
-    background: rgba(59,130,246,0.08);
-    border: 1px solid rgba(96,165,250,0.22);
-    border-top: 1px solid rgba(96,165,250,0.5);
-    border-radius: 18px;
-    padding: 28px 32px;
-    box-shadow: inset 0 1px 0 rgba(96,165,250,0.1);
-    text-align: center;
-  }
-
-  .offer-bonus-title {
-    font-family: var(--font-display);
-    font-size: clamp(19px, 1.8vw, 24px);
-    font-weight: 800;
-    color: #FFFFFF;
-    letter-spacing: -0.02em;
-    margin-bottom: 10px;
-  }
-
-  .offer-bonus-text {
-    font-family: var(--font-body);
-    font-size: 16px;
-    color: #FFFFFF;
-    line-height: 1.7;
-  }
-
-  /* ================================
-     COLONNE DROITE — formulaire
+     FORMULAIRE
      ================================ */
   .offer-form-card {
     background: #FFFFFF;
@@ -318,6 +160,8 @@ import Confirmation from './Confirmation.astro';
     border-radius: 20px;
     padding: 36px 32px;
     box-shadow: 0 30px 80px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.12);
+    width: 100%;
+    max-width: 520px;
   }
 
   .form-badge {
@@ -479,20 +323,28 @@ import Confirmation from './Confirmation.astro';
   }
 
   .form-cal {
-    font-size: 12px;
-    color: #9CA3AF;
+    font-size: 14px;
+    color: #111827;
     text-align: center;
-    line-height: 1.6;
-    margin: 2px 0 0 0;
+    line-height: 1.7;
+    margin: 8px 0 0 0;
+    padding: 14px 16px;
+    background: rgba(29,95,191,0.04);
+    border: 1px solid rgba(29,95,191,0.12);
+    border-radius: 10px;
   }
 
   .form-cal a {
-    color: #4B5563;
+    display: inline-block;
+    margin-top: 6px;
+    color: #1D5FBF;
+    font-weight: 600;
+    font-size: 15px;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
 
-  .form-cal a:hover { color: #1D5FBF; }
+  .form-cal a:hover { color: #174EA6; }
 
   /* ================================
      RESPONSIVE
@@ -506,22 +358,12 @@ import Confirmation from './Confirmation.astro';
 
     .offer-header { margin-bottom: 48px; }
 
-    .offer-layout {
-      grid-template-columns: 1fr;
-      gap: 36px;
-    }
-
-    /* Contenu d'abord, formulaire en dessous */
-    .offer-left  { order: 1; }
-    .offer-right { order: 2; position: static; }
-
     .offer-form-card { padding: 28px 22px; }
 
     .form-row { grid-template-columns: 1fr; }
   }
 
   @media (max-width: 520px) {
-    .founder-secondary-grid { grid-template-columns: 1fr; }
     .offer-title { font-size: 36px; }
   }
 </style>
@@ -530,31 +372,77 @@ import Confirmation from './Confirmation.astro';
   // ========================================
   // OFFER FORM
   // ========================================
-  function submitOfferForm() {
+  async function submitOfferForm() {
     const prenom  = document.getElementById('offer-prenom').value.trim();
     const nom     = document.getElementById('offer-nom').value.trim();
     const societe = document.getElementById('offer-societe').value.trim();
     const email   = document.getElementById('offer-email').value.trim();
     const tel     = document.getElementById('offer-tel').value.trim();
     const consent = document.getElementById('offer-consent').checked;
+    const trap    = document.getElementById('offer-trap').value;
     let hasError  = false;
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const telRegex   = /^(\+33|0)[0-9](\s?\d{2}){4}$/;
+
+    // Réinitialiser les erreurs visuelles
+    document.querySelectorAll('.form-input').forEach(i => { i.style.borderColor = ''; });
+    const consentLabel = document.getElementById('offer-consent').closest('label');
+    consentLabel.style.color = '';
 
     if (!prenom)  { document.getElementById('offer-prenom').style.borderColor  = '#ef4444'; hasError = true; }
     if (!nom)     { document.getElementById('offer-nom').style.borderColor     = '#ef4444'; hasError = true; }
     if (!societe) { document.getElementById('offer-societe').style.borderColor = '#ef4444'; hasError = true; }
     if (!email || !emailRegex.test(email)) { document.getElementById('offer-email').style.borderColor = '#ef4444'; hasError = true; }
     if (!tel || !telRegex.test(tel.replace(/\s/g, ''))) { document.getElementById('offer-tel').style.borderColor = '#ef4444'; hasError = true; }
-    if (!consent) { document.getElementById('offer-consent').closest('label').style.color = '#ef4444'; hasError = true; }
+    if (!consent) { consentLabel.style.color = '#ef4444'; hasError = true; }
     if (hasError) return;
 
-    window.location.href = '/merci';
+    const btn = document.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours\u2026';
+
+    // Supprimer l'erreur précédente si elle existe
+    const existingErr = document.getElementById('form-submit-error');
+    if (existingErr) existingErr.remove();
+
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prenom, nom, societe, email, tel, _trap: trap }),
+      });
+
+      if (res.ok) {
+        window.location.href = '/merci';
+      } else {
+        const data = await res.json().catch(() => ({}));
+        btn.disabled = false;
+        btn.textContent = 'Demander sa place \u2192';
+        const errEl = document.createElement('p');
+        errEl.id = 'form-submit-error';
+        errEl.style.cssText = 'color:#ef4444;font-size:13px;text-align:center;margin:8px 0 0;';
+        errEl.textContent = data.error || 'Une erreur est survenue. R\u00e9essayez.';
+        btn.insertAdjacentElement('afterend', errEl);
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Demander sa place \u2192';
+      const errEl = document.createElement('p');
+      errEl.id = 'form-submit-error';
+      errEl.style.cssText = 'color:#ef4444;font-size:13px;text-align:center;margin:8px 0 0;';
+      errEl.textContent = 'Erreur r\u00e9seau. V\u00e9rifiez votre connexion.';
+      btn.insertAdjacentElement('afterend', errEl);
+    }
   }
 
   document.querySelectorAll('.form-input').forEach(input => {
     input.addEventListener('focus', () => { input.style.borderColor = ''; });
+  });
+
+  // Réinitialiser la couleur du label consent quand la checkbox change
+  document.getElementById('offer-consent').addEventListener('change', function() {
+    this.closest('label').style.color = '';
   });
 
   window.submitOfferForm = submitOfferForm;

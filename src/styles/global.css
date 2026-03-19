@@ -749,7 +749,7 @@ body {
   padding: 0 0;
 }
 .faq-item.open .faq-answer {
-  max-height: 300px;
+  max-height: 500px;
   padding-bottom: 22px;
 }
 .faq-answer p {
@@ -962,12 +962,11 @@ body {
   border-bottom: 1px solid var(--border-light);
 }
 .compare-x {
-  color: #EF4444;
+  color: #DC2626;
   font-size: 12px;
   font-weight: 700;
   flex-shrink: 0;
   margin-top: 3px;
-  opacity: 0.5;
 }
 .compare-check {
   color: var(--success);
@@ -1299,5 +1298,16 @@ body {
 
   .quiz-question {
     text-align: center !important;
+  }
+
+  /* Quiz — padding réduit sur mobile */
+  .quiz-option-card {
+    padding: 20px 12px;
+  }
+  .quiz-volume-card {
+    padding: 22px 12px;
+  }
+  .quiz-progress-track {
+    margin-bottom: 24px;
   }
 }

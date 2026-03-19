@@ -3,7 +3,6 @@ import Base from '../layouts/Base.astro';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Testimonial from '../components/Testimonial.astro';
-import FounderCredibility from '../components/FounderCredibility.astro';
 import SocialProof from '../components/SocialProof.astro';
 import Problem from '../components/Problem.astro';
 import QuizCalculator from '../components/QuizCalculator.astro';
@@ -23,7 +22,7 @@ import '../styles/global.css';
   title="Prévente Fondateur — Système de relance automatique de devis"
   description="On construit le système qui relance automatiquement vos devis. Pour les entreprises B2C qui envoient des devis et veulent structurer leur suivi jusqu'à la signature."
   ogUrl="https://votre-domaine.fr"
-  ogImage="/og-image.jpg"
+  ogImage="/images/og-image.png"
 >
   <Nav />
   <Hero />
@@ -35,7 +34,9 @@ import '../styles/global.css';
     gsKey="t1"
   />
 
-  <FounderCredibility />
+  <Problem />
+  <QuizCalculator />
+  <SocialProof />
 
   <Testimonial
     name="Samuel"
@@ -44,9 +45,6 @@ import '../styles/global.css';
     gsKey="t2"
   />
 
-  <SocialProof />
-  <Problem />
-  <QuizCalculator />
   <Solution />
   <FounderOffer />
   <Objections />
@@ -98,10 +96,6 @@ import '../styles/global.css';
         });
       });
 
-      // Places counter
-      const PLACES_LEFT = 100;
-      if (document.getElementById('places-badge')) document.getElementById('places-badge').textContent = PLACES_LEFT;
-      if (document.getElementById('places-final')) document.getElementById('places-final').textContent = PLACES_LEFT;
     }
 
     initGSAP();
