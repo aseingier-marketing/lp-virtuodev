@@ -1,133 +1,298 @@
 ---
 ---
-<!-- Section 2B — Pour qui est ce système (fond clair) -->
-<section class="section-light section-pad" style="background:#FFFFFF;border-top:none;">
-  <div class="section-inner">
+<section class="pq-section" id="section-pour-qui">
+  <div class="pq-inner">
 
-    <div class="gs-hidden" data-gs="s2b" data-gs-delay="0" style="display:flex;justify-content:center;margin-bottom:20px;">
-      <div style="display:inline-flex;align-items:center;gap:9px;background:linear-gradient(180deg,rgba(59,130,246,0.08) 0%,rgba(59,130,246,0.04) 100%);border:1px solid rgba(59,130,246,0.28);border-radius:100px;padding:8px 18px;box-shadow:0 0 0 1px rgba(59,130,246,0.06),0 0 24px rgba(59,130,246,0.12);">
-        <span style="width:18px;height:18px;border-radius:999px;background:rgba(59,130,246,0.14);border:1px solid rgba(96,165,250,0.28);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;">
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-        </span>
-        <span style="font-family:var(--font-body);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#2563EB;">Pour qui</span>
-      </div>
+    <!-- Badge — pattern identique à FounderCredibility -->
+    <div class="pq-badge-wrap gs-hidden" data-gs="s2b" data-gs-delay="0">
+      <span class="pq-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+        <span>Pour qui</span>
+      </span>
     </div>
-    <h2 class="h1 gs-hidden" data-gs="s2b" data-gs-delay="0.1" style="color:var(--text-light-primary);max-width:680px;margin-left:auto;margin-right:auto;text-align:center;">Con&ccedil;u pour les entreprises B2C qui envoient des devis</h2>
 
-    <!-- Secteurs chips — style premium light -->
-    <div class="gs-hidden" data-gs="s2b" data-gs-delay="0.2" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:680px;margin:28px auto 0 auto;">
-      <div class="sector-chip">
-        <span class="sector-chip-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1D5FBF" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-        R&eacute;novation
-      </div>
-      <div class="sector-chip">
-        <span class="sector-chip-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1D5FBF" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-        Habitat
-      </div>
-      <div class="sector-chip">
-        <span class="sector-chip-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1D5FBF" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-        &Eacute;quipement
-      </div>
-      <div class="sector-chip">
-        <span class="sector-chip-icon"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1D5FBF" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-        Services &agrave; domicile
-      </div>
-      <div class="sector-chip sector-chip--accent">
-        <span class="sector-chip-icon sector-chip-icon--accent"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#1D5FBF" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>
-        Prestations B2C
-      </div>
-    </div>
-    <style>
-      .sector-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        height: 40px;
-        padding: 0 16px;
-        border-radius: 999px;
-        background: #FFFFFF;
-        border: 1px solid rgba(29,95,191,0.18);
-        color: var(--text-light-primary);
-        font-size: 13.5px;
-        font-weight: 500;
-        box-shadow: 0 1px 4px rgba(29,95,191,0.07), 0 2px 12px rgba(0,0,0,0.04);
-        transition: all 0.22s ease;
-        cursor: default;
-        letter-spacing: -0.01em;
-      }
-      .sector-chip:hover {
-        transform: translateY(-2px);
-        border-color: rgba(29,95,191,0.32);
-        box-shadow: 0 4px 16px rgba(29,95,191,0.12), 0 2px 8px rgba(0,0,0,0.06);
-      }
-      .sector-chip--accent {
-        background: rgba(29,95,191,0.06);
-        border-color: rgba(29,95,191,0.28);
-        color: var(--accent);
-        font-weight: 600;
-      }
-      .sector-chip-icon {
-        width: 20px;
-        height: 20px;
-        border-radius: 999px;
-        background: rgba(29,95,191,0.10);
-        border: 1px solid rgba(29,95,191,0.18);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-      .sector-chip-icon--accent {
-        background: rgba(29,95,191,0.14);
-        border-color: rgba(29,95,191,0.28);
-      }
-    </style>
+    <!-- Titre -->
+    <h2 class="pq-heading gs-hidden" data-gs="s2b" data-gs-delay="0.08">
+      Deux profils, une m&ecirc;me r&eacute;alit&eacute;&nbsp;:<br>des devis envoy&eacute;s qui ne signent pas
+    </h2>
 
-    <p class="gs-hidden" data-gs="s2b" data-gs-delay="0.25" style="font-size:15.5px;color:var(--text-light-primary);font-weight:500;line-height:1.65;max-width:560px;margin:16px auto 0 auto;text-align:center;">
-      Si vous envoyez des devis &agrave; des particuliers, vous &ecirc;tes probablement concern&eacute;.
+    <!-- Sous-titre -->
+    <p class="pq-subhead gs-hidden" data-gs="s2b" data-gs-delay="0.14">
+      Virtuodev r&eacute;pond aux besoins des <strong>entreprises BTP</strong> qui cherchent &agrave; convertir plus de devis &mdash; sans changer leur fa&ccedil;on de travailler.
     </p>
 
-    <!-- Avant / Après — cards comparaison -->
-    <div class="gs-hidden" data-gs="s2b" data-gs-delay="0.3" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:56px;">
-      <!-- Avant — border rouge léger -->
-      <div class="compare-box" style="background:#FFFFFF;border:1px solid rgba(220,38,38,0.30);border-radius:16px;overflow:hidden;">
-        <div class="compare-box-header" style="background:rgba(220,38,38,0.07);padding:18px 24px;display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#991B1B;">
-          <span style="width:22px;height:22px;border-radius:50%;background:rgba(220,38,38,0.14);color:#DC2626;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">&#10005;</span>
-          La situation la plus fr&eacute;quente
-        </div>
-        <div class="compare-box-body">
-          <div class="compare-line" style="color:var(--text-light-secondary);border-bottom:1px solid var(--border-light);"><span class="compare-x">&#10005;</span><span>Vous envoyez des devis chaque semaine</span></div>
-          <div class="compare-line" style="color:var(--text-light-secondary);border-bottom:1px solid var(--border-light);"><span class="compare-x">&#10005;</span><span>Certains prospects ne r&eacute;pondent plus apr&egrave;s la proposition</span></div>
-          <div class="compare-line" style="color:var(--text-light-secondary);border-bottom:1px solid var(--border-light);"><span class="compare-x">&#10005;</span><span>Vos relances d&eacute;pendent du temps disponible dans votre journ&eacute;e</span></div>
-          <div class="compare-line" style="color:var(--text-light-secondary);border-bottom:none;"><span class="compare-x">&#10005;</span><span>Une partie des devis finit simplement par &ecirc;tre oubli&eacute;e</span></div>
+    <!-- Rectangle -->
+    <div class="pq-card gs-hidden" data-gs="s2b" data-gs-delay="0.22">
+
+      <!-- Gauche -->
+      <div class="pq-left">
+        <h3 class="pq-profile-title">Artisans et PME<br>du b&acirc;timent</h3>
+        <p class="pq-profile-desc">Vous envoyez des devis mais vous n&rsquo;avez <strong>ni le temps, ni la m&eacute;thode</strong> pour assurer le suivi.</p>
+        <button class="pq-cta" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})">
+          &Ccedil;a m&rsquo;int&eacute;resse
+        </button>
+      </div>
+
+      <!-- Droite -->
+      <div class="pq-right">
+
+        <p class="pq-problem">Vous jonglez entre chantiers, &eacute;quipe et clients &mdash; sans savoir si vos devis sont encore r&eacute;cup&eacute;rables.</p>
+
+        <!-- Ce que Virtuodev apporte | Bénéfice concret -->
+        <div class="pq-two-cols">
+
+          <div class="pq-col">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.5-1.5 4 0 4s2.5-1.5 4 0"/>
+              <path d="M12 2C8 5.5 7 9.5 8 13.5l6 2c4-2.5 6.5-6 6-10.5C17 2.5 14.5 2 12 2z"/>
+              <circle cx="15.5" cy="8.5" r="1.2" fill="#2563EB" stroke="none"/>
+            </svg>
+            <h4 class="pq-col-title">Ce que Virtuodev apporte</h4>
+            <ul class="pq-bullets">
+              <li><span class="pq-dot"></span><span>Des relances automatiques pour <strong>ceux qui n&rsquo;ont pas le temps</strong>.</span></li>
+              <li><span class="pq-dot"></span><span>Une s&eacute;quence calibr&eacute;e pour <strong>ceux qui ne savent pas comment</strong>.</span></li>
+              <li><span class="pq-dot"></span><span>Un suivi jusqu&rsquo;&agrave; la signature pour <strong>ceux qui veulent des r&eacute;sultats</strong>.</span></li>
+            </ul>
+          </div>
+
+          <div class="pq-col">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+            <h4 class="pq-col-title">B&eacute;n&eacute;fice concret</h4>
+            <p class="pq-col-body">Vous <strong>signez plus sans travailler plus</strong>, et pilotez votre activit&eacute; avec s&eacute;r&eacute;nit&eacute;.</p>
+          </div>
+
         </div>
       </div>
-      <!-- Après — border vert léger -->
-      <div class="compare-box" style="background:#FFFFFF;border:1px solid rgba(18,183,106,0.32);border-radius:16px;overflow:hidden;">
-        <div class="compare-box-header" style="background:rgba(18,183,106,0.09);padding:18px 24px;display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:-0.01em;color:#166534;">
-          <span style="width:22px;height:22px;border-radius:50%;background:rgba(18,183,106,0.18);color:#059669;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">&#10003;</span>
-          Ce que nous changeons
-        </div>
-        <div class="compare-box-body">
-          <div class="compare-line" style="color:var(--text-light-primary);border-bottom:1px solid var(--border-light);"><span class="compare-check">&#10003;</span><span>Vos prospects re&ccedil;oivent des relances au bon moment</span></div>
-          <div class="compare-line" style="color:var(--text-light-primary);border-bottom:1px solid var(--border-light);"><span class="compare-check">&#10003;</span><span>Les devis restent actifs jusqu'&agrave; la d&eacute;cision du client</span></div>
-          <div class="compare-line" style="color:var(--text-light-primary);border-bottom:1px solid var(--border-light);"><span class="compare-check">&#10003;</span><span>Les relances ne d&eacute;pendent plus de votre m&eacute;moire ou de votre agenda</span></div>
-          <div class="compare-line" style="color:var(--text-light-primary);border-bottom:none;"><span class="compare-check">&#10003;</span><span>Les prospects qui h&eacute;sitent continuent &agrave; recevoir des relances au bon moment</span></div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Phrase pivot -->
-    <div class="gs-hidden" data-gs="s2b" data-gs-delay="0.4" style="margin-top:48px;max-width:560px;margin-left:auto;margin-right:auto;text-align:center;">
-      <p style="font-size:16px;color:var(--text-light-primary);line-height:1.65;">Dans beaucoup d'entreprises, le probl&egrave;me n'est pas le manque de devis.<br><strong>C'est le manque de suivi apr&egrave;s l'envoi.</strong></p>
     </div>
-
-    <!-- CTA post-phrase pivot -->
-    <div class="gs-hidden" data-gs="s2b" data-gs-delay="0.5" style="margin-top:28px;text-align:center;">
-      <button style="display:inline-flex;align-items:center;justify-content:center;padding:14px 26px;border-radius:11px;font-family:var(--font-body);font-weight:600;font-size:16px;cursor:pointer;border:none;background:#1D5FBF;color:#FFFFFF;transition:background 0.2s ease,transform 0.2s ease,box-shadow 0.2s ease;box-shadow:0px 10px 25px rgba(29,95,191,0.35);" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})" onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)';this.style.boxShadow='0px 14px 32px rgba(29,95,191,0.45)'" onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)';this.style.boxShadow='0px 10px 25px rgba(29,95,191,0.35)'">
-        Demander sa place &rarr;
-      </button>
-    </div>
-
   </div>
 </section>
+
+<style>
+  /* ─── Section ─── */
+  .pq-section {
+    background: #FFFFFF;
+    padding: 100px 0 120px;
+  }
+  .pq-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 48px;
+    text-align: center;
+  }
+
+  /* ─── Badge — même pattern que le reste du site ─── */
+  .pq-badge-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .pq-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-dim);
+    border: 1px solid var(--accent-border);
+    border-radius: 100px;
+    padding: 7px 16px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  /* ─── Titre ─── */
+  .pq-heading {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(30px, 3.6vw, 48px);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--text-light-primary);
+    margin: 0 auto 18px;
+    max-width: 860px;
+  }
+
+  /* ─── Sous-titre ─── */
+  .pq-subhead {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--text-light-secondary);
+    line-height: 1.68;
+    margin: 0 auto 52px;
+    max-width: 500px;
+  }
+  .pq-subhead strong {
+    color: var(--text-light-primary);
+    font-weight: 600;
+  }
+
+  /* ─── Carte — couleurs du design system ─── */
+  .pq-card {
+    background: #EEF4FF;
+    border: 1px solid rgba(29,95,191,0.12);
+    border-radius: 24px;
+    padding: 56px 64px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 80px;
+    align-items: start;
+    text-align: left;
+    box-shadow: 0 4px 24px rgba(29,95,191,0.06);
+  }
+
+  /* ─── Colonne gauche ─── */
+  .pq-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .pq-profile-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(24px, 2.6vw, 34px);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: var(--text-light-primary);
+    margin: 0;
+  }
+  .pq-profile-desc {
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    color: var(--text-light-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .pq-profile-desc strong {
+    color: var(--text-light-primary);
+    font-weight: 600;
+  }
+
+  /* CTA — même style que le reste du site */
+  .pq-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    padding: 14px 26px;
+    border-radius: 11px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    background: var(--accent);
+    color: #FFFFFF;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0px 10px 25px rgba(29,95,191,0.35);
+    margin-top: 6px;
+  }
+  .pq-cta:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0px 14px 32px rgba(29,95,191,0.45);
+  }
+
+  /* ─── Colonne droite ─── */
+  .pq-right {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .pq-problem {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--text-light-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ─── 2 colonnes côte à côte ─── */
+  .pq-two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .pq-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .pq-col-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15.5px;
+    color: var(--text-light-primary);
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  /* Bullets */
+  .pq-bullets {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .pq-bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-light-secondary);
+    line-height: 1.6;
+  }
+  .pq-bullets li strong {
+    color: var(--text-light-primary);
+    font-weight: 600;
+  }
+  .pq-dot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #2563EB;
+    opacity: 0.55;
+    margin-top: 6px;
+  }
+
+  /* Bénéfice */
+  .pq-col-body {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--text-light-secondary);
+    line-height: 1.68;
+    margin: 0;
+  }
+  .pq-col-body strong {
+    color: var(--text-light-primary);
+    font-weight: 600;
+  }
+
+  /* ─── Mobile ─── */
+  @media (max-width: 768px) {
+    .pq-section { padding: 72px 0 88px; }
+    .pq-inner { padding: 0 20px; }
+    .pq-heading br { display: none; }
+    .pq-subhead { margin-bottom: 36px; }
+    .pq-card {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 32px 24px;
+    }
+    .pq-two-cols {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+</style>

@@ -1,0 +1,181 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/tokens.css';
+import '../styles/global.css';
+---
+
+<Base
+  title="Conditions Générales de Vente — Virtuodev"
+  description="Conditions Générales de Vente de Virtuodev, système de relance automatique de devis pour les entreprises BTP."
+>
+  <main class="legal-page">
+    <div class="legal-container">
+      <a href="/" class="legal-back">← Retour</a>
+
+      <h1 class="legal-title">Conditions Générales de Vente</h1>
+
+      <section class="legal-section">
+        <h2>Article 1 — Identification du prestataire</h2>
+        <p>
+          Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre :<br><br>
+          <strong>Antoine SEINGIER</strong>, entrepreneur individuel exerçant sous le nom commercial <strong>Virtuodev</strong><br>
+          2 rue de Lille, 59350 Saint-André-lez-Lille, France<br>
+          SIREN : 878 332 519<br>
+          Contact : <a href="mailto:contact@virtuodev.com">contact@virtuodev.com</a><br><br>
+          Ci-après désigné « le Prestataire »,<br><br>
+          et toute personne physique ou morale procédant à l'achat de services proposés par le Prestataire, ci-après désignée « le Client ».
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 2 — Objet et champ d'application</h2>
+        <p>
+          Les présentes CGV s'appliquent à l'ensemble des services proposés par Virtuodev, notamment le système de relance automatique de devis destiné aux entreprises du secteur BTP (bâtiment et travaux publics).
+        </p>
+        <p>
+          Toute commande ou souscription implique l'acceptation pleine et entière des présentes CGV.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 3 — Description des services</h2>
+        <p>
+          Virtuodev propose un système automatisé de relance de devis permettant aux entreprises d'optimiser leur suivi commercial. Les fonctionnalités et modalités précises sont détaillées dans le devis ou contrat de service remis au Client.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 4 — Tarifs</h2>
+        <p>
+          Les tarifs applicables sont ceux communiqués lors de la souscription et formalisés dans le devis ou contrat de service signé entre les parties. Ils sont exprimés en euros hors taxes (HT). La TVA applicable sera ajoutée conformément à la réglementation en vigueur.
+        </p>
+        <p>
+          Le Prestataire se réserve le droit de modifier ses tarifs à tout moment. Les nouvelles conditions tarifaires ne s'appliquent qu'aux nouvelles souscriptions ou au renouvellement de contrats existants, avec un préavis de 30 jours.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 5 — Modalités de paiement</h2>
+        <p>
+          Les conditions de paiement (montant, échéances, mode de règlement) sont précisées dans le devis ou contrat de service. Tout retard de paiement entraîne l'application de pénalités conformément à la réglementation française en vigueur.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 6 — Durée et résiliation</h2>
+        <p>
+          La durée du contrat est définie dans le devis ou contrat de service. En l'absence de mention contraire, le contrat est conclu pour une durée d'un (1) mois renouvelable tacitement.
+        </p>
+        <p>
+          Chaque partie peut résilier le contrat en respectant un préavis de 30 jours, notifié par écrit (email ou courrier recommandé).
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 7 — Obligations du Client</h2>
+        <p>
+          Le Client s'engage à fournir des informations exactes et à jour, à utiliser les services conformément à leur destination, et à ne pas porter atteinte aux droits de tiers.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 8 — Responsabilité</h2>
+        <p>
+          Le Prestataire s'engage à mettre en œuvre tous les moyens nécessaires à la bonne exécution des services. Sa responsabilité est limitée aux dommages directs et prévisibles. Le Prestataire ne saurait être tenu responsable des dommages indirects, pertes de chiffre d'affaires ou pertes de données.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 9 — Propriété intellectuelle</h2>
+        <p>
+          L'ensemble des outils, logiciels et contenus mis à disposition dans le cadre des services restent la propriété exclusive de Virtuodev. Le Client bénéficie d'un droit d'utilisation limité à la durée du contrat.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 10 — Protection des données personnelles</h2>
+        <p>
+          Les données personnelles collectées dans le cadre de l'exécution du contrat sont traitées conformément à la <a href="/politique-de-confidentialite">Politique de confidentialité</a> de Virtuodev et au Règlement Général sur la Protection des Données (RGPD).
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Article 11 — Droit applicable et juridiction compétente</h2>
+        <p>
+          Les présentes CGV sont soumises au droit français. En cas de litige, et après tentative de résolution amiable, les tribunaux du ressort du siège social de Virtuodev seront seuls compétents.
+        </p>
+      </section>
+
+      <p class="legal-date">Dernière mise à jour : avril 2026</p>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .legal-page {
+    background: var(--bg-light);
+    min-height: 100vh;
+    padding: 80px 24px;
+  }
+
+  .legal-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .legal-back {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: opacity 0.15s ease;
+  }
+
+  .legal-back:hover { opacity: 0.75; }
+
+  .legal-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: -0.03em;
+    color: var(--text-light-primary);
+    margin-bottom: 40px;
+  }
+
+  .legal-section {
+    margin-bottom: 36px;
+  }
+
+  .legal-section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-light-primary);
+    margin-bottom: 12px;
+  }
+
+  .legal-section p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-light-secondary);
+    margin-bottom: 12px;
+  }
+
+  .legal-section a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .legal-date {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--text-light-muted);
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+  }
+</style>

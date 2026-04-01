@@ -4,9 +4,9 @@
   <div class="offer-inner">
 
     <!-- ==============================
-         EN-TÊTE CENTRÉ — pleine largeur
+         GAUCHE — titre + sous-titre
          ============================== -->
-    <div class="offer-header gs-hidden" data-gs="s8" data-gs-delay="0">
+    <div class="offer-left gs-hidden" data-gs="s8" data-gs-delay="0">
       <div class="badge-pill offer-badge" style="background:rgba(59,130,246,0.12);border-color:rgba(96,165,250,0.28);">
         <span class="dot"></span>
         <span style="color:#93C5FD;font-weight:500;">
@@ -19,16 +19,38 @@
       <p class="offer-subtitle">
         Cette premi&egrave;re phase est limit&eacute;e pour accompagner chaque d&eacute;ploiement dans les meilleures conditions.
       </p>
+      <div class="offer-pills">
+
+        <div class="offer-pill">
+          <div class="offer-pill-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="offer-pill-text">Exclusivit&eacute; secteur</span>
+        </div>
+
+        <div class="offer-pill-divider"></div>
+
+        <div class="offer-pill">
+          <div class="offer-pill-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>
+            </svg>
+          </div>
+          <span class="offer-pill-text">Garantie ou rembours&eacute;</span>
+        </div>
+
+      </div>
     </div>
 
     <!-- ==============================
-         FORMULAIRE CENTRÉ
+         DROITE — formulaire
          ============================== -->
-    <div class="offer-form-wrapper">
-        <div id="section-callback" class="offer-form-card gs-hidden" data-gs="s8" data-gs-delay="0.12">
+    <div id="section-callback" class="offer-form-card gs-hidden" data-gs="s8" data-gs-delay="0.12">
 
           <div id="offer-form-container">
-            <div style="text-align:center;margin-bottom:22px;">
+            <div style="text-align:center;margin-bottom:14px;">
               <div class="badge-pill" style="margin:0 auto 14px auto;background:rgba(29,95,191,0.08);border-color:rgba(29,95,191,0.22);">
                 <span class="dot" style="background:#1D5FBF;"></span>
                 <span style="color:#1D5FBF;font-weight:500;"><span id="founder-count2" style="color:#111827;font-weight:700;">—</span> / 100 entreprises fondatrices</span>
@@ -39,7 +61,7 @@
 
             <div class="form-qualification">
               <span style="font-size:17px;flex-shrink:0;">&#128222;</span>
-              <span>Appel de qualification de <strong>15 minutes</strong> pour valider votre acc&egrave;s.</span>
+              <span>Appel de qualification de <strong>10 minutes</strong> pour valider votre acc&egrave;s.</span>
             </div>
 
             <!-- Honeypot anti-spam — ne pas remplir -->
@@ -48,24 +70,24 @@
             <div class="form-fields">
               <div class="form-row">
                 <div>
-                  <label class="form-label">Pr&eacute;nom <span class="form-required">*</span></label>
+                  <label class="form-label" for="offer-prenom">Pr&eacute;nom <span class="form-required">*</span></label>
                   <input type="text" class="form-input" id="offer-prenom" placeholder="Votre pr&eacute;nom" required>
                 </div>
                 <div>
-                  <label class="form-label">Nom <span class="form-required">*</span></label>
+                  <label class="form-label" for="offer-nom">Nom <span class="form-required">*</span></label>
                   <input type="text" class="form-input" id="offer-nom" placeholder="Votre nom" required>
                 </div>
               </div>
               <div>
-                <label class="form-label">Soci&eacute;t&eacute; <span class="form-required">*</span></label>
+                <label class="form-label" for="offer-societe">Soci&eacute;t&eacute; <span class="form-required">*</span></label>
                 <input type="text" class="form-input" id="offer-societe" placeholder="Nom de votre soci&eacute;t&eacute;" required>
               </div>
               <div>
-                <label class="form-label">E-mail professionnel <span class="form-required">*</span></label>
+                <label class="form-label" for="offer-email">E-mail professionnel <span class="form-required">*</span></label>
                 <input type="email" class="form-input" id="offer-email" placeholder="votre@entreprise.com" required>
               </div>
               <div>
-                <label class="form-label">T&eacute;l&eacute;phone <span class="form-required">*</span></label>
+                <label class="form-label" for="offer-tel">T&eacute;l&eacute;phone <span class="form-required">*</span></label>
                 <input type="tel" class="form-input" id="offer-tel" placeholder="06 00 00 00 00" required>
               </div>
               <div>
@@ -74,8 +96,7 @@
                   <span>J'accepte d'&ecirc;tre contact&eacute; par t&eacute;l&eacute;phone. <span class="form-required">*</span></span>
                 </label>
               </div>
-              <button class="form-submit" onclick="submitOfferForm()">Demander sa place &rarr;</button>
-              <div style="text-align:center;font-size:13px;color:#111827;margin-top:8px;">Pr&eacute;ventes ouvertes jusqu'au <strong style="color:#111827;">17/04/26</strong></div>
+              <button class="form-submit" onclick="submitOfferForm()">Appel de qualification &mdash; 10 min &rarr;</button>
               <div class="form-reassurance">
                 <div><span class="form-check">&#10003;</span><span>Aucun engagement.</span></div>
                 <div><span class="form-check">&#10003;</span><span>Nous v&eacute;rifions si le syst&egrave;me correspond &agrave; votre activit&eacute;.</span></div>
@@ -88,7 +109,7 @@
           </div>
 
         </div>
-    </div><!-- /offer-form-wrapper -->
+    </div><!-- /offer-form-card -->
   </div>
 </section>
 
@@ -102,33 +123,38 @@
   }
 
   .offer-inner {
-    max-width: 1440px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 80px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: stretch;
   }
 
   /* ================================
-     EN-TÊTE CENTRÉ
+     GAUCHE — titre + sous-titre
      ================================ */
-  .offer-header {
-    text-align: center;
-    margin-bottom: 64px;
+  .offer-left {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .offer-badge {
-    margin: 0 auto 24px auto;
+    margin: 0 0 24px 0;
     display: inline-flex;
   }
 
   .offer-title {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: clamp(30px, 3.8vw, 52px);
+    font-size: clamp(30px, 3.2vw, 48px);
     line-height: 1.12;
     letter-spacing: -0.03em;
     color: #FFFFFF;
-    margin: 0 auto 20px auto;
-    max-width: 720px;
+    margin: 0 0 20px 0;
   }
 
   .offer-subtitle {
@@ -136,16 +162,51 @@
     font-size: clamp(16px, 1.5vw, 19px);
     color: #FFFFFF;
     line-height: 1.65;
-    max-width: 560px;
-    margin: 0 auto;
+    margin: 0 0 28px 0;
   }
 
-  /* ================================
-     FORMULAIRE CENTRÉ
-     ================================ */
-  .offer-form-wrapper {
+  .offer-pills {
     display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.03);
+    max-width: 360px;
+    overflow: hidden;
+  }
+
+  .offer-pill {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 20px;
+  }
+
+  .offer-pill-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.08);
+    margin: 0 20px;
+  }
+
+  .offer-pill-icon {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    background: rgba(96,165,250,0.12);
+    border: 1px solid rgba(96,165,250,0.20);
+    color: #93C5FD;
+    flex-shrink: 0;
+  }
+
+  .offer-pill-text {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 600;
+    color: #F1F5F9;
+    letter-spacing: -0.01em;
   }
 
   /* ================================
@@ -155,7 +216,7 @@
     background: #FFFFFF;
     border: 1px solid rgba(229,231,235,1);
     border-radius: 20px;
-    padding: 36px 32px;
+    padding: 26px 28px;
     box-shadow: 0 30px 80px rgba(0,0,0,0.3), 0 4px 20px rgba(0,0,0,0.12);
     width: 100%;
     max-width: 520px;
@@ -209,8 +270,8 @@
     background: rgba(29,95,191,0.06);
     border: 1px solid rgba(29,95,191,0.15);
     border-radius: 10px;
-    padding: 11px 14px;
-    margin-bottom: 20px;
+    padding: 9px 14px;
+    margin-bottom: 14px;
     font-size: 13px;
     color: #374151;
     line-height: 1.5;
@@ -221,7 +282,7 @@
   .form-fields {
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 10px;
   }
 
   /* Prénom + Nom côte à côte */
@@ -247,7 +308,7 @@
     background: #F9FAFB;
     border: 1px solid #E5E7EB;
     border-radius: 8px;
-    padding: 10px 12px;
+    padding: 8px 12px;
     font-family: var(--font-body);
     font-size: 14px;
     color: #111827;
@@ -347,17 +408,29 @@
      RESPONSIVE
      ================================ */
   @media (max-width: 1024px) {
-    .offer-inner { padding: 64px 32px; }
+    .offer-inner { padding: 64px 32px; gap: 56px; }
   }
 
   @media (max-width: 860px) {
-    .offer-inner { padding: 56px 20px; }
+    .offer-inner {
+      padding: 56px 20px;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
 
-    .offer-header { margin-bottom: 48px; }
+    .offer-left { text-align: center; align-items: center; }
+
+    .offer-badge { margin: 0 auto 24px auto; }
+
+    .offer-pills { max-width: 100%; }
+
+    .offer-pill { max-width: 100%; }
 
     .offer-form-card { padding: 28px 22px; }
 
     .form-row { grid-template-columns: 1fr; }
+
+    .form-input { font-size: 16px; }
   }
 
   @media (max-width: 520px) {
@@ -433,7 +506,7 @@
       } else {
         const data = await res.json().catch(() => ({}));
         btn.disabled = false;
-        btn.textContent = 'Demander sa place \u2192';
+        btn.textContent = 'Appel de qualification \u2014 10 min \u2192';
         const errEl = document.createElement('p');
         errEl.id = 'form-submit-error';
         errEl.style.cssText = 'color:#ef4444;font-size:13px;text-align:center;margin:8px 0 0;';
@@ -442,7 +515,7 @@
       }
     } catch {
       btn.disabled = false;
-      btn.textContent = 'Demander sa place \u2192';
+      btn.textContent = 'Appel de qualification \u2014 10 min \u2192';
       const errEl = document.createElement('p');
       errEl.id = 'form-submit-error';
       errEl.style.cssText = 'color:#ef4444;font-size:13px;text-align:center;margin:8px 0 0;';
@@ -480,7 +553,13 @@
         if (el)  { el.textContent  = String(count); }
         if (el2) { el2.textContent = String(count); el2.style.color = '#111827'; }
       }
-    } catch (e) { /* silently fail */ }
+    } catch (e) {
+      // Fallback : affiche 0 si l'API est indisponible
+      const el  = document.getElementById('founder-count');
+      const el2 = document.getElementById('founder-count2');
+      if (el)  el.textContent = '0';
+      if (el2) { el2.textContent = '0'; el2.style.color = '#111827'; }
+    }
   }
 
   loadFounderCount();

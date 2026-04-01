@@ -1,0 +1,258 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/tokens.css';
+import '../styles/global.css';
+---
+
+<Base
+  title="Politique de cookies — VirtuoDev"
+  description="Politique de cookies de VirtuoDev : quels cookies sont utilisés sur ce site et comment les gérer."
+>
+  <main class="legal-page">
+    <div class="legal-container">
+      <a href="/" class="legal-back">← Retour</a>
+
+      <h1 class="legal-title">Politique de cookies</h1>
+
+      <section class="legal-section">
+        <h2>Qu'est-ce qu'un cookie ?</h2>
+        <p>
+          Un cookie est un petit fichier texte déposé sur votre appareil (ordinateur, smartphone, tablette) lors de la visite d'un site internet. Il permet au site de mémoriser vos préférences ou de collecter des informations sur votre navigation.
+        </p>
+        <p>
+          Conformément à la loi n° 78-17 du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, et au Règlement Général sur la Protection des Données (RGPD), vous disposez du droit d'accepter ou de refuser les cookies non essentiels.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Les cookies utilisés sur ce site</h2>
+
+        <h3>Cookies strictement nécessaires</h3>
+        <p>
+          Ces cookies sont indispensables au fonctionnement du site. Ils ne collectent aucune information personnelle identifiable et ne peuvent pas être désactivés.
+        </p>
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Finalité</th>
+              <th>Durée</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>cookie-consent</code></td>
+              <td>Mémorise votre choix concernant les cookies</td>
+              <td>12 mois</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Cookies analytiques</h3>
+        <p>
+          Ces cookies nous permettent de mesurer l'audience du site et d'analyser le comportement des visiteurs afin d'améliorer nos contenus et notre expérience utilisateur. Ils ne sont déposés qu'avec votre consentement.
+        </p>
+        <table class="cookie-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Cookies</th>
+              <th>Finalité</th>
+              <th>Durée</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Google Analytics 4</strong></td>
+              <td><code>_ga</code>, <code>_ga_*</code></td>
+              <td>Mesure d'audience, statistiques de navigation</td>
+              <td>13 mois</td>
+            </tr>
+            <tr>
+              <td><strong>Microsoft Clarity</strong></td>
+              <td><code>_clck</code>, <code>_clsk</code>, <code>CLID</code></td>
+              <td>Enregistrement de sessions, cartes de chaleur (heatmaps)</td>
+              <td>Session / 12 mois</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Ces services peuvent collecter des données telles que votre adresse IP (anonymisée), les pages visitées, la durée des sessions et les interactions avec les éléments de la page. Ces données sont traitées par Google Ireland Limited et Microsoft Corporation conformément à leurs propres politiques de confidentialité.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Comment gérer vos cookies ?</h2>
+        <p>
+          Lors de votre première visite, une bannière vous invite à accepter ou refuser les cookies analytiques. Vous pouvez modifier votre choix à tout moment.
+        </p>
+        <p>
+          Vous pouvez également configurer votre navigateur pour bloquer ou supprimer les cookies. Voici les liens vers les instructions des principaux navigateurs :
+        </p>
+        <ul>
+          <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+          <li><a href="https://support.mozilla.org/fr/kb/activer-desactiver-cookies" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+          <li><a href="https://support.apple.com/fr-fr/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+          <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge/supprimer-les-cookies-dans-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+        </ul>
+        <p>
+          Notez que la désactivation de certains cookies peut affecter votre expérience de navigation sur ce site.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Opt-out Google Analytics</h2>
+        <p>
+          Pour refuser la collecte de données par Google Analytics sur tous les sites qui l'utilisent, vous pouvez installer le <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">module de désactivation de Google Analytics</a>.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Contact</h2>
+        <p>
+          Pour toute question relative à notre utilisation des cookies, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:contact@virtuodev.com">contact@virtuodev.com</a>
+        </p>
+        <p>
+          Pour en savoir plus sur vos droits concernant vos données personnelles, consultez notre <a href="/politique-de-confidentialite">politique de confidentialité</a>.
+        </p>
+      </section>
+
+      <p class="legal-date">Dernière mise à jour : avril 2026</p>
+    </div>
+  </main>
+</Base>
+
+<style>
+  .legal-page {
+    background: var(--bg-light);
+    min-height: 100vh;
+    padding: 80px 24px;
+  }
+
+  .legal-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .legal-back {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: color 0.2s;
+  }
+  .legal-back:hover { color: var(--accent-hover); }
+
+  .legal-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--noir-900);
+    letter-spacing: -0.025em;
+    margin-bottom: 48px;
+  }
+
+  .legal-section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .legal-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .legal-section h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--noir-900);
+    margin-bottom: 16px;
+  }
+
+  .legal-section h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--noir-900);
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .legal-section p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--gris-700);
+    margin-bottom: 12px;
+  }
+  .legal-section p:last-child { margin-bottom: 0; }
+
+  .legal-section ul {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--gris-700);
+    padding-left: 20px;
+    margin-bottom: 12px;
+  }
+
+  .legal-section li {
+    margin-bottom: 6px;
+  }
+
+  .legal-section a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .legal-section a:hover { text-decoration: underline; }
+
+  .cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-body);
+    font-size: 14px;
+    margin: 16px 0 24px;
+  }
+
+  .cookie-table th {
+    text-align: left;
+    padding: 10px 12px;
+    background: var(--bg-card, #f5f5f5);
+    color: var(--noir-900);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-light);
+  }
+
+  .cookie-table td {
+    padding: 10px 12px;
+    color: var(--gris-700);
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+
+  .cookie-table code {
+    font-family: monospace;
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+
+  @media (max-width: 600px) {
+    .cookie-table {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  .legal-date {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--gris-500);
+    margin-top: 48px;
+  }
+</style>

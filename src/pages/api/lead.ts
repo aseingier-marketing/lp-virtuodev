@@ -1,3 +1,4 @@
+export const prerender = false;
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 import { Client } from '@notionhq/client';
@@ -81,11 +82,16 @@ export const POST: APIRoute = async ({ request }) => {
 
   // Validation serveur
   const errors: string[] = [];
-  if (!prenom)  errors.push('Prénom requis');
-  if (!nom)     errors.push('Nom requis');
-  if (!societe) errors.push('Société requise');
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Email invalide');
-  if (!tel)     errors.push('Téléphone requis');
+
+  const emailRegex = /^[^\s@]{1,64}@[^\s@]{1,253}\.[^\s@]{2,}$/;
+  const telRegex   = /^[0-9+\s\-().]{7,20}$/;
+
+  if (!prenom || prenom.length > 100)  errors.push('Prénom requis (max 100 caractères)');
+  if (!nom    || nom.length > 100)     errors.push('Nom requis (max 100 caractères)');
+  if (!societe || societe.length > 200) errors.push('Société requise (max 200 caractères)');
+  if (!email  || !emailRegex.test(email)) errors.push('Email invalide');
+  if (!tel    || !telRegex.test(tel))  errors.push('Téléphone invalide');
+  if (message && message.length > 2000) errors.push('Message trop long (max 2000 caractères)');
 
   if (errors.length > 0) {
     return json({ error: errors.join(', ') }, 400);

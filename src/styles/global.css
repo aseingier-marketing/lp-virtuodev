@@ -3,6 +3,26 @@
    ======================================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Skip link — invisible sauf au focus clavier */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background: #1D5FBF;
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 @media (max-width: 768px) { html { scroll-behavior: auto; } }
 
@@ -136,6 +156,10 @@ body {
 .btn-primary:hover {
   opacity: 0.88;
   transform: translateY(-1px);
+}
+.btn-primary:focus-visible {
+  outline: 3px solid #60A5FA;
+  outline-offset: 3px;
 }
 .btn-primary-light {
   background: var(--blanc-100);
@@ -400,6 +424,10 @@ body {
 .nav-cta:hover {
   opacity: 0.88;
   transform: translateY(-1px);
+}
+.nav-cta:focus-visible {
+  outline: 3px solid #60A5FA;
+  outline-offset: 3px;
 }
 
 /* ========================================
@@ -1078,10 +1106,23 @@ body {
 }
 
 /* ========================================
-   GSAP — hidden by default
+   Scroll animations — hidden by default, revealed by IntersectionObserver
    ======================================== */
-.gs-hidden { opacity: 0; transform: translateY(20px); }
-@media (max-width: 768px) { .gs-hidden { transform: none; } }
+.gs-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: opacity, transform;
+}
+.gs-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (max-width: 768px) {
+  .gs-hidden { transform: none; }
+  .gs-visible { transition-duration: 0.35s; }
+}
 
 /* ========================================
    SECTION 2 — ORIGIN STORY

@@ -3,17 +3,14 @@
 <section class="section-dark section-pad" style="background:#0C1222;border-top:1px solid rgba(29,95,191,0.15);">
   <div class="section-inner" style="text-align:center;max-width:640px;">
     <div class="gs-hidden" data-gs="s11" data-gs-delay="0">
-      <!-- Version générique (par défaut) -->
-      <h2 class="display-l" id="final-cta-generic" style="color:var(--text-dark-primary);">Arr&ecirc;tez de laisser<br>vos devis sans suivi</h2>
-      <!-- Version personnalisée si le quiz a été complété -->
-      <h2 class="display-l" id="final-cta-quiz-recall" style="color:var(--text-dark-primary);display:none;">Vous pourriez r&eacute;cup&eacute;rer<br><span id="final-cta-amount" style="background:linear-gradient(90deg,#7FB0FF,#3B82F6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"></span></h2>
+      <h2 class="display-l" style="color:var(--text-dark-primary);">Arr&ecirc;tez de laisser<br>vos devis sans suivi</h2>
 
       <div style="margin-top:28px;">
         <p class="lead" style="color:var(--text-dark-secondary);">Profitez de l&rsquo;offre exclusive avec 100 autres entreprises</p>
       </div>
 
       <button class="btn-primary btn-primary-accent btn-primary-big" style="margin-top:36px;" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})">
-        Demander sa place &rarr;
+        Appel de qualification &mdash; 10 min &rarr;
       </button>
       <div style="font-size:12px;color:var(--text-dark-muted);margin-top:14px;">
         Places limit&eacute;es
@@ -22,34 +19,3 @@
   </div>
 </section>
 
-<script>
-  // FINAL CTA — affiche le montant récupérable (dernière phase du quiz)
-  function updateFinalCTA(amount) {
-    if (!amount || amount <= 0) return;
-    const recallEl = document.getElementById('final-cta-quiz-recall');
-    const genericEl = document.getElementById('final-cta-generic');
-    const amountEl = document.getElementById('final-cta-amount');
-    if (recallEl && genericEl && amountEl) {
-      amountEl.textContent = amount.toLocaleString('fr-FR') + '\u00A0\u20AC\u00A0/ an';
-      recallEl.style.display = 'block';
-      genericEl.style.display = 'none';
-    }
-  }
-
-  // Cas 1 : le quiz se termine APRÈS que la section est visible
-  document.addEventListener('quiz-complete', (e) => {
-    updateFinalCTA(e.detail.amount);
-  });
-
-  // Cas 2 : l'utilisateur fait le quiz AVANT de scroller jusqu'ici
-  const finalCtaEl = document.querySelector('[data-gs="s11"]');
-  if (finalCtaEl) {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        updateFinalCTA(window.quizResultFinal);
-        observer.disconnect();
-      }
-    }, { threshold: 0.1 });
-    observer.observe(finalCtaEl);
-  }
-</script>

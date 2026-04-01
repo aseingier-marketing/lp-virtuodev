@@ -1,252 +1,363 @@
 ---
 ---
-<section id="section-quiz" class="section-dark section-pad" style="background:#0C1222;border-top:1px solid rgba(29,95,191,0.15);">
+<section id="section-relances" class="section-dark section-pad" style="background:#0C1222;border-top:1px solid rgba(29,95,191,0.15);">
   <div class="section-inner">
 
-    <div class="gs-hidden" data-gs="s3" data-gs-delay="0" style="text-align: center; margin-bottom: 20px;">
-      <span style="display:inline-block;background:rgba(29,95,191,0.15);border:1px solid rgba(29,95,191,0.4);border-radius:8px;padding:8px 24px;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);">Simulateur</span>
+    <!-- En-tête 2 colonnes -->
+    <div class="why-header gs-hidden" data-gs="s3" data-gs-delay="0.05">
+      <h2 class="why-title">Relancez mieux,<br>pour signer plus.</h2>
+      <div>
+        <p class="why-desc">Virtuodev vous donne une vision claire de votre suivi commercial.</p>
+        <p class="why-desc" style="margin-top:8px;">Plus de devis oubli&eacute;s, plus de prospects sans nouvelles&nbsp;: vous voyez exactement qui a ouvert votre devis, qui a re&ccedil;u une relance, et qui doit &ecirc;tre rappel&eacute;.</p>
+      </div>
     </div>
 
-    <h2 class="h1 gs-hidden" data-gs="s3" data-gs-delay="0.1" style="color: var(--text-dark-primary); max-width: 650px; margin-left: auto; margin-right: auto; text-align: center;">
-      Combien vous co&ucirc;tent vos devis non sign&eacute;s&nbsp;?
-    </h2>
+    <!-- 4 cards -->
+    <div class="why-cards gs-hidden" data-gs="s3" data-gs-delay="0.12">
 
-    <p class="lead gs-hidden" data-gs="s3" data-gs-delay="0.15" style="color: var(--text-dark-secondary); max-width: 480px; margin-top: 16px; margin-left: auto; margin-right: auto; text-align: center;">
-      Calculez en <strong style="color:#FFFFFF;font-weight:700;">30 secondes</strong> le CA que vous abandonnez chaque mois
-    </p>
-
-    <div class="gs-hidden" data-gs="s3" data-gs-delay="0.2" style="margin-top: 48px; max-width: 640px; margin-left: auto; margin-right: auto;">
-
-      <!-- Progress bar -->
-      <div class="quiz-progress-track">
-        <div class="quiz-progress-bar" id="quiz-progress"></div>
-      </div>
-
-      <!-- Step 1 — Secteur -->
-      <div class="quiz-step" id="quiz-step-1" data-step="1">
-        <p class="quiz-question">Dans quel secteur exercez-vous&nbsp;?</p>
-        <div class="quiz-grid-2x2">
-          <button class="quiz-option-card" data-value="btp" onclick="quizSelectStep1(this)">
-            <span class="quiz-option-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h1"/><path d="M9 13h1"/><path d="M9 17h1"/></svg></span>
-            <span class="quiz-option-label">BTP</span>
-          </button>
-          <button class="quiz-option-card" data-value="services" onclick="quizSelectStep1(this)">
-            <span class="quiz-option-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-            <span class="quiz-option-label">Services</span>
-          </button>
-          <button class="quiz-option-card" data-value="commerce" onclick="quizSelectStep1(this)">
-            <span class="quiz-option-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="M3 9l2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg></span>
-            <span class="quiz-option-label">Commerce</span>
-          </button>
-          <button class="quiz-option-card" data-value="autre" onclick="quizSelectStep1(this)">
-            <span class="quiz-option-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></span>
-            <span class="quiz-option-label">Autre</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Step 2 — Volume -->
-      <div class="quiz-step" id="quiz-step-2" data-step="2" style="display:none;">
-        <p class="quiz-question">Combien de devis envoyez-vous par mois&nbsp;?</p>
-        <div class="quiz-grid-2x2">
-          <button class="quiz-volume-card" data-value="12" onclick="quizSelectStep2(this)">
-            <span class="quiz-volume-number">5-20</span>
-            <span class="quiz-volume-label" style="font-size:16px;color:#FFFFFF;font-weight:600;">devis / mois</span>
-          </button>
-          <button class="quiz-volume-card" data-value="35" onclick="quizSelectStep2(this)">
-            <span class="quiz-volume-number">20-50</span>
-            <span class="quiz-volume-label" style="font-size:16px;color:#FFFFFF;font-weight:600;">devis / mois</span>
-          </button>
-          <button class="quiz-volume-card" data-value="75" onclick="quizSelectStep2(this)">
-            <span class="quiz-volume-number">50-100</span>
-            <span class="quiz-volume-label" style="font-size:16px;color:#FFFFFF;font-weight:600;">devis / mois</span>
-          </button>
-          <button class="quiz-volume-card" data-value="130" onclick="quizSelectStep2(this)">
-            <span class="quiz-volume-number">+100</span>
-            <span class="quiz-volume-label" style="font-size:16px;color:#FFFFFF;font-weight:600;">devis / mois</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Step 3 — Panier moyen -->
-      <div class="quiz-step" id="quiz-step-3" data-step="3" style="display:none;">
-        <p class="quiz-question">Quel est le montant moyen d'un devis&nbsp;?</p>
-        <div class="quiz-grid-2x2">
-          <button class="quiz-option-card" data-value="3500" onclick="quizSelectStep3(this)">
-            <span style="font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--text-dark-primary);letter-spacing:-0.02em;">2-5k</span>
-            <span style="font-size:20px;font-weight:700;color:#FFFFFF;">&euro;</span>
-          </button>
-          <button class="quiz-option-card" data-value="7500" onclick="quizSelectStep3(this)">
-            <span style="font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--text-dark-primary);letter-spacing:-0.02em;">5-10k</span>
-            <span style="font-size:20px;font-weight:700;color:#FFFFFF;">&euro;</span>
-          </button>
-          <button class="quiz-option-card" data-value="12500" onclick="quizSelectStep3(this)">
-            <span style="font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--text-dark-primary);letter-spacing:-0.02em;">10-15k</span>
-            <span style="font-size:20px;font-weight:700;color:#FFFFFF;">&euro;</span>
-          </button>
-          <button class="quiz-option-card" data-value="20000" onclick="quizSelectStep3(this)">
-            <span style="font-family:var(--font-display);font-weight:800;font-size:24px;color:var(--text-dark-primary);letter-spacing:-0.02em;">+15k</span>
-            <span style="font-size:20px;font-weight:700;color:#FFFFFF;">&euro;</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Step 4 — Taux de transformation -->
-      <div class="quiz-step" id="quiz-step-4" data-step="4" style="display:none;">
-        <p class="quiz-question">Quel est votre taux de transformation actuel&nbsp;?</p>
-        <div class="quiz-grid-2x2">
-          <button class="quiz-option-card" data-value="20" onclick="quizSelectStep4(this)">
-            <span style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--text-dark-primary);letter-spacing:-0.02em;">20%</span>
-            <span style="font-size:16px;font-weight:600;color:#FFFFFF;">de mes devis</span>
-          </button>
-          <button class="quiz-option-card" data-value="30" onclick="quizSelectStep4(this)">
-            <span style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--text-dark-primary);letter-spacing:-0.02em;">30%</span>
-            <span style="font-size:16px;font-weight:600;color:#FFFFFF;">de mes devis</span>
-          </button>
-          <button class="quiz-option-card" data-value="40" onclick="quizSelectStep4(this)">
-            <span style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--text-dark-primary);letter-spacing:-0.02em;">40%</span>
-            <span style="font-size:16px;font-weight:600;color:#FFFFFF;">de mes devis</span>
-          </button>
-          <button class="quiz-option-card" data-value="55" onclick="quizSelectStep4(this)">
-            <span style="font-family:var(--font-display);font-weight:800;font-size:28px;color:var(--text-dark-primary);letter-spacing:-0.02em;">+50%</span>
-            <span style="font-size:16px;font-weight:600;color:#FFFFFF;">de mes devis</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Résultat Page 1 -->
-      <div class="quiz-step" id="quiz-result" data-step="result" style="display:none;">
-        <div style="text-align:center;padding:20px 0;">
-          <div style="font-size:17px;font-weight:600;color:#FFFFFF;margin-bottom:12px;">Sur la base de vos r&eacute;ponses</div>
-          <div class="label-caps" style="color:var(--text-dark-secondary);margin-bottom:10px;font-size:16px;">Votre chiffre d'affaires estim&eacute; par an</div>
-          <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(32px,4.5vw,48px);letter-spacing:-0.03em;color:var(--text-dark-primary);" id="quiz-result-signe">0 &euro;</div>
-          <div style="width:60px;height:1px;background:var(--border-dark-hover);margin:32px auto;"></div>
-          <div style="font-size:20px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--danger);margin-bottom:12px;">Le chiffre d'affaires non sign&eacute; perdu chaque ann&eacute;e</div>
-          <div class="stat-number" id="quiz-result-perdu" style="color:#F87171;font-size:clamp(52px,7vw,80px);">0 &euro;</div>
-          <div style="font-size:18px;color:var(--text-dark-secondary);margin-top:20px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.6;">Au minimum <strong style="color:#FFFFFF;font-weight:700;">10% de ce montant</strong> est r&eacute;cup&eacute;rable d&egrave;s la premi&egrave;re ann&eacute;e.</div>
-          <button class="btn-primary btn-primary-accent btn-primary-big" style="margin-top:48px;" onclick="quizGoStep('result2')">Voir comment r&eacute;cup&eacute;rer ce CA &rarr;</button>
-        </div>
-      </div>
-
-      <!-- Résultat Page 2 -->
-      <div class="quiz-step" id="quiz-result-2" data-step="result2" style="display:none;">
-        <div style="text-align:center;padding:20px 0;">
-          <div class="label-caps" style="color:var(--success);margin-bottom:12px;font-size:17px;letter-spacing:0.12em;">En relan&ccedil;ant vos devis, vous d&eacute;bloquez</div>
-          <div style="font-family:var(--font-display);font-weight:800;font-size:clamp(44px,6vw,72px);letter-spacing:-0.04em;color:var(--success);line-height:1;" id="quiz-result-recoverable">0 &euro;</div>
-          <div style="font-size:17px;color:var(--text-dark-secondary);margin-top:14px;" id="quiz-result-monthly-subtitle">(+10% de transformation)</div>
-
-          <div style="margin-top:40px;max-width:480px;margin-left:auto;margin-right:auto;">
-            <p style="font-size:19px;font-weight:500;color:var(--text-dark-primary);line-height:1.65;">Sans recruter de commercial. Juste en r&eacute;activant vos devis oubli&eacute;s.</p>
+      <!-- Card 1 -->
+      <div class="why-card">
+        <h3 class="why-card-title">Tous vos devis en cours, d&rsquo;un seul coup d&rsquo;&oelig;il</h3>
+        <p class="why-card-desc">Visualisez tous vos devis en attente, le nombre de relances et le tracking d&rsquo;ouverture.</p>
+        <div class="why-mock">
+          <div class="mock-tag">Devis envoy&eacute;s</div>
+          <div class="mock-big-num">8 <span class="mock-big-unit">en attente</span></div>
+          <div class="mock-sub-text">objectif&nbsp;: 3 signatures ce mois</div>
+          <div class="mock-progress-track">
+            <div class="mock-progress-fill" style="width:35%;"></div>
           </div>
+        </div>
+      </div>
 
-          <button style="display:inline-flex;align-items:center;justify-content:center;padding:16px 32px;border-radius:8px;font-family:var(--font-body);font-weight:600;font-size:15px;cursor:pointer;border:none;background:#1D5FBF;color:#FFFFFF;transition:background 0.2s ease,transform 0.2s ease,box-shadow 0.2s ease;box-shadow:0 0 32px rgba(29,95,191,0.35);margin-top:32px;" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})" onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)'">
-            Acc&eacute;der &agrave; l&rsquo;offre fondateur (100 places)
-          </button>
+      <!-- Card 2 -->
+      <div class="why-card">
+        <h3 class="why-card-title">Un alli&eacute; anti charge mentale</h3>
+        <p class="why-card-desc">Chaque devis est relancé automatiquement, en suivant un ordre de relance précis, pour vous faire gagner du temps.</p>
+        <div class="why-mock why-mock--center">
+          <svg width="110" height="62" viewBox="0 0 110 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10,55 A45,45 0 0,1 100,55" stroke="rgba(255,255,255,0.08)" stroke-width="13" stroke-linecap="round" fill="none"/>
+            <path d="M10,55 A45,45 0 0,1 55,10" stroke="#4D8EE8" stroke-width="13" stroke-linecap="round" fill="none"/>
+            <path d="M55,10 A45,45 0 0,1 100,55" stroke="#7B61FF" stroke-width="13" stroke-linecap="round" fill="none"/>
+          </svg>
+          <div class="mock-donut-legend">
+            <span class="mock-legend-item"><span class="mock-dot mock-dot--blue"></span>3 &agrave; relancer</span>
+            <span class="mock-legend-item"><span class="mock-dot mock-dot--purple"></span>12 en veille</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="why-card">
+        <h3 class="why-card-title">Le bon message, au bon moment</h3>
+        <p class="why-card-desc">Chaque relance est personnalis&eacute;e selon le profil du prospect et l&rsquo;&eacute;tape du devis, pour maximiser vos chances de signature.</p>
+        <div class="why-mock why-mock--messages">
+          <div class="mock-msg-row">
+            <span class="mock-msg-tag mock-msg-tag--cold">Froid</span>
+            <span class="mock-msg-text">Rappel de devis envoy&eacute;</span>
+          </div>
+          <div class="mock-msg-row">
+            <span class="mock-msg-tag mock-msg-tag--warm">Tiède</span>
+            <span class="mock-msg-text">Relance + photo chantier</span>
+          </div>
+          <div class="mock-msg-row">
+            <span class="mock-msg-tag mock-msg-tag--hot">Chaud</span>
+            <span class="mock-msg-text">Offre &agrave; dur&eacute;e limit&eacute;e</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="why-card">
+        <h3 class="why-card-title">Des d&eacute;cisions appuy&eacute;es sur des donn&eacute;es</h3>
+        <p class="why-card-desc">Les donn&eacute;es analysent les relances, les taux d&rsquo;ouverture, et am&eacute;liorent en continu les s&eacute;quences de relances.</p>
+        <div class="why-mock">
+          <div class="mock-chart-header">
+            <span class="mock-chart-month">Avril</span>
+            <span class="mock-chart-real">R&eacute;el</span>
+          </div>
+          <svg class="mock-chart-svg" viewBox="0 0 200 56" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#7B61FF" stop-opacity="0.35"/>
+                <stop offset="100%" stop-color="#7B61FF" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 45 C30 42, 50 30, 80 28 S130 35, 160 18 S185 12, 200 8 L200 56 L0 56 Z" fill="url(#chartGrad)"/>
+            <path d="M0 45 C30 42, 50 30, 80 28 S130 35, 160 18 S185 12, 200 8" stroke="#7B61FF" stroke-width="2" fill="none" stroke-linecap="round"/>
+          </svg>
+          <div class="mock-chart-value">+32&nbsp;%</div>
         </div>
       </div>
 
     </div>
+
   </div>
 </section>
 
-<script>
-  // ========================================
-  // QUIZ-CALCULATEUR LOGIC
-  // ========================================
-  const quizState = { step: 1, secteur: null, volume: null, montant: 2000, taux: 30 };
+<style>
+  /* ── EN-TÊTE ─────────────────────────────── */
+  .why-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto 64px;
+  }
 
-  function quizGoStep(stepNum) {
-    document.querySelectorAll('.quiz-step').forEach(s => s.style.display = 'none');
-    if (stepNum === 'result') {
-      document.getElementById('quiz-result').style.display = 'block';
-      quizShowResult();
-    } else if (stepNum === 'result2') {
-      document.getElementById('quiz-result-2').style.display = 'block';
-      quizShowResult2();
-    } else {
-      document.getElementById('quiz-step-' + stepNum).style.display = 'block';
+  .why-title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(34px, 4.5vw, 62px);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  .why-desc {
+    font-family: var(--font-body);
+    font-size: clamp(15px, 1.4vw, 17px);
+    color: var(--text-dark-secondary, rgba(255,255,255,0.55));
+    line-height: 1.7;
+    margin: 0;
+    padding-top: 6px;
+  }
+
+  /* ── GRILLE 4 CARDS ──────────────────────── */
+  .why-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .why-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.055) 0%, rgba(255,255,255,0.025) 100%);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 20px;
+    padding: 28px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .why-card:hover {
+    border-color: rgba(77,142,232,0.30);
+    background: linear-gradient(145deg, rgba(77,142,232,0.07) 0%, rgba(255,255,255,0.03) 100%);
+  }
+
+  .why-card-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(17px, 1.6vw, 20px);
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+  .why-card-desc {
+    font-family: var(--font-body);
+    font-size: clamp(13px, 1.1vw, 14px);
+    color: var(--text-dark-secondary, rgba(255,255,255,0.50));
+    line-height: 1.6;
+    margin: 0 0 4px;
+  }
+
+  /* ── MOCKUP BASE ─────────────────────────── */
+  .why-mock {
+    margin-top: auto;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 18px 16px 14px;
+  }
+
+  .why-mock--center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .why-mock--pie {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* ── MOCKUP CARD 1 ───────────────────────── */
+  .mock-tag {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: #4D8EE8;
+    margin-bottom: 6px;
+  }
+
+  .mock-big-num {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(26px, 2.8vw, 34px);
+    letter-spacing: -0.03em;
+    color: #FFFFFF;
+    line-height: 1.1;
+  }
+
+  .mock-big-unit {
+    font-size: 0.5em;
+    font-weight: 600;
+    color: rgba(255,255,255,0.40);
+    letter-spacing: 0;
+  }
+
+  .mock-sub-text {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    margin: 4px 0 14px;
+  }
+
+  .mock-progress-track {
+    height: 5px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .mock-progress-fill {
+    height: 100%;
+    background: #4D8EE8;
+    border-radius: 4px;
+  }
+
+  /* ── MOCKUP CARD 2 (donut) ───────────────── */
+  .mock-donut-legend {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  /* ── MOCKUP CARD 3 (messages) ───────────── */
+  .why-mock--messages {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mock-msg-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mock-msg-tag {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    border-radius: 6px;
+    padding: 3px 8px;
+    flex-shrink: 0;
+    min-width: 46px;
+    text-align: center;
+  }
+
+  .mock-msg-tag--cold   { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.45); }
+  .mock-msg-tag--warm   { background: rgba(245,197,66,0.15);  color: #F5C542; }
+  .mock-msg-tag--hot    { background: rgba(77,142,232,0.18);  color: #7FB3F5; }
+
+  .mock-msg-text {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ── MOCKUP CARD 4 (chart) ───────────────── */
+  .mock-chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .mock-chart-month {
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .mock-chart-real {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 2px 7px;
+  }
+
+  .mock-chart-svg {
+    width: 100%;
+    height: 50px;
+    display: block;
+  }
+
+  .mock-chart-value {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: #7B61FF;
+    margin-top: 8px;
+  }
+
+  /* ── DOTS légende ────────────────────────── */
+  .mock-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+  }
+
+  .mock-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .mock-dot--blue   { background: #4D8EE8; }
+  .mock-dot--purple { background: #7B61FF; }
+  .mock-dot--yellow { background: #F5C542; }
+
+  /* ── RESPONSIVE ──────────────────────────── */
+  @media (max-width: 900px) {
+    .why-header {
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
-    const progressMap = { 1: 25, 2: 50, 3: 75, 4: 100, 'result': 100, 'result2': 100 };
-    document.getElementById('quiz-progress').style.width = (progressMap[stepNum] || 100) + '%';
-    quizState.step = stepNum;
-  }
 
-  function quizSelectStep1(btn) {
-    document.querySelectorAll('#quiz-step-1 .quiz-option-card').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    quizState.secteur = btn.dataset.value;
-    setTimeout(() => quizGoStep(2), 400);
-  }
-  function quizSelectStep2(btn) {
-    document.querySelectorAll('#quiz-step-2 .quiz-volume-card').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    quizState.volume = parseInt(btn.dataset.value);
-    setTimeout(() => quizGoStep(3), 400);
-  }
-  function quizSelectStep3(btn) {
-    document.querySelectorAll('#quiz-step-3 .quiz-option-card').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    quizState.montant = parseInt(btn.dataset.value);
-    setTimeout(() => quizGoStep(4), 400);
-  }
-  function quizSelectStep4(btn) {
-    document.querySelectorAll('#quiz-step-4 .quiz-option-card').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    quizState.taux = parseInt(btn.dataset.value);
-    setTimeout(() => quizGoStep('result'), 400);
-  }
-
-  function quizAnimateCount(el, target, duration, delay, formatter) {
-    if (typeof gsap !== 'undefined') {
-      gsap.to({ val: 0 }, { val: target, duration, delay: delay || 0, ease: 'power2.out',
-        onUpdate: function() { el.innerHTML = formatter(Math.round(this.targets()[0].val)); }
-      });
-    } else {
-      el.innerHTML = formatter(target);
+    .why-cards {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  function quizShowResult() {
-    const volume = quizState.volume || 20;
-    const montant = quizState.montant || 2000;
-    const taux = quizState.taux || 30;
-    const caTotal = volume * montant * 12;
-    const caSigne = Math.round(caTotal * (taux / 100));
-    const caPerdu = Math.round(caTotal * ((100 - taux) / 100));
-    window.quizCaSigne = caSigne;
-    window.quizCaPerdu = caPerdu;
-
-    const signeEl = document.getElementById('quiz-result-signe');
-    quizAnimateCount(signeEl, caSigne, 1.2, 0, v => v.toLocaleString('fr-FR') + ' \u20AC');
-
-    const perduEl = document.getElementById('quiz-result-perdu');
-    quizAnimateCount(perduEl, caPerdu, 1.8, 0.3, v => v.toLocaleString('fr-FR') + ' \u20AC');
+  @media (max-width: 560px) {
+    .why-cards {
+      grid-template-columns: 1fr;
+    }
   }
-
-  function quizShowResult2() {
-    const caPerdu = window.quizCaPerdu || 0;
-    const recoverable = Math.round(caPerdu * 0.10);
-    const monthly = Math.round(recoverable / 12);
-
-    window.quizResultFinal = recoverable;
-    document.dispatchEvent(new CustomEvent('quiz-complete', { detail: { amount: recoverable } }));
-
-    quizAnimateCount(
-      document.getElementById('quiz-result-recoverable'),
-      recoverable, 1.6, 0.2,
-      v => v.toLocaleString('fr-FR') + ' \u20AC'
-    );
-
-    const subtitleEl = document.getElementById('quiz-result-monthly-subtitle');
-    quizAnimateCount(subtitleEl, monthly, 1.4, 0.5, v =>
-      '(+10\u202F% de transformation, soit <strong style="color:#FFFFFF;font-weight:700;">' + v.toLocaleString('fr-FR') + '\u202F\u20AC/mois</strong>)'
-    );
-  }
-
-  // Expose to global scope for onclick handlers
-  window.quizGoStep = quizGoStep;
-  window.quizSelectStep1 = quizSelectStep1;
-  window.quizSelectStep2 = quizSelectStep2;
-  window.quizSelectStep3 = quizSelectStep3;
-  window.quizSelectStep4 = quizSelectStep4;
-</script>
+</style>

@@ -3,9 +3,110 @@
 <section class="section-dark section-pad hero-section" style="padding-top: 140px; min-height: 88vh; position: relative; overflow: hidden; background: linear-gradient(180deg, #05070B 0%, #070C16 100%);">
 
 <style>
+  .hero-postcta {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .postcta-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 5px 5px 5px 16px;
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .postcta-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: #FFFFFF;
+    min-width: 0;
+  }
+
+  .postcta-input::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .postcta-btn {
+    flex-shrink: 0;
+    background: #1D5FBF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 20px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0px 6px 18px rgba(29, 95, 191, 0.35);
+    white-space: nowrap;
+  }
+
+  .postcta-btn:hover {
+    background: #174EA6;
+    box-shadow: 0px 8px 24px rgba(29, 95, 191, 0.5);
+  }
+
+  .postcta-hint {
+    font-size: 13px;
+    color: rgba(200, 208, 224, 0.45);
+    margin: 0;
+  }
+
   @media (max-width: 768px) {
-    .hero-section { padding-top: 100px !important; }
-    .hero-video-wrap { margin-top: 44px !important; }
+    /* Supprime l'espace mort : min-height libre, padding réduit */
+    .hero-section {
+      padding-top: 100px !important;
+      min-height: auto !important;
+      padding-bottom: 48px !important;
+    }
+
+    .hero-video-wrap {
+      margin-top: 32px !important;
+    }
+
+    /* Le sticky CTA mobile remplace ce bloc — inutile sur mobile */
+    .hero-postcta { display: none; }
+
+    .postcta-wrap {
+      flex-direction: column;
+      padding: 10px;
+      gap: 8px;
+      align-items: stretch;
+      max-width: 100%;
+    }
+
+    .postcta-input {
+      font-size: 16px; /* évite le zoom iOS */
+      padding: 6px 4px;
+    }
+
+    .postcta-btn {
+      width: 100%;
+      text-align: center;
+    }
+
+    .hero-chip {
+      height: auto;
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+
+    .hero-badge-text {
+      font-size: 11px !important;
+    }
   }
 
 </style>
@@ -18,7 +119,7 @@
     <!-- Badge chip -->
     <div class="gs-hidden" data-gs="hero" data-gs-delay="0" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(29,95,191,0.12); border: 1px solid rgba(29,95,191,0.30); border-radius: 100px; padding: 8px 20px; margin: 0 auto;">
       <span style="width:6px;height:6px;background:#4D8EE8;border-radius:50%;flex-shrink:0;box-shadow:0 0 8px rgba(77,142,232,0.7);"></span>
-      <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: #7FB3F5;">ACC&Egrave;S R&Eacute;SERV&Eacute; AUX <span style="color: #FFFFFF; font-weight: 700;">100</span> PREMI&Egrave;RES ENTREPRISES</span>
+      <span class="hero-badge-text" style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: #7FB3F5; text-align: center;">ACC&Egrave;S R&Eacute;SERV&Eacute; AUX <span style="color: #FFFFFF; font-weight: 700;">100</span> PREMI&Egrave;RES<br>ENTREPRISES BTP</span>
     </div>
 
     <!-- H1 -->
@@ -56,15 +157,15 @@
 
     <!-- Sous-headline -->
     <p class="gs-hidden" data-gs="hero" data-gs-delay="0.2" style="margin-top: 24px; color: rgba(255,255,255,0.95); max-width: 620px; margin-left: auto; margin-right: auto; font-family: var(--font-body); font-weight: 400; font-size: clamp(17px, 2vw, 21px); line-height: 1.6;">
-      Des relances automatiques qui font signer
+      Vos devis m&eacute;ritent des relances de qualit&eacute;
     </p>
 
     <!-- CTA -->
     <div class="gs-hidden" data-gs="hero" data-gs-delay="0.3" style="margin-top: 36px;">
-      <button style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 11px; font-family: var(--font-body); font-weight: 600; font-size: 16px; cursor: pointer; border: none; background: #1D5FBF; color: #FFFFFF; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0px 10px 25px rgba(29,95,191,0.35);" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})" onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)';this.style.boxShadow='0px 14px 32px rgba(29,95,191,0.45)'" onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)';this.style.boxShadow='0px 10px 25px rgba(29,95,191,0.35)'">
-        Demander sa place &rarr;
+      <button style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 11px; font-family: var(--font-body); font-weight: 600; font-size: 16px; cursor: pointer; border: none; background: #1D5FBF; color: #FFFFFF; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0px 10px 25px rgba(29,95,191,0.35);" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'});" onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)';this.style.boxShadow='0px 14px 32px rgba(29,95,191,0.45)'" onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)';this.style.boxShadow='0px 10px 25px rgba(29,95,191,0.35)'">
+        D&eacute;couvrir nos relances &rarr;
       </button>
-      <div style="font-size: 15px; font-weight: 600; color: #FFFFFF; margin-top: 12px; letter-spacing: 0.01em;">Pr&eacute;ventes ouvertes jusqu'au 17/04/26</div>
+      <div style="font-size: 15px; font-weight: 600; color: #FFFFFF; margin-top: 12px; letter-spacing: 0.01em;">La relance automatique, pens&eacute;e pour le BTP</div>
     </div>
 
     <!-- Trust line — chips premium glass -->
@@ -126,54 +227,55 @@
       }
     </style>
 
-    <!-- Vidéo -->
-    <div class="gs-hidden hero-video-wrap" data-gs="hero" data-gs-delay="0.5" style="margin-top: 90px; max-width: 800px; margin-left: auto; margin-right: auto;">
-      <div class="video-wrapper" style="position:relative;width:100%;max-width:800px;margin:0 auto;border-radius:12px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.08);box-shadow:0px 30px 80px rgba(0,0,0,0.45);" id="video-container">
-
-        <div id="video-thumbnail" style="position:relative;width:100%;aspect-ratio:16/9;">
-          <img
-            src="/images/miniature-hero.png"
-            fetchpriority="high"
-            loading="eager"
-            decoding="async"
-            style="width:100%;height:100%;object-fit:cover;display:block;"
-            alt="Vidéo fondateur"
-          />
-          <div style="position:absolute;inset:0;background:rgba(0,0,0,0.5);"></div>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-        </div>
-
-        <iframe
-          id="vimeo-iframe"
-          src=""
-          data-src="https://player.vimeo.com/video/1174941707?badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479"
-          style="display:none;width:100%;aspect-ratio:16/9;border:none;"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-
-      </div>
+    <!-- Vidéo hero -->
+    <div class="gs-hidden hero-video-wrap" data-gs="hero" data-gs-delay="0.5" style="margin-top: 56px; max-width: 960px; width: 100%; margin-left: auto; margin-right: auto;">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        width="1280"
+        height="720"
+        style="width:100%;height:auto;display:block;border-radius:0;"
+      >
+        <source src="/videos/motion-hero.mp4" type="video/mp4">
+      </video>
     </div>
 
     <!-- CTA post-vidéo -->
-    <div class="gs-hidden" data-gs="hero" data-gs-delay="0.6" style="margin-top: 36px;">
-      <button style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 11px; font-family: var(--font-body); font-weight: 600; font-size: 16px; cursor: pointer; border: none; background: #1D5FBF; color: #FFFFFF; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0px 10px 25px rgba(29,95,191,0.35);" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})" onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)';this.style.boxShadow='0px 14px 32px rgba(29,95,191,0.45)'" onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)';this.style.boxShadow='0px 10px 25px rgba(29,95,191,0.35)'">
-        Demander sa place &rarr;
-      </button>
+    <div class="gs-hidden hero-postcta" data-gs="hero" data-gs-delay="0.6">
+      <div class="postcta-wrap">
+        <input
+          type="email"
+          id="hero-email-input"
+          class="postcta-input"
+          placeholder="votremail@entreprise.com"
+          autocomplete="email"
+        />
+        <button class="postcta-btn" onclick="heroScrollToForm()">
+          Appel de qualification &mdash; 10 min &rarr;
+        </button>
+      </div>
+      <p class="postcta-hint">Aucun engagement</p>
     </div>
 
     <script>
-      document.getElementById('video-container').addEventListener('click', function() {
-        document.getElementById('video-thumbnail').style.display = 'none';
-        var iframe = document.getElementById('vimeo-iframe');
-        iframe.src = iframe.getAttribute('data-src');
-        iframe.style.display = 'block';
+      function heroScrollToForm() {
+        var email = document.getElementById('hero-email-input').value.trim();
+        if (email) {
+          var target = document.getElementById('offer-email');
+          if (target) target.value = email;
+        }
+        document.getElementById('section-callback').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Allow submit on Enter key
+      document.getElementById('hero-email-input').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') heroScrollToForm();
       });
     </script>
+
 
   </div>
 </section>

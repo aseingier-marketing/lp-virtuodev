@@ -12,7 +12,6 @@ import Objections from '../components/Objections.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import Footer from '../components/Footer.astro';
 import Chatbot from '../components/Chatbot.astro';
-import StickyCTAMobile from '../components/StickyCTAMobile.astro';
 
 import '../styles/tokens.css';
 import '../styles/global.css';
@@ -25,79 +24,74 @@ import '../styles/global.css';
 >
   <Nav />
   <Hero />
-
   <Testimonial
-    name="Lo&iuml;c"
-    role="B&acirc;ti Flamme"
-    text="&laquo; Les devis partent, mais les relances ne suivent pas toujours. C'est l&agrave; qu'on laisse filer du chiffre. &raquo;"
+    name="Loïc"
+    role="Bâti Flamme"
+    text="« Les devis partent, mais les relances ne suivent pas toujours. C'est là qu'on laisse filer du chiffre. »"
     gsKey="t1"
   />
 
   <Problem />
   <QuizCalculator />
-  <SocialProof />
+  <Solution />
 
   <Testimonial
     name="Samuel"
     role="Eau et Plaisir"
-    text="&laquo; Je fais mes relances de devis moi-même, mais rien n'est automatisé, donc je perds du temps. &raquo;"
+    text="« Mes relances de devis ne sont pas automatisées — je perds du temps. »"
     gsKey="t2"
   />
 
-  <Solution />
+  <SocialProof />
   <FounderOffer />
   <Objections />
   <FinalCTA />
   <Footer />
 
-  <StickyCTAMobile />
   <Chatbot />
 
-  <!-- GSAP scroll animations — initialized after GSAP deferred scripts load -->
+  <!-- Scroll animations — IntersectionObserver natif (remplace GSAP+ScrollTrigger, économise 113K) -->
   <script>
-    // Wait for GSAP to be available (loaded deferred) — max 50 retries (5s)
-    let gsapRetries = 0;
-    function initGSAP() {
-      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-        if (++gsapRetries < 50) setTimeout(initGSAP, 100);
-        return;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    // Reveal animation pour .gs-hidden
+    const revealIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+        const delay = parseFloat((el as HTMLElement).dataset.gsDelay ?? '0') || 0;
+        el.style.transitionDelay = isMobile ? '0ms' : `${delay * 1000}ms`;
+        el.classList.add('gs-visible');
+        revealIO.unobserve(el);
+      });
+    }, {
+      rootMargin: isMobile ? '0px 0px -2% 0px' : '0px 0px -15% 0px',
+      threshold: 0,
+    });
+    document.querySelectorAll('.gs-hidden').forEach(el => revealIO.observe(el));
+
+    // Compteur animé pour [data-count-to]
+    function animateCounter(el: HTMLElement) {
+      const target = parseInt(el.dataset.countTo ?? '0');
+      const prefix = el.dataset.prefix ?? '';
+      const suffix = el.dataset.suffix ?? '';
+      const duration = 1400;
+      const startTime = performance.now();
+      function tick(now: number) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+        el.textContent = prefix + Math.round(eased * target).toLocaleString('fr-FR') + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
       }
-      gsap.registerPlugin(ScrollTrigger);
-
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
-      // Scroll animations for .gs-hidden elements
-      document.querySelectorAll('.gs-hidden').forEach(el => {
-        const delay = parseFloat(el.dataset.gsDelay) || 0;
-        gsap.to(el, {
-          opacity: 1, y: 0,
-          duration: isMobile ? 0.35 : 0.7,
-          delay: isMobile ? 0 : delay,
-          ease: 'cubic-bezier(0.22, 1, 0.36, 1)',
-          scrollTrigger: { trigger: el, start: isMobile ? 'top 98%' : 'top 85%', once: true }
-        });
-      });
-
-      // Stat counter animation
-      document.querySelectorAll('[data-count-to]').forEach(el => {
-        const target = parseInt(el.dataset.countTo);
-        const prefix = el.dataset.prefix || '';
-        const suffix = el.dataset.suffix || '';
-        ScrollTrigger.create({
-          trigger: el, start: 'top 85%', once: true,
-          onEnter: () => {
-            gsap.to({ val: 0 }, {
-              val: target, duration: 1.4, ease: 'power2.out',
-              onUpdate: function() {
-                el.innerHTML = prefix + Math.round(this.targets()[0].val).toLocaleString('fr-FR') + suffix;
-              }
-            });
-          }
-        });
-      });
-
+      requestAnimationFrame(tick);
     }
-
-    initGSAP();
+    const counterIO = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        animateCounter(entry.target as HTMLElement);
+        counterIO.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -15% 0px', threshold: 0 });
+    document.querySelectorAll('[data-count-to]').forEach(el => counterIO.observe(el));
   </script>
 </Base>

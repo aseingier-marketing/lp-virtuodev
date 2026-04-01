@@ -8,10 +8,10 @@ export interface Props {
 const { name, role, text, gsKey = "t" } = Astro.props;
 ---
 <div class="testimonial-float gs-hidden" data-gs={gsKey}>
-  <div class="t-text" set:html={text}></div>
+  <div class="t-text">{text}</div>
   <div class="t-footer">
-    <div class="t-name" set:html={name}></div>
+    <div class="t-name">{name}</div>
     <span class="t-sep">&middot;</span>
-    <div class="t-role" set:html={role}></div>
+    <div class="t-role">{role}</div>
   </div>
 </div>

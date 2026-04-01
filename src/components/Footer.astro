@@ -1,18 +1,91 @@
 ---
 ---
 <footer class="footer">
-  <a href="#" class="footer-logo"><img src="/images/virtuodev-logo.png" alt="Virtuodev" class="footer-logo-img" width="100" height="100" loading="lazy" decoding="async" /></a>
-  <div class="footer-links">
-    <a href="/mentions-legales">Mentions légales</a>
-    <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+  <span class="footer-copy">&copy; 2026 Virtuodev. Tous droits r&eacute;serv&eacute;s.</span>
+
+  <div class="footer-legal-links">
+    <a href="/mentions-legales" class="footer-legal-link">Mentions l&eacute;gales</a>
+    <a href="/politique-de-confidentialite" class="footer-legal-link">Politique de confidentialit&eacute;</a>
+    <a href="/politique-de-cookies" class="footer-legal-link">Politique de cookies</a>
+    <a href="/cgv" class="footer-legal-link">CGV/CGU</a>
   </div>
+
+  <span class="footer-credit">Un site fi&egrave;rement r&eacute;alis&eacute; par <a href="https://virtuodev.fr" class="footer-credit-link">Virtuodev</a></span>
 </footer>
 
 <style>
-  .footer-links a {
-    color: #ffffff !important;
+  .footer {
+    background: #040609 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 48px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    font-family: var(--font-body);
+    gap: 24px;
   }
-  .footer-links a:hover {
-    color: var(--gris-300) !important;
+
+  .footer-copy,
+  .footer-credit {
+    font-size: 13px;
+    color: rgba(200, 208, 224, 0.35);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .footer-legal-links {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer-legal-link {
+    font-size: 13px;
+    color: rgba(200, 208, 224, 0.4);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(200, 208, 224, 0.2);
+    transition: color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .footer-legal-link:hover { color: rgba(200, 208, 224, 0.8); }
+
+  .footer-credit-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(200, 208, 224, 0.2);
+    transition: color 0.15s ease;
+  }
+
+  .footer-credit-link:hover { color: #FFFFFF; }
+
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column !important;
+      height: auto !important;
+      min-height: auto !important;
+      padding: 24px 20px 88px !important;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .footer-legal-links {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+      width: 100%;
+    }
+
+    .footer-legal-link {
+      white-space: normal;
+      text-align: center;
+    }
+
+    .footer-credit { display: none; }
   }
 </style>

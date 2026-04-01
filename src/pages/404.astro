@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/tokens.css';
+import '../styles/global.css';
+---
+
+<Base
+  title="Page introuvable — Virtuodev"
+  description="Cette page n'existe pas ou a été déplacée."
+>
+  <main class="notfound-page">
+    <div class="notfound-container">
+
+      <div class="notfound-code" aria-hidden="true">404</div>
+
+      <h1 class="notfound-title">Page introuvable</h1>
+
+      <p class="notfound-desc">
+        Cette page n'existe pas ou a été déplacée.<br>
+        Revenez à l'accueil pour retrouver votre chemin.
+      </p>
+
+      <a href="/" class="btn-primary btn-primary-accent btn-primary-big notfound-cta">
+        Retour à l'accueil
+      </a>
+
+    </div>
+  </main>
+</Base>
+
+<style>
+  .notfound-page {
+    min-height: 100vh;
+    background: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .notfound-container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .notfound-code {
+    font-family: var(--font-display);
+    font-size: clamp(72px, 15vw, 120px);
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    background: linear-gradient(135deg, #1D5FBF 0%, #60A5FA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+  }
+
+  .notfound-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(24px, 4vw, 36px);
+    letter-spacing: -0.03em;
+    color: var(--text-dark-primary);
+    margin-bottom: 16px;
+  }
+
+  .notfound-desc {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-dark-secondary);
+    margin-bottom: 36px;
+  }
+
+  .notfound-cta {
+    text-decoration: none;
+  }
+</style>

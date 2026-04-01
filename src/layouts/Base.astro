@@ -1,4 +1,6 @@
 ---
+import CookieBanner from '../components/CookieBanner.astro';
+
 export interface Props {
   title?: string;
   description?: string;
@@ -73,48 +75,18 @@ const schemaOrg = JSON.stringify({
   <link rel="preload" as="font" href="/fonts/pjs-latin.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="/fonts/dm-sans-latin.woff2" type="font/woff2" crossorigin>
 
-  <!-- Preconnect Vimeo (connexion TCP+TLS anticipée, vidéo chargée au clic) -->
-  <link rel="preconnect" href="https://player.vimeo.com">
   <link rel="dns-prefetch" href="https://cal.com">
 
   <!-- Prefetch de la page merci (chargement instantané après soumission) -->
   <link rel="prefetch" href="/merci">
 
-  <!-- GSAP auto-hébergé (zéro CDN externe) -->
-  <script defer src="/js/gsap.min.js"></script>
-  <script defer src="/js/ScrollTrigger.min.js"></script>
 
-  <!-- Analytics différés — chargés en idle pour ne pas bloquer le rendu initial -->
-  <script>
-    function loadAnalytics() {
-      // Google Analytics 4
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      var gaScript = document.createElement('script');
-      gaScript.async = true;
-      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6N3P18H1QX';
-      gaScript.onload = function() { gtag('config', 'G-6N3P18H1QX'); };
-      document.head.appendChild(gaScript);
-
-      // Microsoft Clarity
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window,document,'clarity','script','vx3g2slfy8');
-    }
-
-    // requestIdleCallback si disponible, sinon après l'événement load
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(loadAnalytics);
-    } else {
-      window.addEventListener('load', loadAnalytics);
-    }
-  </script>
 </head>
 <body>
-  <slot />
+  <a href="#main-content" class="skip-link">Passer au contenu principal</a>
+  <div id="main-content">
+    <slot />
+  </div>
+  <CookieBanner />
 </body>
 </html>

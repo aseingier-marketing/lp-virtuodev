@@ -1,0 +1,65 @@
+---
+---
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0C1222;border-top:1px solid rgba(29,95,191,0.25);padding:16px 24px;">
+  <div style="max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <p style="font-family:var(--font-body);font-size:14px;color:#CBD5E1;line-height:1.5;margin:0;">
+      Ce site utilise des cookies analytiques (Google Analytics, Microsoft Clarity) pour mesurer l&rsquo;audience et am&eacute;liorer votre exp&eacute;rience.
+      <a href="/politique-de-confidentialite" style="color:#93C5FD;text-decoration:underline;white-space:nowrap;">En savoir plus</a>
+    </p>
+    <div style="display:flex;gap:10px;flex-shrink:0;">
+      <button id="cookie-refuse-btn" style="font-family:var(--font-body);font-size:14px;font-weight:600;color:#94A3B8;background:transparent;border:1px solid rgba(148,163,184,0.3);border-radius:8px;padding:8px 18px;cursor:pointer;transition:border-color 0.2s;">
+        Refuser
+      </button>
+      <button id="cookie-accept-btn" style="font-family:var(--font-body);font-size:14px;font-weight:600;color:#FFFFFF;background:#1D5FBF;border:none;border-radius:8px;padding:8px 18px;cursor:pointer;transition:background 0.2s;">
+        Accepter
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function loadAnalytics() {
+    // Google Analytics 4
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-6N3P18H1QX';
+    gaScript.onload = function() { gtag('config', 'G-6N3P18H1QX'); };
+    document.head.appendChild(gaScript);
+
+    // Microsoft Clarity
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,'clarity','script','vx3g2slfy8');
+  }
+
+  function hideBanner() {
+    var b = document.getElementById('cookie-banner');
+    if (b) b.style.display = 'none';
+  }
+
+  document.getElementById('cookie-accept-btn').addEventListener('click', function() {
+    localStorage.setItem('cookie-consent', 'accepted');
+    hideBanner();
+    loadAnalytics();
+  });
+
+  document.getElementById('cookie-refuse-btn').addEventListener('click', function() {
+    localStorage.setItem('cookie-consent', 'refused');
+    hideBanner();
+  });
+
+  // Vérification au chargement
+  var consent = localStorage.getItem('cookie-consent');
+  if (consent === 'accepted') {
+    loadAnalytics();
+  } else if (!consent) {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+  // Si 'refused' : analytics non chargés, banner caché
+</script>
