@@ -96,7 +96,7 @@
                   <span>J'accepte d'&ecirc;tre contact&eacute; par t&eacute;l&eacute;phone. <span class="form-required">*</span></span>
                 </label>
               </div>
-              <button class="form-submit" onclick="submitOfferForm()">Appel de qualification &mdash; 10 min &rarr;</button>
+              <button class="form-submit" onclick="submitOfferForm()">Arr&ecirc;ter de perdre des devis &rarr;</button>
               <div class="form-reassurance">
                 <div><span class="form-check">&#10003;</span><span>Aucun engagement.</span></div>
                 <div><span class="form-check">&#10003;</span><span>Nous v&eacute;rifions si le syst&egrave;me correspond &agrave; votre activit&eacute;.</span></div>
@@ -506,7 +506,7 @@
       } else {
         const data = await res.json().catch(() => ({}));
         btn.disabled = false;
-        btn.textContent = 'Appel de qualification \u2014 10 min \u2192';
+        btn.textContent = 'Arr\u00eater de perdre des devis \u2192';
         const errEl = document.createElement('p');
         errEl.id = 'form-submit-error';
         errEl.style.cssText = 'color:#ef4444;font-size:13px;text-align:center;margin:8px 0 0;';
@@ -515,7 +515,7 @@
       }
     } catch {
       btn.disabled = false;
-      btn.textContent = 'Appel de qualification \u2014 10 min \u2192';
+      btn.textContent = 'Arr\u00eater de perdre des devis \u2192';
       const errEl = document.createElement('p');
       errEl.id = 'form-submit-error';
       errEl.style.cssText = 'color:#ef4444;font-size:13px;text-align:center;margin:8px 0 0;';

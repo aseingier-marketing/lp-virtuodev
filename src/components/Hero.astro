@@ -19,7 +19,7 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 12px;
     padding: 5px 5px 5px 16px;
-    max-width: 480px;
+    max-width: 580px;
     width: 100%;
   }
 
@@ -119,7 +119,7 @@
     <!-- Badge chip -->
     <div class="gs-hidden" data-gs="hero" data-gs-delay="0" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(29,95,191,0.12); border: 1px solid rgba(29,95,191,0.30); border-radius: 100px; padding: 8px 20px; margin: 0 auto;">
       <span style="width:6px;height:6px;background:#4D8EE8;border-radius:50%;flex-shrink:0;box-shadow:0 0 8px rgba(77,142,232,0.7);"></span>
-      <span class="hero-badge-text" style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: #7FB3F5; text-align: center;">ACC&Egrave;S R&Eacute;SERV&Eacute; AUX <span style="color: #FFFFFF; font-weight: 700;">100</span> PREMI&Egrave;RES<br>ENTREPRISES BTP</span>
+      <span class="hero-badge-text" style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: #7FB3F5; text-align: center;">OFFRE R&Eacute;SERV&Eacute;E AUX <span style="color: #FFFFFF; font-weight: 700;">100</span> PREMI&Egrave;RES ENTREPRISES</span>
     </div>
 
     <!-- H1 -->
@@ -162,10 +162,10 @@
 
     <!-- CTA -->
     <div class="gs-hidden" data-gs="hero" data-gs-delay="0.3" style="margin-top: 36px;">
-      <button style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 11px; font-family: var(--font-body); font-weight: 600; font-size: 16px; cursor: pointer; border: none; background: #1D5FBF; color: #FFFFFF; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0px 10px 25px rgba(29,95,191,0.35);" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'});" onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)';this.style.boxShadow='0px 14px 32px rgba(29,95,191,0.45)'" onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)';this.style.boxShadow='0px 10px 25px rgba(29,95,191,0.35)'">
+      <button style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 11px; font-family: var(--font-body); font-weight: 600; font-size: 16px; cursor: pointer; border: none; background: #1D5FBF; color: #FFFFFF; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0px 10px 25px rgba(29,95,191,0.35);" onclick="document.getElementById('hero-video').scrollIntoView({behavior:'smooth'});" onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)';this.style.boxShadow='0px 14px 32px rgba(29,95,191,0.45)'" onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)';this.style.boxShadow='0px 10px 25px rgba(29,95,191,0.35)'">
         D&eacute;couvrir nos relances &rarr;
       </button>
-      <div style="font-size: 15px; font-weight: 600; color: #FFFFFF; margin-top: 12px; letter-spacing: 0.01em;">La relance automatique, pens&eacute;e pour le BTP</div>
+      <div style="font-size: 15px; font-weight: 600; color: #FFFFFF; margin-top: 12px; letter-spacing: 0.01em;">Les relances personnalis&eacute;es que vos prospects attendent</div>
     </div>
 
     <!-- Trust line — chips premium glass -->
@@ -228,7 +228,7 @@
     </style>
 
     <!-- Vidéo hero -->
-    <div class="gs-hidden hero-video-wrap" data-gs="hero" data-gs-delay="0.5" style="margin-top: 56px; max-width: 960px; width: 100%; margin-left: auto; margin-right: auto;">
+    <div id="hero-video" class="gs-hidden hero-video-wrap" data-gs="hero" data-gs-delay="0.5" style="margin-top: 56px; max-width: 960px; width: 100%; margin-left: auto; margin-right: auto;">
       <video
         autoplay
         muted
@@ -254,7 +254,7 @@
           autocomplete="email"
         />
         <button class="postcta-btn" onclick="heroScrollToForm()">
-          Appel de qualification &mdash; 10 min &rarr;
+          Arr&ecirc;ter de perdre des devis &rarr;
         </button>
       </div>
       <p class="postcta-hint">Aucun engagement</p>
