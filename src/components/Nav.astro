@@ -1,11 +1,9 @@
 ---
-import { Image } from 'astro:assets';
-import logoImg from '../assets/images/virtuodev-logo.png';
 ---
 <header class="site-header" id="site-header">
-  <!-- Logo -->
+  <!-- Wordmark -->
   <a href="/" class="nav-logo">
-    <Image src={logoImg} alt="Virtuodev" class="nav-logo-img" width="128" height="128" loading="eager" decoding="async" />
+    <img src="/images/reccolt-logo.png" alt="Reccolt" class="nav-logo-img" />
   </a>
 
   <!-- Nav links -->
@@ -16,7 +14,7 @@ import logoImg from '../assets/images/virtuodev-logo.png';
   </nav>
 
   <!-- CTA -->
-  <a href="#section-offer" class="nav-cta">Rejoindre la prévente</a>
+  <a href="#section-offer" class="nav-cta">Rejoindre l'offre fondateur</a>
 </header>
 
 <style>
@@ -37,24 +35,24 @@ import logoImg from '../assets/images/virtuodev-logo.png';
   }
 
   .site-header.scrolled {
-    background: rgba(7, 10, 20, 0.95);
-    border-bottom-color: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+    background: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
   }
 
   .nav-logo {
     text-decoration: none;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
-    flex-shrink: 0;
+    overflow: visible;
   }
 
   .nav-logo-img {
-    height: 42px;
+    height: 200px;
     width: auto;
-    filter: brightness(0) invert(1);
+    mix-blend-mode: multiply;
+    margin-top: -20px;
   }
 
   .nav-links {
@@ -68,9 +66,9 @@ import logoImg from '../assets/images/virtuodev-logo.png';
 
   .nav-link {
     font-family: var(--font-body);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
-    color: rgba(200, 208, 224, 0.7);
+    color: var(--texte-secondaire);
     text-decoration: none;
     letter-spacing: 0.01em;
     transition: color 0.15s ease;
@@ -78,30 +76,30 @@ import logoImg from '../assets/images/virtuodev-logo.png';
   }
 
   .nav-link:hover {
-    color: #FFFFFF;
+    color: var(--texte);
   }
 
   .nav-cta {
-    font-family: var(--font-body);
-    font-size: 14px;
+    font-family: var(--font-display);
+    font-size: 13px;
     font-weight: 600;
-    color: #FFFFFF;
-    background: #1D5FBF;
+    color: var(--fond);
+    background: var(--olive);
     text-decoration: none;
-    padding: 13px 22px;
-    min-height: 44px;
+    padding: 10px 20px;
+    min-height: 40px;
     display: inline-flex;
     align-items: center;
-    border-radius: 999px;
+    border-radius: 4px;
     white-space: nowrap;
     flex-shrink: 0;
+    letter-spacing: 0.01em;
     transition: background 0.15s ease, box-shadow 0.15s ease;
-    box-shadow: 0 0 20px rgba(29, 95, 191, 0.35);
   }
 
   .nav-cta:hover {
-    background: #174EA6;
-    box-shadow: 0 0 28px rgba(29, 95, 191, 0.5);
+    background: #68793A;
+    box-shadow: 0 4px 16px rgba(122, 140, 58, 0.30);
   }
 
   @media (max-width: 768px) {
@@ -113,13 +111,9 @@ import logoImg from '../assets/images/virtuodev-logo.png';
       display: none;
     }
 
-    .nav-logo-img {
-      height: 34px;
-    }
-
     .nav-cta {
-      font-size: 13px;
-      padding: 8px 16px;
+      font-size: 12px;
+      padding: 8px 14px;
     }
   }
 </style>

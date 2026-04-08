@@ -8,8 +8,8 @@ export interface Props {
 }
 
 const {
-  title = "Prévente Fondateur — Système de relance automatique de devis",
-  description = "On construit le système qui relance automatiquement vos devis. Pour les entreprises B2C qui envoient des devis et veulent structurer leur suivi jusqu'à la signature.",
+  title = "Reccolt — On relance. Tu récoltes.",
+  description = "Reccolt récupère le chiffre d'affaires que tu as déjà gagné mais jamais encaissé. En moyenne, 20% du CA dort dans des devis jamais relancés. Rejoins l'offre fondateur.",
   ogImage = "/og-image.png",
 } = Astro.props;
 
@@ -30,11 +30,11 @@ const schemaOrg = JSON.stringify({
     {
       "@type": "Organization",
       "@id": `${ogUrl}/#organization`,
-      "name": "Virtuodev",
+      "name": "Reccolt",
       "url": ogUrl,
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "contact@virtuodev.com",
+        "email": "contact@reccolt.fr",
         "contactType": "customer service"
       }
     }
@@ -72,8 +72,13 @@ const schemaOrg = JSON.stringify({
   <script type="application/ld+json" set:html={schemaOrg}></script>
 
   <!-- Preload des 2 fonts critiques — chargées depuis tokens.css inliné -->
-  <link rel="preload" as="font" href="/fonts/pjs-latin.woff2" type="font/woff2" crossorigin>
-  <link rel="preload" as="font" href="/fonts/dm-sans-latin.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/sohne/Sohne-Halbfett.woff2" type="font/woff2" crossorigin>
+  <link rel="preload" as="font" href="/fonts/tiempos/TiemposText-Regular.woff2" type="font/woff2" crossorigin>
+
+  <!-- Spectral — fallback éditorial pour les glyphes accentués absents des fonts Test -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 
   <link rel="dns-prefetch" href="https://cal.com">
 

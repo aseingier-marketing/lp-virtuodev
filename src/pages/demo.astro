@@ -1,0 +1,652 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/tokens.css';
+import '../styles/global.css';
+---
+
+<Base
+  title="Réserver une démo — Reccolt"
+  description="Montre-moi ce que tu peux récupérer. 15 minutes pour estimer ton potentiel de relance et répondre à tes questions."
+>
+  <Nav />
+
+  <main class="demo-page">
+
+    <!-- ── SECTION FORMULAIRE ── -->
+    <section class="demo-form-section" id="demo-form">
+      <div class="demo-inner demo-two-col">
+
+        <!-- Colonne gauche : texte -->
+        <div class="demo-text-col">
+          <h1 class="demo-title">
+            Rejoindre le projet <span class="demo-highlight">Reccolt</span>
+          </h1>
+
+          <p class="demo-subtitle">
+            Rejoignez les premières entreprises qui structurent enfin leur commerce sans recruter, sans complexité, sans changer leurs outils.
+          </p>
+
+          <ul class="demo-checklist">
+            <li>
+              <span class="demo-check-dot"></span>
+              <span>L'assistant commercial des <strong>TPE/PME</strong></span>
+            </li>
+            <li>
+              <span class="demo-check-dot"></span>
+              <span>Pas de logiciel à apprendre, <strong>tu gardes tes outils</strong></span>
+            </li>
+            <li>
+              <span class="demo-check-dot"></span>
+              <span>Un tarif exclusif pour les <strong>100 premiers Reccolteurs</strong></span>
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- Colonne droite : formulaire -->
+        <div class="demo-form-col">
+          <form class="demo-form" id="demo-contact-form" novalidate>
+
+            <!-- Honeypot anti-spam -->
+            <input type="text" id="demo-trap" name="_trap" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;pointer-events:none;" />
+
+            <div class="demo-fields-row">
+              <div class="demo-field">
+                <label for="demo-prenom">Prénom</label>
+                <input
+                  type="text"
+                  id="demo-prenom"
+                  name="prenom"
+                  placeholder="Thomas"
+                  autocomplete="given-name"
+                  required
+                >
+                <span class="field-error" id="prenom-error" role="alert">Prénom requis.</span>
+              </div>
+              <div class="demo-field">
+                <label for="demo-nom">Nom</label>
+                <input
+                  type="text"
+                  id="demo-nom"
+                  name="nom"
+                  placeholder="Dupont"
+                  autocomplete="family-name"
+                  required
+                >
+                <span class="field-error" id="nom-error" role="alert">Nom requis.</span>
+              </div>
+            </div>
+
+            <div class="demo-field">
+              <label for="demo-email">Adresse email</label>
+              <input
+                type="email"
+                id="demo-email"
+                name="email"
+                placeholder="thomas@entreprise.fr"
+                autocomplete="email"
+                required
+              >
+              <span class="field-error" id="email-error" role="alert">Adresse email invalide.</span>
+            </div>
+
+            <button type="submit" class="demo-submit">
+              Je deviens un Reccolteur
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+
+            <p class="demo-reassurance">
+              Sans engagement. Je te réponds sous 24h.
+            </p>
+
+          </form>
+
+          <div class="demo-success" id="demo-success" role="status">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A8C3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>Reçu. Je reviens vers toi sous 24h.</span>
+            <span class="demo-success-sub">Tu préfères choisir ton créneau maintenant ? Réserve directement ci-dessous.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SÉPARATEUR ── -->
+    <div class="demo-sep" aria-hidden="true">
+      <span>ou</span>
+    </div>
+
+    <!-- ── SECTION CAL.COM ── -->
+    <section class="demo-cal-section" id="reserver">
+      <div class="demo-inner">
+
+        <div class="demo-label demo-label-light">Réserve directement</div>
+
+        <h2 class="demo-cal-title">
+          Choisis ton créneau maintenant
+        </h2>
+
+        <p class="demo-cal-subtitle">
+          15 minutes. On regarde ensemble ce qui dort dans ta base client.
+        </p>
+
+        <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-20min" class="demo-cal-embed"></div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  .demo-page {
+    min-height: 100vh;
+    background: var(--fond);
+    padding-top: 60px; /* hauteur nav */
+  }
+
+  .demo-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+  }
+
+  /* ── SECTION FORMULAIRE ── */
+  .demo-form-section {
+    background: #0D1207;
+    padding: clamp(4rem, 8vw, 6rem) 0 clamp(3.5rem, 7vw, 5rem);
+  }
+
+  /* Layout 2 colonnes */
+  .demo-two-col {
+    max-width: 1060px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(3rem, 6vw, 6rem);
+    align-items: center;
+  }
+
+  .demo-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .demo-form-col {
+    background: var(--terracotta);
+    border: none;
+    border-radius: 12px;
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  .demo-label {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.70rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--olive);
+    border: 1px solid rgba(122, 140, 58, 0.30);
+    border-radius: 3px;
+    padding: 0.38rem 0.75rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .demo-label-light {
+    color: var(--texte-secondaire);
+    border-color: var(--border);
+    background: var(--fond);
+  }
+
+  .demo-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: var(--fond);
+    margin-bottom: 1.25rem;
+  }
+
+  .demo-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.8vw, 1.1rem);
+    line-height: 1.75;
+    color: rgba(245, 243, 238, 0.60);
+    margin-bottom: 1.75rem;
+  }
+
+  .demo-highlight {
+    display: inline-block;
+    position: relative;
+    color: var(--fond);
+    background: var(--terracotta);
+    border-radius: 14px;
+    padding: 0.04em 0.22em 0.10em;
+    transform: rotate(-0.5deg);
+    transform-origin: center;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.12);
+  }
+
+  .demo-text-body {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    line-height: 1.75;
+    color: rgba(245, 243, 238, 0.60);
+    margin-bottom: 1.75rem;
+  }
+
+  .demo-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  .demo-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: rgba(245, 243, 238, 0.70);
+    line-height: 1.6;
+  }
+
+  .demo-checklist li strong {
+    color: rgba(245, 243, 238, 0.95);
+    font-weight: 600;
+  }
+
+  .demo-check-dot {
+    flex-shrink: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--olive);
+    opacity: 0.75;
+    margin-top: 0.45rem;
+  }
+
+  .demo-text-quote {
+    font-family: var(--font-display);
+    font-size: 0.80rem;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--olive);
+    opacity: 0.70;
+    margin: 0;
+  }
+
+  /* ── FORMULAIRE ── */
+  .demo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .demo-fields-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.875rem;
+  }
+
+  .demo-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .demo-field-full {
+    grid-column: 1 / -1;
+  }
+
+  .demo-field label {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  .demo-field input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 3px;
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    outline: none;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+  }
+
+  .demo-field input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+    font-weight: 400;
+  }
+
+  .demo-field input:focus {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.22);
+  }
+
+  .demo-field input.error {
+    border-color: #c05050;
+  }
+
+  .field-error {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    color: #d06060;
+    display: none;
+  }
+
+  .field-error.visible {
+    display: block;
+  }
+
+  .demo-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.75rem;
+    background: #0D1207;
+    color: var(--fond);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 20px -6px rgba(13, 18, 7, 0.40);
+    margin-top: 0.25rem;
+    align-self: flex-start;
+  }
+
+  .demo-submit:hover {
+    background: #1a2a0a;
+    transform: translateY(-1px);
+  }
+
+  .demo-submit:active {
+    transform: translateY(1px) scale(0.985);
+  }
+
+  .demo-submit svg {
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .demo-submit:hover svg {
+    transform: translateX(3px);
+  }
+
+  .demo-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .demo-reassurance {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 0;
+  }
+
+  /* ── SUCCESS ── */
+  .demo-success {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(122, 140, 58, 0.12);
+    border: 1px solid rgba(122, 140, 58, 0.28);
+    border-radius: 4px;
+    max-width: 520px;
+  }
+
+  .demo-success.visible {
+    display: flex;
+  }
+
+  .demo-success svg {
+    flex-shrink: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .demo-success span:first-of-type {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--fond);
+  }
+
+  .demo-success-sub {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: rgba(245, 243, 238, 0.55);
+  }
+
+  /* ── SÉPARATEUR ── */
+  .demo-sep {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+    background: var(--fond);
+    padding-top: clamp(2.5rem, 5vw, 3.5rem);
+    padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .demo-sep::before,
+  .demo-sep::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .demo-sep span {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--texte-secondaire);
+    opacity: 0.45;
+  }
+
+  /* ── SECTION CAL ── */
+  .demo-cal-section {
+    background: var(--fond);
+    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(4rem, 8vw, 6rem);
+    scroll-margin-top: 60px;
+  }
+
+  .demo-cal-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: var(--texte);
+    margin-bottom: 0.875rem;
+    margin-top: 1.5rem;
+  }
+
+  .demo-cal-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+    line-height: 1.75;
+    color: var(--texte-secondaire);
+    max-width: 50ch;
+    margin-bottom: 2rem;
+  }
+
+  .demo-cal-embed {
+    width: 100%;
+    min-height: 600px;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 860px) {
+    .demo-two-col {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .demo-title {
+      font-size: clamp(1.7rem, 5vw, 2.2rem);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .demo-fields-row {
+      grid-template-columns: 1fr;
+    }
+
+    .demo-submit {
+      align-self: stretch;
+      justify-content: center;
+    }
+
+    .demo-form-col {
+      padding: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  function getUTMParams() {
+    const p = new URLSearchParams(window.location.search);
+    return {
+      utm_source:   p.get('utm_source')   ?? '',
+      utm_medium:   p.get('utm_medium')   ?? '',
+      utm_campaign: p.get('utm_campaign') ?? '',
+    };
+  }
+
+  function detectSource() {
+    const utm = new URLSearchParams(window.location.search).get('utm_source');
+    if (utm) return utm;
+    const ref = document.referrer;
+    if (!ref) return 'direct';
+    try { return new URL(ref).hostname; } catch { return 'direct'; }
+  }
+
+  const form         = document.getElementById('demo-contact-form') as HTMLFormElement;
+  const prenomInput  = document.getElementById('demo-prenom')    as HTMLInputElement;
+  const nomInput     = document.getElementById('demo-nom')        as HTMLInputElement;
+  const emailInput   = document.getElementById('demo-email')      as HTMLInputElement;
+  const prenomError  = document.getElementById('prenom-error');
+  const nomError     = document.getElementById('nom-error');
+  const emailError   = document.getElementById('email-error');
+  const successBox   = document.getElementById('demo-success');
+
+  const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+
+  function clearError(input: HTMLInputElement, errEl: HTMLElement | null) {
+    input.classList.remove('error');
+    errEl?.classList.remove('visible');
+  }
+
+  prenomInput.addEventListener('input', () => { if (prenomInput.value.trim()) clearError(prenomInput, prenomError); });
+  nomInput.addEventListener('input',    () => { if (nomInput.value.trim())    clearError(nomInput,    nomError);    });
+  emailInput.addEventListener('input',  () => { if (isValidEmail(emailInput.value)) clearError(emailInput, emailError); });
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    let valid = true;
+
+    if (!prenomInput.value.trim()) {
+      prenomInput.classList.add('error');
+      prenomError?.classList.add('visible');
+      valid = false;
+    }
+    if (!nomInput.value.trim()) {
+      nomInput.classList.add('error');
+      nomError?.classList.add('visible');
+      valid = false;
+    }
+    if (!isValidEmail(emailInput.value)) {
+      emailInput.classList.add('error');
+      emailError?.classList.add('visible');
+      valid = false;
+    }
+
+    if (!valid) {
+      form.querySelector('.error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    const trap = (document.getElementById('demo-trap') as HTMLInputElement).value;
+    const btn  = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours\u2026';
+
+    try {
+      const utm = getUTMParams();
+      await fetch('/api/demo-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          prenom: prenomInput.value.trim(),
+          nom:    nomInput.value.trim(),
+          email:  emailInput.value.trim(),
+          _trap:  trap,
+          source: detectSource(),
+          ...utm,
+        }),
+      });
+    } catch (_) {
+      // Fail silently — affiche le succès dans tous les cas
+    }
+
+    form.style.display = 'none';
+    successBox?.classList.add('visible');
+
+    // Scroll doux vers la section Cal.com
+    setTimeout(() => {
+      document.getElementById('reserver')?.scrollIntoView({ behavior: 'smooth' });
+    }, 1200);
+  });
+</script>
+
+<!-- Cal inline embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "20min", {origin:"https://app.cal.com"});
+
+  Cal.ns["20min"]("inline", {
+    elementOrSelector:"#my-cal-inline-20min",
+    config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+    calLink: "a.seingier-virtuodev/20min",
+  });
+
+  Cal.ns["20min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#C97D55"},"dark":{"cal-brand":"#fafafa"}},"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal inline embed code ends -->

@@ -3,73 +3,84 @@
    Servi depuis /public/fonts/ (zéro Google Fonts)
    ======================================== */
 
-/* DM Sans 400 — latin-ext */
+/* Söhne Halbfett 600 */
 @font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/dm-sans-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/dm-sans-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-/* DM Sans 600 */
-@font-face {
-  font-family: 'DM Sans';
+  font-family: 'Söhne';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/fonts/dm-sans-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url('/fonts/sohne/Sohne-Halbfett.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'DM Sans';
-  font-style: normal;
+  font-family: 'Söhne';
+  font-style: italic;
   font-weight: 600;
   font-display: swap;
-  src: url('/fonts/dm-sans-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('/fonts/sohne/Sohne-HalbfettKursiv.woff2') format('woff2');
 }
 
-/* Plus Jakarta Sans — variable 400→800, toutes ranges */
+/* Söhne Fett 700 */
 @font-face {
-  font-family: 'Plus Jakarta Sans';
+  font-family: 'Söhne';
   font-style: normal;
-  font-weight: 400 800;
+  font-weight: 700;
   font-display: swap;
-  src: url('/fonts/pjs-cyrillic-ext.woff2') format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  src: url('/fonts/sohne/Sohne-Fett.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Plus Jakarta Sans';
-  font-style: normal;
-  font-weight: 400 800;
+  font-family: 'Söhne';
+  font-style: italic;
+  font-weight: 700;
   font-display: swap;
-  src: url('/fonts/pjs-vietnamese.woff2') format('woff2');
-  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+  src: url('/fonts/sohne/Sohne-FettKursiv.woff2') format('woff2');
+}
+
+/* Söhne Mono Kräftig 500 */
+@font-face {
+  font-family: 'Söhne Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/sohne/SohneMono-Kraftig.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Plus Jakarta Sans';
-  font-style: normal;
-  font-weight: 400 800;
+  font-family: 'Söhne Mono';
+  font-style: italic;
+  font-weight: 500;
   font-display: swap;
-  src: url('/fonts/pjs-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url('/fonts/sohne/SohneMono-KraftigKursiv.woff2') format('woff2');
+}
+
+/* Tiempos Text Regular 400 */
+@font-face {
+  font-family: 'Tiempos Text';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/tiempos/TiemposText-Regular.woff2') format('woff2');
 }
 @font-face {
-  font-family: 'Plus Jakarta Sans';
-  font-style: normal;
-  font-weight: 400 800;
+  font-family: 'Tiempos Text';
+  font-style: italic;
+  font-weight: 400;
   font-display: swap;
-  src: url('/fonts/pjs-latin.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url('/fonts/tiempos/TiemposText-RegularItalic.woff2') format('woff2');
+}
+
+/* Tiempos Text Semibold 600 */
+@font-face {
+  font-family: 'Tiempos Text';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/tiempos/TiemposText-Semibold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Tiempos Text';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/tiempos/TiemposText-SemiboldItalic.woff2') format('woff2');
 }
 
 /* ========================================
@@ -77,62 +88,47 @@
    ======================================== */
 :root {
   /* Fonts */
-  --font-display: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Söhne', sans-serif;
+  --font-body:    'Spectral', 'Tiempos Text', Georgia, serif;
+  --font-mono:    'Söhne Mono', monospace;
 
-  /* Noir — dark backgrounds (blue-tinted) */
-  --noir-900: #07090D;
-  --noir-800: #0C1222;
-  --noir-700: #11141C;
-  --noir-600: #1C2230;
+  /* Palette Reccolt */
+  --fond:              #F5F3EE;
+  --texte:             #1E2A0E;
+  --texte-secondaire:  #4A5535;
+  --olive:             #7A8C3A;
+  --terracotta:        #C97D55;
+  --bordeaux:          #9C0D0F;
 
-  /* Blanc */
-  --blanc-100: #FFFFFF;
-  --blanc-200: #FCFCFD;
-  --blanc-300: #F5F7FB;
-  --blanc-400: #E6EAF2;
+  /* Dérivés utilitaires */
+  --olive-dim:         rgba(122, 140, 58, 0.12);
+  --olive-border:      rgba(122, 140, 58, 0.30);
+  --terracotta-dim:    rgba(201, 125, 85, 0.12);
+  --terracotta-border: rgba(201, 125, 85, 0.30);
+  --bordeaux-dim:      rgba(156, 13, 15, 0.08);
+  --bordeaux-border:   rgba(156, 13, 15, 0.22);
 
-  /* Gris */
-  --gris-200: #E6EAF2;
-  --gris-300: #C8D0E0;
-  --gris-500: #8899B0;
-  --gris-600: #475467;
-  --gris-700: #344054;
+  /* Surfaces */
+  --bg:            #F5F3EE;
+  --bg-elevated:   #EDE9E1;
+  --bg-card:       #FFFFFF;
+  --bg-dark:       #1E2A0E;
+  --bg-dark-card:  #2A3B18;
 
-  /* Brand Blue — Primary */
-  --accent: #1D5FBF;
-  --accent-hover: #174EA6;
-  --accent-dim: rgba(29,95,191,0.10);
-  --accent-border: rgba(29,95,191,0.25);
-  --accent-light: #DCE9FF;
+  /* Bordures */
+  --border:        rgba(30, 42, 14, 0.12);
+  --border-hover:  rgba(30, 42, 14, 0.25);
+  --border-dark:   rgba(245, 243, 238, 0.10);
 
-  /* Success Green — résultats / gains */
-  --success: #12B76A;
-  --success-dim: rgba(18,183,106,0.10);
-  --success-border: rgba(18,183,106,0.25);
+  /* Texte sémantique */
+  --text-primary:   #1E2A0E;
+  --text-secondary: #4A5535;
+  --text-muted:     rgba(74, 85, 53, 0.55);
+  --text-on-dark:   #F5F3EE;
 
-  /* Danger Red — problèmes / pertes */
-  --danger: #F04438;
-  --danger-dim: rgba(240,68,56,0.08);
-  --danger-border: rgba(240,68,56,0.20);
-
-  /* Semantic — Dark */
-  --bg-dark: #07090D;
-  --bg-dark-elevated: #0C1222;
-  --bg-dark-card: #11141C;
-  --border-dark: rgba(255,255,255,0.08);
-  --border-dark-hover: rgba(255,255,255,0.15);
-  --text-dark-primary: #FFFFFF;
-  --text-dark-secondary: #C8D0E0;
-  --text-dark-muted: #6B7FA0;
-
-  /* Semantic — Light */
-  --bg-light: #FCFCFD;
-  --bg-light-alt: #F5F7FB;
-  --bg-light-card: #FFFFFF;
-  --border-light: #E6EAF2;
-  --border-light-hover: #C8D0E0;
-  --text-light-primary: #101828;
-  --text-light-secondary: #475467;
-  --text-light-muted: #8899B0;
+  /* Accent par défaut = olive */
+  --accent:        #7A8C3A;
+  --accent-hover:  #68793200;
+  --accent-dim:    rgba(122, 140, 58, 0.12);
+  --accent-border: rgba(122, 140, 58, 0.30);
 }

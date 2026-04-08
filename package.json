@@ -11,6 +11,7 @@
     "@astrojs/vercel": "^10.0.3",
     "@notionhq/client": "^5.13.0",
     "astro": "^6.1.2",
-    "resend": "^6.9.4"
+    "resend": "^6.9.4",
+    "shiki": "4.0.2"
   }
 }

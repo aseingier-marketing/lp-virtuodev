@@ -3,8 +3,8 @@
 <style>
   .prob-grid {
     display: grid;
-    grid-template-columns: 0.7fr 1.4fr;
-    gap: 80px;
+    grid-template-columns: 0.75fr 1fr;
+    gap: 56px;
     align-items: start;
     max-width: 1200px;
     margin: 0 auto;
@@ -19,16 +19,17 @@
   /* ── Progress bar ── */
   .prob-progress-track {
     height: 2px;
-    background: rgba(0,0,0,0.08);
+    width: 300px;
+    background: var(--border);
     border-radius: 2px;
-    margin-bottom: 44px;
     overflow: hidden;
+    flex-shrink: 0;
   }
 
   .prob-progress-fill {
     height: 100%;
     width: 0%;
-    background: #2563EB;
+    background: var(--olive);
     border-radius: 2px;
     transition: width 0.05s linear;
   }
@@ -44,7 +45,7 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: rgba(0,0,0,0.12);
+    background: var(--border);
     background-clip: content-box;
     border: none;
     cursor: pointer;
@@ -57,13 +58,13 @@
   }
 
   .prob-dot:focus-visible {
-    outline: 3px solid #2563EB;
+    outline: 3px solid var(--olive);
     outline-offset: 4px;
     border-radius: 4px;
   }
 
   .prob-dot.active {
-    background: #2563EB;
+    background: var(--olive);
     background-clip: content-box;
     width: 24px;
     border-radius: 4px;
@@ -98,11 +99,11 @@
   /* ── Number ── */
   .prob-number {
     font-family: var(--font-display);
-    font-weight: 800;
+    font-weight: 700;
     font-size: clamp(56px, 7.7vw, 95px);
     letter-spacing: -0.04em;
     line-height: 1;
-    color: #101828;
+    color: var(--bordeaux);
   }
 
   .prob-number sup {
@@ -115,7 +116,7 @@
   .prob-phrase {
     font-family: var(--font-body);
     font-size: clamp(16px, 1.5vw, 18px);
-    color: #475467;
+    color: var(--texte-secondaire);
     line-height: 1.65;
     margin-top: 20px;
     max-width: 300px;
@@ -133,32 +134,32 @@
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background: #F5F7FB;
-    border: 1px solid #E6EAF2;
+    background: transparent;
+    border: 1.5px solid var(--border);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #101828;
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    color: var(--texte);
+    transition: border-color 0.18s ease, color 0.18s ease, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
     flex-shrink: 0;
   }
 
   .prob-arrow-btn:hover {
-    background: #EBF0FF;
-    border-color: #C7D7FF;
-    transform: scale(1.07);
+    border-color: var(--olive);
+    color: var(--olive);
+    transform: translateY(-1px);
   }
 
   .prob-arrow-btn:active {
-    transform: scale(0.96);
+    transform: translateY(1px) scale(0.985);
   }
 
   .prob-arrow-btn svg {
     width: 16px;
     height: 16px;
     stroke: currentColor;
-    stroke-width: 2;
+    stroke-width: 1.5;
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -183,22 +184,24 @@
 </style>
 
 <!-- Section Le Problème -->
-<section class="section-pad" style="background:#FFFFFF; overflow:hidden;">
+<section class="section-pad" style="background: #FFFFFF; overflow:hidden;">
   <div class="section-inner">
     <div class="prob-grid">
 
       <!-- Colonne gauche — carousel -->
       <div class="prob-carousel">
 
-        <!-- En-tête : label + compteur -->
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
-          <span style="font-family:var(--font-body); font-size:13px; font-weight:600; color:#101828; letter-spacing:0.04em; text-transform:uppercase;">Données clés</span>
-          <span id="prob-counter" style="font-family:var(--font-display); font-size:13px; font-weight:700; color:#98A2B3; letter-spacing:0.04em;">01 / 03</span>
+        <!-- Label -->
+        <div style="margin-bottom:14px;">
+          <span style="font-family:var(--font-display); font-size:13px; font-weight:600; color:var(--texte); letter-spacing:0.04em; text-transform:uppercase;">Données clés</span>
         </div>
 
-        <!-- Barre de progression -->
-        <div class="prob-progress-track">
-          <div class="prob-progress-fill" id="prob-progress"></div>
+        <!-- Barre de progression + compteur alignés -->
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:44px;">
+          <div class="prob-progress-track">
+            <div class="prob-progress-fill" id="prob-progress"></div>
+          </div>
+          <span id="prob-counter" style="font-family:var(--font-mono); font-size:13px; font-weight:500; color:var(--text-muted); letter-spacing:0.04em; white-space:nowrap;">01 / 03</span>
         </div>
 
         <!-- Slides -->
@@ -215,8 +218,8 @@
           </div>
 
           <div class="prob-slide" data-index="2">
-            <div class="prob-number">55<sup>%</sup></div>
-            <p class="prob-phrase">des réponses arrivent grâce à une relance au bon moment.</p>
+            <div class="prob-number">700<sup>%</sup></div>
+            <p class="prob-phrase">Un nouveau client coûte 7 fois plus cher que fidéliser un client existant.</p>
           </div>
 
         </div>
@@ -241,18 +244,18 @@
 
       <!-- Colonne droite — titre -->
       <div>
-        <h2 style="font-family:var(--font-display); font-weight:800; font-size:clamp(26px,3vw,38px); letter-spacing:-0.03em; line-height:1.12; color:#101828; margin:0;">
-          Combien de devis avez-vous envoyés le mois dernier&nbsp;?<br>
-          <span style="color:#2563EB;">Combien ont signé&nbsp;?</span>
+        <h2 style="font-family:var(--font-display); font-weight:700; font-size:clamp(26px,3vw,38px); letter-spacing:-0.03em; line-height:1.12; color:var(--texte); margin:0;">
+          Ton <span style="display:inline-block; position:relative; color:var(--fond); background:var(--terracotta); border-radius:14px; padding:0.04em 0.22em 0.10em; transform:rotate(-0.5deg); transform-origin:center; box-shadow:inset 0 -4px 0 rgba(0,0,0,0.12);">suivi commercial</span> ne devrait pas dépendre du temps qu&rsquo;il te reste.
         </h2>
-        <p style="font-family:var(--font-body); font-weight:500; font-size:clamp(16px,1.5vw,19px); line-height:1.65; color:#475467; margin:24px 0 0 0; max-width:480px;">
-          Chaque mois, ce sont des dizaines de propositions qui n&rsquo;aboutissent pas.
+        <p style="font-family:var(--font-body); font-size:clamp(16px,1.5vw,19px); line-height:1.65; color:var(--texte-secondaire); margin:24px 0 0 0; max-width:640px;">
+          Relance de devis, campagne de parrainage, offres promotionnelles&nbsp;: Reccolt s&rsquo;occupe de tout. Pour que tu te concentres sur ton métier.
         </p>
-        <button style="display:inline-flex; align-items:center; justify-content:center; margin-top:40px; padding:14px 26px; border-radius:11px; font-family:var(--font-body); font-weight:600; font-size:16px; cursor:pointer; border:none; background:#1D5FBF; color:#FFFFFF; transition:background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow:0px 10px 25px rgba(29,95,191,0.35);"
-          onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)';this.style.boxShadow='0px 14px 32px rgba(29,95,191,0.45)'"
-          onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)';this.style.boxShadow='0px 10px 25px rgba(29,95,191,0.35)'">
-          Arr&ecirc;ter de perdre des devis &rarr;
-        </button>
+        <a href="#offre-fondateur" style="display:inline-flex; align-items:center; gap:0.5rem; margin-top:40px; padding:0.9rem 1.65rem; background:#4A5535; color:var(--fond); font-family:var(--font-display); font-size:0.875rem; font-weight:600; letter-spacing:0.01em; border-radius:4px; text-decoration:none; border:1.5px solid transparent; box-shadow:0 4px 18px rgba(30,42,14,0.24); transition:background 0.2s ease, box-shadow 0.2s ease, transform 0.18s cubic-bezier(0.16,1,0.3,1);"
+          onmouseover="this.style.background='#2D4018';this.style.boxShadow='0 8px 28px rgba(30,42,14,0.32)';this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.background='var(--texte)';this.style.boxShadow='0 4px 18px rgba(30,42,14,0.24)';this.style.transform='translateY(0)'">
+          Devenir Reccolteur
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
 
     </div>

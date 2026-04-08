@@ -1,281 +1,333 @@
 ---
 ---
-<section class="section-dark section-pad hero-section" style="padding-top: 140px; min-height: 88vh; position: relative; overflow: hidden; background: linear-gradient(180deg, #05070B 0%, #070C16 100%);">
+<section class="hero-reccolt" aria-label="Hero">
 
-<style>
-  .hero-postcta {
-    margin-top: 36px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+  <!-- Blobs organiques -->
+  <div class="blob blob-terracotta" aria-hidden="true"></div>
+  <div class="blob blob-olive"      aria-hidden="true"></div>
+  <div class="blob blob-bordeaux"   aria-hidden="true"></div>
 
-  .postcta-wrap {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 12px;
-    padding: 5px 5px 5px 16px;
-    max-width: 580px;
-    width: 100%;
-  }
+  <!-- Lignes topographiques -->
+  <svg class="hero-topo" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#7A8C3A" stroke-width="1">
+      <!-- Cluster top-droite -->
+      <path stroke-opacity="0.18" d="M 1440,0 C 1300,80 1100,40 1060,190 C 1020,340 1160,460 1320,400 C 1430,360 1440,220 1440,120"/>
+      <path stroke-opacity="0.12" d="M 1440,0 C 1340,130 1070,60 1010,260 C 950,460 1120,630 1340,540 C 1440,490 1440,300 1440,180"/>
+      <path stroke-opacity="0.07" d="M 1440,0 C 1380,180 1040,80 960,330 C 880,580 1080,800 1360,680 C 1440,640 1440,380 1440,240"/>
+      <path stroke-opacity="0.04" d="M 1440,20 C 1420,230 1010,100 910,400 C 810,700 1040,970 1380,820 C 1440,790 1440,460 1440,300"/>
+      <!-- Cluster bas-gauche -->
+      <path stroke-opacity="0.18" d="M 0,900 C 90,800 180,640 90,490 C 0,360 -90,310 0,210"/>
+      <path stroke-opacity="0.12" d="M 0,900 C 140,780 260,580 140,390 C 20,210 -140,130 0,10"/>
+      <path stroke-opacity="0.07" d="M 0,900 C 190,760 340,520 190,290 C 40,70 -190,-40 0,-80"/>
+      <path stroke-opacity="0.04" d="M 0,900 C 240,740 420,460 240,190 C 60,-60 -240,-200 0,-180"/>
+    </g>
+  </svg>
 
-  .postcta-input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-family: var(--font-body);
-    font-size: 15px;
-    color: #FFFFFF;
-    min-width: 0;
-  }
+  <div class="hero-inner">
 
-  .postcta-input::placeholder {
-    color: rgba(255, 255, 255, 0.65);
-  }
-
-  .postcta-btn {
-    flex-shrink: 0;
-    background: #1D5FBF;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 8px;
-    padding: 11px 20px;
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0px 6px 18px rgba(29, 95, 191, 0.35);
-    white-space: nowrap;
-  }
-
-  .postcta-btn:hover {
-    background: #174EA6;
-    box-shadow: 0px 8px 24px rgba(29, 95, 191, 0.5);
-  }
-
-  .postcta-hint {
-    font-size: 13px;
-    color: rgba(200, 208, 224, 0.45);
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    /* Supprime l'espace mort : min-height libre, padding réduit */
-    .hero-section {
-      padding-top: 100px !important;
-      min-height: auto !important;
-      padding-bottom: 48px !important;
-    }
-
-    .hero-video-wrap {
-      margin-top: 32px !important;
-    }
-
-    /* Le sticky CTA mobile remplace ce bloc — inutile sur mobile */
-    .hero-postcta { display: none; }
-
-    .postcta-wrap {
-      flex-direction: column;
-      padding: 10px;
-      gap: 8px;
-      align-items: stretch;
-      max-width: 100%;
-    }
-
-    .postcta-input {
-      font-size: 16px; /* évite le zoom iOS */
-      padding: 6px 4px;
-    }
-
-    .postcta-btn {
-      width: 100%;
-      text-align: center;
-    }
-
-    .hero-chip {
-      height: auto;
-      padding: 8px 12px;
-      font-size: 12px;
-    }
-
-    .hero-badge-text {
-      font-size: 11px !important;
-    }
-  }
-
-</style>
-
-  <!-- Halo principal centré derrière le titre -->
-  <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;height:700px;background:radial-gradient(circle at 50% 20%, rgba(29,95,191,0.25), transparent 60%);pointer-events:none;z-index:0;"></div>
-
-  <div class="section-inner" style="position: relative; z-index: 1; text-align: center;">
-
-    <!-- Badge chip -->
-    <div class="gs-hidden" data-gs="hero" data-gs-delay="0" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(29,95,191,0.12); border: 1px solid rgba(29,95,191,0.30); border-radius: 100px; padding: 8px 20px; margin: 0 auto;">
-      <span style="width:6px;height:6px;background:#4D8EE8;border-radius:50%;flex-shrink:0;box-shadow:0 0 8px rgba(77,142,232,0.7);"></span>
-      <span class="hero-badge-text" style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: #7FB3F5; text-align: center;">OFFRE R&Eacute;SERV&Eacute;E AUX <span style="color: #FFFFFF; font-weight: 700;">100</span> PREMI&Egrave;RES ENTREPRISES</span>
+    <!-- Badge -->
+    <div class="hero-badge">
+      Système commercial autonome
     </div>
 
     <!-- H1 -->
-    <h1 class="gs-hidden" data-gs="hero" data-gs-delay="0.1" style="margin-top: 32px; max-width: 900px; margin-left: auto; margin-right: auto; font-family: var(--font-display); font-weight: 800; letter-spacing: -0.04em; line-height: 1.1; text-align: center;">
-      <span style="display: block; font-size: clamp(38px, 5.5vw, 72px); color: #FFFFFF;">Vous envoyez des devis.</span>
-      <span class="hero-line2">
-        <span class="hero-puis">Puis </span><span class="hero-silence">silence</span>
-      </span>
+    <h1 class="hero-title">
+      Ta base client contient<br>du chiffre d'affaires <span class="hero-highlight">inexploité</span>
     </h1>
 
-    <style>
-      .hero-line2 {
-        display: block;
-        font-size: clamp(38px, 5.5vw, 72px);
-        overflow: visible;
-      }
-      .hero-puis {
-        background: linear-gradient(90deg, #3B82F6, #5B9CF6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        filter: drop-shadow(0 0 20px rgba(59,130,246,0.2));
-      }
-      .hero-silence {
-        display: inline-block;
-        font-style: italic;
-        padding-right: 0.08em;
-        background: linear-gradient(100deg, #60A5FA 0%, #A8C8FF 55%, #DBEAFE 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        filter: drop-shadow(0 0 35px rgba(147,197,253,0.55));
-      }
-    </style>
-
-    <!-- Sous-headline -->
-    <p class="gs-hidden" data-gs="hero" data-gs-delay="0.2" style="margin-top: 24px; color: rgba(255,255,255,0.95); max-width: 620px; margin-left: auto; margin-right: auto; font-family: var(--font-body); font-weight: 400; font-size: clamp(17px, 2vw, 21px); line-height: 1.6;">
-      Vos devis m&eacute;ritent des relances de qualit&eacute;
+    <!-- Sous-titre -->
+    <p class="hero-sub">
+      Devis, relances, parrainage, fidélisation. Vous avez déjà la matière, on la transforme en résultats.
     </p>
 
-    <!-- CTA -->
-    <div class="gs-hidden" data-gs="hero" data-gs-delay="0.3" style="margin-top: 36px;">
-      <button style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 26px; border-radius: 11px; font-family: var(--font-body); font-weight: 600; font-size: 16px; cursor: pointer; border: none; background: #1D5FBF; color: #FFFFFF; transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0px 10px 25px rgba(29,95,191,0.35);" onclick="document.getElementById('hero-video').scrollIntoView({behavior:'smooth'});" onmouseover="this.style.background='#174EA6';this.style.transform='translateY(-2px)';this.style.boxShadow='0px 14px 32px rgba(29,95,191,0.45)'" onmouseout="this.style.background='#1D5FBF';this.style.transform='translateY(0)';this.style.boxShadow='0px 10px 25px rgba(29,95,191,0.35)'">
-        D&eacute;couvrir nos relances &rarr;
-      </button>
-      <div style="font-size: 15px; font-weight: 600; color: #FFFFFF; margin-top: 12px; letter-spacing: 0.01em;">Les relances personnalis&eacute;es que vos prospects attendent</div>
+    <!-- CTAs -->
+    <div class="hero-ctas">
+      <a href="#offre-fondateur" class="btn-primary">
+        Devenir Reccolteur
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="/demo" class="btn-secondary">
+        Réserver une démo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
 
-    <!-- Trust line — chips premium glass -->
-    <div class="gs-hidden" data-gs="hero" data-gs-delay="0.4" style="display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; justify-content: center;">
-      <div class="hero-chip">
-        <span class="hero-chip-icon-wrap">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-        </span>
-        Accès fondateur
-      </div>
-      <div class="hero-chip">
-        <span class="hero-chip-icon-wrap">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-        </span>
-        Sans engagement
-      </div>
-      <div class="hero-chip">
-        <span class="hero-chip-icon-wrap">
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
-        </span>
-        Offre exclusive
-      </div>
+    <!-- Trust -->
+    <div class="hero-trust" aria-label="Garanties">
+      <span>100 places fondateur</span>
+      <span class="sep" aria-hidden="true">·</span>
+      <span>B2B . Artisan . Agence web . Sécurité</span>
     </div>
-
-    <style>
-      .hero-chip {
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-        height: 48px;
-        padding: 0 18px;
-        border-radius: 999px;
-        background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
-        border: 1px solid rgba(96,165,250,0.22);
-        color: #E5EDF8;
-        font-size: 13px;
-        font-weight: 500;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.28), 0 0 0 1px rgba(59,130,246,0.06), 0 0 30px rgba(59,130,246,0.10);
-        transition: all 0.25s ease;
-        cursor: default;
-      }
-      .hero-chip:hover {
-        transform: translateY(-2px);
-        border-color: rgba(96,165,250,0.38);
-        box-shadow: 0 14px 34px rgba(0,0,0,0.32), 0 0 0 1px rgba(59,130,246,0.10), 0 0 38px rgba(59,130,246,0.16);
-      }
-      .hero-chip-icon-wrap {
-        width: 22px;
-        height: 22px;
-        border-radius: 999px;
-        background: rgba(59,130,246,0.14);
-        border: 1px solid rgba(96,165,250,0.20);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
-    </style>
-
-    <!-- Vidéo hero -->
-    <div id="hero-video" class="gs-hidden hero-video-wrap" data-gs="hero" data-gs-delay="0.5" style="margin-top: 56px; max-width: 960px; width: 100%; margin-left: auto; margin-right: auto;">
-      <video
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-        width="1280"
-        height="720"
-        style="width:100%;height:auto;display:block;border-radius:0;"
-      >
-        <source src="/videos/motion-hero.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <!-- CTA post-vidéo -->
-    <div class="gs-hidden hero-postcta" data-gs="hero" data-gs-delay="0.6">
-      <div class="postcta-wrap">
-        <input
-          type="email"
-          id="hero-email-input"
-          class="postcta-input"
-          placeholder="votremail@entreprise.com"
-          autocomplete="email"
-        />
-        <button class="postcta-btn" onclick="heroScrollToForm()">
-          Arr&ecirc;ter de perdre des devis &rarr;
-        </button>
-      </div>
-      <p class="postcta-hint">Aucun engagement</p>
-    </div>
-
-    <script>
-      function heroScrollToForm() {
-        var email = document.getElementById('hero-email-input').value.trim();
-        if (email) {
-          var target = document.getElementById('offer-email');
-          if (target) target.value = email;
-        }
-        document.getElementById('section-callback').scrollIntoView({ behavior: 'smooth' });
-      }
-
-      // Allow submit on Enter key
-      document.getElementById('hero-email-input').addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') heroScrollToForm();
-      });
-    </script>
-
 
   </div>
 </section>
+
+<style>
+  /* =============================================
+     HERO RECCOLT — PREMIUM
+  ============================================= */
+
+  .hero-reccolt {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--fond);
+    padding: clamp(7rem, 16vw, 11rem) var(--px, 1.5rem) clamp(5rem, 10vw, 8rem);
+  }
+
+  /* ---- Blobs ---- */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .blob-terracotta {
+    width: clamp(360px, 55vw, 680px);
+    height: clamp(300px, 46vw, 560px);
+    background: rgba(201, 125, 85, 0.20);
+    top: -12%;
+    right: -10%;
+    border-radius: 62% 38% 56% 44% / 52% 61% 39% 48%;
+    filter: blur(88px);
+    animation: float-a 20s ease-in-out infinite alternate;
+  }
+
+  .blob-olive {
+    width: clamp(300px, 46vw, 580px);
+    height: clamp(260px, 40vw, 500px);
+    background: rgba(122, 140, 58, 0.16);
+    bottom: -14%;
+    left: -8%;
+    border-radius: 44% 56% 38% 62% / 61% 39% 56% 44%;
+    filter: blur(96px);
+    animation: float-b 24s ease-in-out infinite alternate;
+  }
+
+  .blob-bordeaux {
+    width: clamp(200px, 30vw, 400px);
+    height: clamp(180px, 26vw, 340px);
+    background: rgba(156, 13, 15, 0.06);
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: blur(130px);
+  }
+
+  @keyframes float-a {
+    from { transform: translate(0, 0) scale(1);         }
+    to   { transform: translate(-28px, 22px) scale(1.06); }
+  }
+  @keyframes float-b {
+    from { transform: translate(0, 0) scale(1);         }
+    to   { transform: translate(22px, -18px) scale(1.05); }
+  }
+
+  /* ---- Grain texture ---- */
+  .hero-reccolt::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0.032;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.68' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 180px;
+  }
+
+  /* ---- Lignes topo ---- */
+  .hero-topo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* ---- Contenu ---- */
+  .hero-inner {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    max-width: min(92vw, 1160px);
+    width: 100%;
+  }
+
+  /* Entrées échelonnées — CSS pur, zéro JS */
+  .hero-badge,
+  .hero-title,
+  .hero-sub,
+  .hero-ctas,
+  .hero-trust {
+    opacity: 0;
+    transform: translateY(22px);
+    animation: fade-up 0.72s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-title  { animation-delay: 0.10s; }
+  .hero-sub    { animation-delay: 0.22s; }
+  .hero-ctas   { animation-delay: 0.34s; }
+  .hero-trust  { animation-delay: 0.44s; }
+
+  @keyframes fade-up {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ---- Badge ---- */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-display);
+    font-size: 0.70rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--texte-secondaire);
+    background: var(--fond);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+  }
+
+  /* ---- Titre ---- */
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.53rem, 5.52vw, 4.485rem);
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: -0.018em;
+    color: var(--texte);
+    margin-bottom: 1.75rem;
+  }
+
+  /* Highlight terracotta — légère rotation pour l'ancrage artisanal */
+  .hero-highlight {
+    display: inline-block;
+    position: relative;
+    color: var(--fond);
+    background: var(--terracotta);
+    border-radius: 14px;
+    padding: 0.04em 0.22em 0.10em;
+    transform: rotate(-0.5deg);
+    transform-origin: center;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.12);
+  }
+
+  /* ---- Sous-titre ---- */
+  .hero-sub {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    line-height: 1.85;
+    color: var(--texte);
+    opacity: 0.62;
+    max-width: 52ch;
+    margin: 0 auto 2.75rem;
+  }
+
+  /* ---- CTAs ---- */
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.65rem;
+    background: #4A5535;
+    color: var(--fond);
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    box-shadow: 0 4px 18px rgba(30, 42, 14, 0.24);
+    transition:
+      background  0.2s ease,
+      box-shadow  0.2s ease,
+      transform   0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-primary:hover {
+    background: #3a4229;
+    box-shadow: 0 8px 28px rgba(30, 42, 14, 0.32);
+    transform: translateY(-2px);
+  }
+  .btn-primary svg {
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-primary:hover svg { transform: translateX(3px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.65rem;
+    background: transparent;
+    color: var(--texte);
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1.5px solid rgba(30, 42, 14, 0.22);
+    transition:
+      border-color 0.2s ease,
+      background   0.2s ease,
+      transform    0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-secondary:hover {
+    background: rgba(30, 42, 14, 0.06);
+    border-color: var(--texte);
+    transform: translateY(-2px);
+  }
+  .btn-secondary svg {
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-secondary:hover svg { transform: translateX(3px); }
+
+  /* ---- Trust ---- */
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    font-family: var(--font-body);
+    font-size: 0.74rem;
+    font-weight: 400;
+    color: var(--texte-secondaire);
+    opacity: 0.55;
+  }
+
+  .hero-trust .sep { opacity: 0.4; }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 640px) {
+    .hero-ctas {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .btn-primary,
+    .btn-secondary {
+      justify-content: center;
+    }
+    .hero-title {
+      letter-spacing: -0.025em;
+    }
+  }
+</style>

@@ -253,7 +253,7 @@ body {
   position: relative;
   z-index: 10;
   max-width: 480px;
-  margin: -32px auto -32px auto;
+  margin: -68px auto 4px auto;
   background: var(--blanc-100);
   border: 1px solid var(--border-light);
   border-left: 3px solid var(--accent, #e05a2b);
@@ -265,12 +265,15 @@ body {
   font-size: 14px;
   color: var(--text-light-primary);
   line-height: 1.55;
-  margin-bottom: 12px;
+  margin-bottom: 0;
+  padding-bottom: 4px;
 }
 .testimonial-float .t-footer {
   display: flex;
   align-items: center;
   gap: 6px;
+  border-top: 1px solid var(--border-light);
+  padding-top: 4px;
 }
 .testimonial-float .t-name {
   font-family: var(--font-display);
@@ -392,16 +395,12 @@ body {
   flex-shrink: 0;
 }
 .nav-logo-img {
-  height: 100px;
+  height: 280px;
   width: auto;
-  transition: height 0.3s ease, filter 0.3s ease;
-  filter: brightness(0) invert(1);
+  mix-blend-mode: multiply;
 }
 @media (max-width: 768px) {
-  .nav-logo-img { height: 72px; }
-}
-.nav-bar.scrolled .nav-logo-img {
-  height: 72px;
+  .nav-logo-img { height: 200px; }
 }
 .nav-cta {
   padding: 10px 22px;

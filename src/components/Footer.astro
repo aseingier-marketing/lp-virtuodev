@@ -1,91 +1,188 @@
 ---
 ---
 <footer class="footer">
-  <span class="footer-copy">&copy; 2026 Virtuodev. Tous droits r&eacute;serv&eacute;s.</span>
+  <div class="footer-inner">
+    <div class="footer-top">
 
-  <div class="footer-legal-links">
-    <a href="/mentions-legales" class="footer-legal-link">Mentions l&eacute;gales</a>
-    <a href="/politique-de-confidentialite" class="footer-legal-link">Politique de confidentialit&eacute;</a>
-    <a href="/politique-de-cookies" class="footer-legal-link">Politique de cookies</a>
-    <a href="/cgv" class="footer-legal-link">CGV/CGU</a>
+      <!-- GAUCHE -->
+      <div class="footer-col footer-col--left">
+        <a href="/" class="footer-logo">
+          <div class="footer-logo-crop">
+            <img src="/images/reccolt-logo.png" alt="Reccolt" class="footer-logo-img" />
+          </div>
+        </a>
+        <p class="footer-baseline">L&rsquo;outil de relance automatique<br>pour les artisans et ind&eacute;pendants.</p>
+      </div>
+
+      <!-- CENTRE -->
+      <div class="footer-col footer-col--center">
+        <span class="footer-col-label">Liens</span>
+        <ul class="footer-links">
+          <li><a href="/mentions-legales">Mentions l&eacute;gales</a></li>
+          <li><a href="/politique-de-confidentialite">Confidentialit&eacute;</a></li>
+          <li><a href="/politique-de-cookies">Cookies</a></li>
+          <li><a href="/cgv">CGV</a></li>
+        </ul>
+      </div>
+
+      <!-- DROITE -->
+      <div class="footer-col footer-col--right">
+        <span class="footer-col-label">Contact</span>
+        <a href="mailto:contact@reccolt.com" class="footer-email">contact@reccolt.com</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 Reccolt &mdash; Tous droits r&eacute;serv&eacute;s</span>
+    </div>
   </div>
-
-  <span class="footer-credit">Un site fi&egrave;rement r&eacute;alis&eacute; par <a href="https://virtuodev.fr" class="footer-credit-link">Virtuodev</a></span>
 </footer>
 
 <style>
   .footer {
-    background: #040609 !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 0 48px !important;
-    height: 52px !important;
-    min-height: 52px !important;
-    font-family: var(--font-body);
-    gap: 24px;
+    background: var(--fond);
+    font-family: var(--font-display);
+    width: 100%;
   }
 
-  .footer-copy,
-  .footer-credit {
-    font-size: 13px;
-    color: rgba(200, 208, 224, 0.35);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .footer-legal-links {
+  .footer-inner {
+    width: 100%;
+    padding: 1.25rem 4rem;
     display: flex;
-    gap: 28px;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding-bottom: 0.75rem;
+  }
+
+  /* LOGO + BASELINE */
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 0.25rem;
+  }
+
+  .footer-logo-crop {
+    width: 140px;
+    height: 36px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .footer-logo-img {
+    height: 200px;
+    width: auto;
+    mix-blend-mode: multiply;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .footer-baseline {
+    font-size: 0.8rem;
+    color: rgba(30, 42, 14, 0.38);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* COLONNES */
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-col--center {
+    align-items: center;
+  }
+
+  .footer-col--right {
+    align-items: flex-end;
+  }
+
+  .footer-col-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(30, 42, 14, 0.3);
+    margin-bottom: 0.4rem;
+  }
+
+  /* LIENS */
+  .footer-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
   }
 
-  .footer-legal-link {
-    font-size: 13px;
-    color: rgba(200, 208, 224, 0.4);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: rgba(200, 208, 224, 0.2);
-    transition: color 0.15s ease;
-    white-space: nowrap;
-  }
-
-  .footer-legal-link:hover { color: rgba(200, 208, 224, 0.8); }
-
-  .footer-credit-link {
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: rgba(200, 208, 224, 0.2);
+  .footer-links a {
+    font-size: 0.8rem;
+    color: rgba(30, 42, 14, 0.45);
+    text-decoration: none;
     transition: color 0.15s ease;
   }
 
-  .footer-credit-link:hover { color: #FFFFFF; }
+  .footer-links a:hover {
+    color: var(--texte);
+  }
 
+  /* EMAIL */
+  .footer-email {
+    font-size: 0.8rem;
+    color: rgba(30, 42, 14, 0.45);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .footer-email:hover {
+    color: #C97D55;
+  }
+
+  /* BOTTOM */
+  .footer-bottom {
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(30, 42, 14, 0.09);
+    text-align: center;
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(30, 42, 14, 0.25);
+  }
+
+  /* MOBILE */
   @media (max-width: 768px) {
-    .footer {
-      flex-direction: column !important;
-      height: auto !important;
-      min-height: auto !important;
-      padding: 24px 20px 88px !important;
-      gap: 14px;
-      text-align: center;
+    .footer-inner {
+      padding: 1rem 1.25rem;
     }
 
-    .footer-legal-links {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px 20px;
-      width: 100%;
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
-    .footer-legal-link {
-      white-space: normal;
-      text-align: center;
+    .footer-col--center,
+    .footer-col--right {
+      align-items: flex-start;
     }
 
-    .footer-credit { display: none; }
+    .footer-links {
+      justify-content: flex-start;
+    }
   }
 </style>
