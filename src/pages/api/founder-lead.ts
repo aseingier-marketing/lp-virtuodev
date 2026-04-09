@@ -1,8 +1,10 @@
 export const prerender = false;
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
+import { Client } from '@notionhq/client';
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
+const notion = new Client({ auth: import.meta.env.NOTION_API_KEY });
 
 // Rate limiter : max 3 soumissions / IP / heure
 const rateLimiter = new Map<string, { count: number; resetAt: number }>();
@@ -62,14 +64,18 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ success: true });
   }
 
-  const email  = sanitize(raw.email);
-  const source = sanitize(raw.source) || 'direct';
+  const email       = sanitize(raw.email);
+  const source      = sanitize(raw.source) || 'direct';
+  const utmSource   = sanitize(raw.utm_source);
+  const utmMedium   = sanitize(raw.utm_medium);
+  const utmCampaign = sanitize(raw.utm_campaign);
 
   const emailRegex = /^[^\s@]{1,64}@[^\s@]{1,253}\.[^\s@]{2,}$/;
   if (!email || !emailRegex.test(email)) {
     return json({ error: 'Email invalide.' }, 400);
   }
 
+  const createdAt   = new Date().toISOString();
   const displayDate = new Date().toLocaleString('fr-FR', { timeZone: 'Europe/Paris' });
 
   try {
@@ -94,21 +100,43 @@ export const POST: APIRoute = async ({ request }) => {
     await resend.emails.send({
       from: import.meta.env.RESEND_FROM_EMAIL,
       to:   email,
-      subject: 'On se retrouve quand ?',
+      subject: 'Merci pour votre intérêt',
       html: `
-        <div style="font-family:sans-serif;max-width:480px;margin:0 auto;color:#111;line-height:1.6;">
-          <p>Bonjour,</p>
-          <p>Je t'invite à réserver 15 minutes pour qu'on en parle et que je te montre concrètement l'impact pour une TPE/PME.</p>
-          <p style="margin:28px 0;">
+        <div style="font-family:Georgia,serif;max-width:480px;margin:0 auto;color:#111;font-size:15px;line-height:1.75;">
+          <p style="margin:0 0 16px;">Bonjour,</p>
+          <p style="margin:0 0 16px;">Merci pour votre intérêt.</p>
+          <p style="margin:0 0 16px;">Reccolt est destiné à toute entreprise qui a envie d'améliorer son système commercial. Pour vous l'expliquer, je fais des démonstrations de 10 minutes.</p>
+          <p style="margin:0 0 24px;">Vous pouvez réserver un créneau ou m'indiquer quand vous êtes disponibles.</p>
+          <p style="margin:0 0 24px;">
             <a href="https://cal.com/a.seingier-virtuodev/20min"
-               style="background:#7A8C3A;color:#fff;text-decoration:none;padding:12px 24px;border-radius:8px;font-weight:600;display:inline-block;">
+               style="background:#7A8C3A;color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-family:Georgia,serif;font-size:15px;display:inline-block;">
               Réserver un créneau
             </a>
           </p>
-          <p style="color:#666;font-size:13px;">L'équipe Reccolt</p>
+          <p style="margin:0;">Bien à vous,<br>L'équipe Reccolt</p>
         </div>
       `,
     });
+
+    // ── 3. Notion ──────────────────────────────────────────────
+    if (import.meta.env.NOTION_API_KEY && import.meta.env.NOTION_DATABASE_ID) {
+      await notion.pages.create({
+        parent: { database_id: import.meta.env.NOTION_DATABASE_ID },
+        properties: {
+          'Prénom':       { title:        [{ text: { content: '—' } }] },
+          'Nom':          { rich_text:    [{ text: { content: '—' } }] },
+          'Société':      { rich_text:    [{ text: { content: '—' } }] },
+          'Email':        { email:        email },
+          'Téléphone':    { phone_number: '' },
+          'Source':       { rich_text:    [{ text: { content: `fondateur / ${source}` } }] },
+          'UTM Source':   { rich_text:    utmSource   ? [{ text: { content: utmSource } }]   : [] },
+          'UTM Medium':   { rich_text:    utmMedium   ? [{ text: { content: utmMedium } }]   : [] },
+          'UTM Campaign': { rich_text:    utmCampaign ? [{ text: { content: utmCampaign } }] : [] },
+          'Statut':       { select:       { name: 'Nouveau' } },
+          'Date':         { date:         { start: createdAt } },
+        },
+      });
+    }
 
     console.info(`[founder-lead] Intéressé : ${email}`);
     return json({ success: true });
