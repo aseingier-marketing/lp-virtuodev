@@ -1,10 +1,10 @@
 ---
 ---
-<section id="section-offer" class="cta-band">
+<section id="offre-fondateur" class="cta-band">
   <div class="cta-band-inner">
 
 <h2 class="cta-title reveal reveal-delay-1">
-      Rejoins les premiers <span class="highlight">Reccolteurs</span>
+      Acc&egrave;de &agrave; Reccolt en <span style="display:inline-block;position:relative;color:var(--fond);background:var(--terracotta);border-radius:14px;padding:0.04em 0.22em 0.10em;transform:rotate(-0.5deg);transform-origin:center;box-shadow:inset 0 -4px 0 rgba(0,0,0,0.12);">avant-premi&egrave;re</span>
     </h2>
     <p class="cta-claim reveal reveal-delay-2">
       Reccolt est le <em>premier</em> syst&egrave;me commercial con&ccedil;u pour les TPE/PME.
@@ -29,15 +29,22 @@
       >
       <span class="input-error" id="email-error" role="alert">Adresse email invalide.</span>
       <button type="submit" class="btn-primary">
-        Je deviens Reccolteur
+        Je suis intéressé
       </button>
       <p class="cta-social-proof">
-        Tu rejoins les premi&egrave;res entreprises qui arr&ecirc;tent de laisser du chiffre de c&ocirc;t&eacute;.
+        Les 100 premiers b&eacute;n&eacute;ficient d&rsquo;un tarif exclusif.
+      </p>
+      <p class="cta-rgpd">
+        Tes donn&eacute;es sont utilis&eacute;es uniquement pour te recontacter dans le cadre de Reccolt.
       </p>
     </form>
 
     <div class="form-success" id="form-success" role="status">
-      Bienvenue. On revient vers toi sous 24h pour poser les bases.
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A8C3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+      <div>
+        <p class="form-success-title">Bienvenue parmi les Reccolteurs.</p>
+        <p class="form-success-sub">Je reviens vers toi sous 24h pour poser les bases. En attendant, rejoins la communaut&eacute; &rarr; <a href="/reccolteurs">Les Reccolteurs</a></p>
+      </div>
     </div>
 
   </div>
@@ -47,7 +54,7 @@
   .cta-band {
     background: #0D1207;
     border-top: 1px solid rgba(122, 140, 58, 0.15);
-    padding: clamp(1.75rem, 4vw, 2.75rem) clamp(1.25rem, 5vw, 2.5rem) clamp(2.5rem, 6vw, 4rem);
+    padding: clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 5vw, 2.5rem) clamp(1.75rem, 4vw, 2.75rem);
   }
 
   .cta-band-inner {
@@ -147,50 +154,83 @@
     align-items: center;
     justify-content: center;
     padding: 0.9rem 1.75rem;
-    background: var(--olive);
+    background: linear-gradient(160deg, #8A9E42 0%, #6B7C32 100%);
     color: var(--fond);
     font-family: var(--font-display);
     font-size: 0.95rem;
     font-weight: 700;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.03em;
     border: none;
-    border-radius: 3px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background 0.18s ease, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 20px -6px rgba(122, 140, 58, 0.50);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.12) inset, 0 4px 20px -4px rgba(90, 110, 30, 0.50);
+    transition: filter 0.18s ease, box-shadow 0.18s ease, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .btn-primary:hover  { background: #68793A; transform: translateY(-1px); }
-  .btn-primary:active { transform: translateY(1px) scale(0.985); }
+  .btn-primary:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.12) inset, 0 8px 28px -4px rgba(90, 110, 30, 0.60);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active { transform: translateY(0px) scale(0.98); filter: brightness(0.96); }
 
   .cta-social-proof {
     font-family: var(--font-display);
     font-size: 0.82rem;
-    color: rgba(245, 243, 238, 0.42);
+    font-weight: 500;
+    color: rgba(245, 243, 238, 0.85);
     margin-top: 0.75rem;
     text-align: center;
   }
 
-  .cta-guarantee {
+  .cta-rgpd {
     font-family: var(--font-body);
-    font-size: 0.85rem;
-    color: rgba(245, 243, 238, 0.28);
-    margin-top: 0.25rem;
-    font-style: italic;
+    font-size: 0.72rem;
+    color: rgba(245, 243, 238, 0.38);
+    margin-top: 0.5rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .cta-rgpd a {
+    color: rgba(245, 243, 238, 0.55);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   .form-success {
     display: none;
-    padding: 1rem 1.25rem;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
     background: rgba(122, 140, 58, 0.14);
     border: 1px solid rgba(122, 140, 58, 0.28);
-    border-radius: 3px;
-    font-family: var(--font-display);
-    font-size: 0.9rem;
-    color: var(--fond);
+    border-radius: 6px;
     max-width: 400px;
     margin: 0 auto;
   }
-  .form-success.visible { display: block; }
+  .form-success.visible { display: flex; }
+
+  .form-success-title {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--fond);
+    margin: 0 0 0.4rem;
+  }
+
+  .form-success-sub {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: rgba(245, 243, 238, 0.65);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .form-success-sub a {
+    color: var(--olive);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
 </style>
 
 <script>
@@ -242,7 +282,7 @@
 
     try {
       const utm = getUTMParams();
-      await fetch('/api/lead', {
+      await fetch('/api/founder-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: emailInput.value.trim(), _trap: trap, source: detectSource(), ...utm }),
@@ -251,7 +291,6 @@
       // Fail silently
     }
 
-    form!.style.display = 'none';
-    formSuccess!.classList.add('visible');
+    window.location.href = '/merci';
   });
 </script>

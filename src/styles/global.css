@@ -1110,7 +1110,6 @@ body {
 .gs-hidden {
   opacity: 0;
   transform: translateY(20px);
-  will-change: opacity, transform;
 }
 .gs-visible {
   opacity: 1;

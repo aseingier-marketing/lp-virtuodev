@@ -111,6 +111,42 @@ export const POST: APIRoute = async ({ request }) => {
       return json({ error: 'Erreur envoi email. Réessayez ou contactez-nous directement.' }, 500);
     }
 
+    // Mail de bienvenue au visiteur
+    await resend.emails.send({
+      from: import.meta.env.RESEND_FROM_EMAIL,
+      to:   email,
+      subject: `Bienvenue parmi les Reccolteurs, ${h(prenom)} !`,
+      html: `
+        <div style="font-family:Georgia,serif;max-width:520px;margin:0 auto;color:#1E2A0E;background:#F5F3EE;padding:40px 36px;border-radius:8px;">
+          <p style="font-size:18px;font-weight:700;margin:0 0 24px;letter-spacing:-0.02em;">Bonjour ${h(prenom)},</p>
+          <p style="font-size:15px;line-height:1.75;margin:0 0 16px;">
+            Merci pour ton intérêt.
+          </p>
+          <p style="font-size:15px;line-height:1.75;margin:0 0 16px;">
+            Je vais te recontacter très prochainement pour te montrer ce que fait Reccolt.
+          </p>
+          <p style="font-size:15px;line-height:1.75;margin:0 0 16px;">
+            Est-ce que tu as des disponibilités qui t'arrangent ?
+          </p>
+          <p style="font-size:15px;line-height:1.75;margin:0 0 24px;">
+            Sinon, tu peux directement choisir un créneau ici&nbsp;:
+          </p>
+          <p style="margin:0 0 32px;">
+            <a href="https://cal.com/a.seingier-virtuodev/20min" style="display:inline-block;background:#7A8C3A;color:#F5F3EE;font-family:Georgia,serif;font-size:15px;font-weight:700;text-decoration:none;padding:14px 28px;border-radius:6px;">
+              Choisir mon créneau &rarr;
+            </a>
+          </p>
+          <p style="font-size:15px;line-height:1.75;margin:0 0 32px;">
+            En attendant, tu peux me suivre sur LinkedIn&nbsp;:
+            <a href="https://www.linkedin.com/in/aseingier/" style="color:#7A8C3A;text-decoration:underline;">linkedin.com/in/aseingier</a>
+          </p>
+          <p style="font-size:15px;margin:0;">À très vite</p>
+          <hr style="border:none;border-top:1px solid rgba(30,42,14,0.12);margin:28px 0 20px;" />
+          <p style="font-size:12px;color:#4A5535;margin:0;">Reccolt</p>
+        </div>
+      `,
+    });
+
     if (import.meta.env.NOTION_API_KEY && import.meta.env.NOTION_DATABASE_ID) {
       await notion.pages.create({
         parent: { database_id: import.meta.env.NOTION_DATABASE_ID },

@@ -105,7 +105,7 @@ export const POST: APIRoute = async ({ request }) => {
     const { error: emailError } = await resend.emails.send({
       from: import.meta.env.RESEND_FROM_EMAIL,
       to:   import.meta.env.NOTIFICATION_EMAIL,
-      subject: `🚀 Nouveau lead Virtuodev — ${prenom} ${nom} (${societe})`,
+      subject: `🚀 Nouveau lead Reccolt — ${prenom} ${nom} (${societe})`,
       html: `
         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#111;">
           <h2 style="color:#1D5FBF;margin-bottom:4px;">Nouveau lead reçu</h2>

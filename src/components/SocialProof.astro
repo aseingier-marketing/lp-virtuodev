@@ -59,9 +59,9 @@
             <div class="pq-left">
               <h3 class="pq-profile-title">Artisans et dirigeants<br>B2C</h3>
               <p class="pq-profile-desc">Tu as du CA qui dort dans ta base. Tu n&rsquo;as juste <strong>pas le temps</strong> d&rsquo;aller le chercher.</p>
-              <button class="pq-cta" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})">
+              <a href="/formulaire" class="pq-cta">
                 &Ccedil;a m&rsquo;int&eacute;resse
-              </button>
+              </a>
             </div>
             <div class="pq-right">
               <p class="pq-problem">Tu g&egrave;res clients, projets et administratif. Le suivi commercial, tu le fais quand tu as le temps. Et tu n&rsquo;as jamais le temps.</p>
@@ -96,9 +96,9 @@
             <div class="pq-left">
               <h3 class="pq-profile-title">Agences et dirigeants<br>B2B</h3>
               <p class="pq-profile-desc">Tu as du CA qui dort dans ta base. <strong>Personne n&rsquo;a le temps</strong> d&rsquo;aller le chercher.</p>
-              <button class="pq-cta pq-cta-b2b" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})">
+              <a href="/formulaire" class="pq-cta pq-cta-b2b">
                 &Ccedil;a m&rsquo;int&eacute;resse
-              </button>
+              </a>
             </div>
             <div class="pq-right">
               <p class="pq-problem">Tu g&egrave;res missions, &eacute;quipes et prospection. Le suivi commercial, il se perd entre les dossiers. Et personne n&rsquo;a le temps de le rattraper.</p>
@@ -181,6 +181,15 @@
 
   window.addEventListener('scroll', tick, { passive: true });
   tick();
+
+  // Switcher cliquable : scroll vers la carte correspondante
+  sw0.addEventListener('click', () => {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  sw1.addEventListener('click', () => {
+    const targetScroll = section.offsetTop + (section.offsetHeight - window.innerHeight) * 0.55;
+    window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+  });
 })();
 </script>
 
@@ -332,7 +341,7 @@
     color: var(--texte-secondaire);
     background: transparent;
     border: none;
-    cursor: default;
+    cursor: pointer;
     transition: background 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
   }
   .pq-sw-item.pq-sw-active {
@@ -458,6 +467,7 @@
     font-size: 14px;
     cursor: pointer;
     border: none;
+    text-decoration: none;
     background: #4A5535;
     color: var(--fond);
     transition: background .2s, transform .2s, box-shadow .2s;

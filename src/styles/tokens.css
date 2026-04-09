@@ -3,13 +3,14 @@
    Servi depuis /public/fonts/ (zéro Google Fonts)
    ======================================== */
 
-/* Söhne Halbfett 600 */
+/* Söhne Halbfett 600 — limité aux glyphes réellement présents dans le fichier */
 @font-face {
   font-family: 'Söhne';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
   src: url('/fonts/sohne/Sohne-Halbfett.woff2') format('woff2');
+  unicode-range: U+0020, U+002C-002E, U+0030-0039, U+0041-005A, U+0061-007A, U+00D6, U+00F6;
 }
 @font-face {
   font-family: 'Söhne';
@@ -17,15 +18,17 @@
   font-weight: 600;
   font-display: swap;
   src: url('/fonts/sohne/Sohne-HalbfettKursiv.woff2') format('woff2');
+  unicode-range: U+0020, U+002C-002E, U+0030-0039, U+0041-005A, U+0061-007A, U+00D6, U+00F6;
 }
 
-/* Söhne Fett 700 */
+/* Söhne Fett 700 — limité aux glyphes réellement présents dans le fichier */
 @font-face {
   font-family: 'Söhne';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
   src: url('/fonts/sohne/Sohne-Fett.woff2') format('woff2');
+  unicode-range: U+0020, U+002C-002E, U+0030-0039, U+0041-005A, U+0061-007A, U+00D6, U+00F6;
 }
 @font-face {
   font-family: 'Söhne';
@@ -33,6 +36,25 @@
   font-weight: 700;
   font-display: swap;
   src: url('/fonts/sohne/Sohne-FettKursiv.woff2') format('woff2');
+  unicode-range: U+0020, U+002C-002E, U+0030-0039, U+0041-005A, U+0061-007A, U+00D6, U+00F6;
+}
+
+/* Söhne — patch DM Sans pour les glyphes accentués manquants (é, à, ç, è, ê, î, ô, û, œ…) */
+@font-face {
+  font-family: 'Söhne';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/dm-sans-latin.woff2') format('woff2');
+  unicode-range: U+00C0-00D5, U+00D7-00F5, U+00F7-00FF, U+0152-0153;
+}
+@font-face {
+  font-family: 'Söhne';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/dm-sans-latin.woff2') format('woff2');
+  unicode-range: U+00C0-00D5, U+00D7-00F5, U+00F7-00FF, U+0152-0153;
 }
 
 /* Söhne Mono Kräftig 500 */
@@ -128,7 +150,7 @@
 
   /* Accent par défaut = olive */
   --accent:        #7A8C3A;
-  --accent-hover:  #68793200;
+  --accent-hover:  #5A6B32;
   --accent-dim:    rgba(122, 140, 58, 0.12);
   --accent-border: rgba(122, 140, 58, 0.30);
 }

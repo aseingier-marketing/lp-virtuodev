@@ -12,6 +12,6 @@
     "@notionhq/client": "^5.13.0",
     "astro": "^6.1.2",
     "resend": "^6.9.4",
-    "shiki": "4.0.2"
+    "shiki": "^1.0.0"
   }
 }

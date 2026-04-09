@@ -6,7 +6,7 @@ export default defineConfig({
   // Les routes API gardent export const prerender = false pour rester en serverless
   output: 'static',
   adapter: vercel(),
-  site: 'https://virtuodev.com',
+  site: 'https://reccolt.com',
   compressHTML: true,
   build: {
     // Inline les feuilles de style < 4kB dans le HTML (évite un aller-retour réseau)

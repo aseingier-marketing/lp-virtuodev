@@ -1,21 +1,87 @@
 ---
 ---
-<section class="section-dark section-pad" style="background:#C97D55;border-top:none;padding-top:50px;padding-bottom:50px;">
-  <div class="section-inner" style="text-align:center;max-width:640px;">
+<section class="final-cta-section">
+  <div class="final-cta-inner">
     <div class="gs-hidden" data-gs="s11" data-gs-delay="0">
-      <h2 class="display-l" style="color:#fff;">Arr&ecirc;tez de laisser<br>vos clients sans suivi</h2>
+      <h2 class="final-cta-title">Rejoins la communaut&eacute; de <span class="final-cta-highlight">Reccolt</span></h2>
 
-      <div style="margin-top:28px;">
-        <p class="lead" style="color:rgba(255,255,255,0.85);">Profitez de l&rsquo;offre exclusive avec 100 autres entreprises</p>
-      </div>
+      <p class="final-cta-lead">Un mouvement de dirigeants qui r&eacute;coltent ce qu&rsquo;ils ont sem&eacute;</p>
 
-      <button class="btn-primary btn-primary-accent btn-primary-big" style="margin-top:36px;background:#4A5535;color:#F5F3EE;border-color:transparent;" onclick="document.getElementById('section-callback').scrollIntoView({behavior:'smooth'})">
-        Arr&ecirc;ter de perdre des clients &rarr;
-      </button>
-      <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:14px;">
-        Places limit&eacute;es
-      </div>
+      <a href="/reccolteurs" class="final-cta-btn">
+        En savoir plus &rarr;
+      </a>
     </div>
   </div>
 </section>
+
+<style>
+  .final-cta-section {
+    background: #0D1207;
+    border-top: 1px solid rgba(122, 140, 58, 0.15);
+    padding: clamp(3rem, 6vw, 5rem) clamp(1.25rem, 5vw, 2.5rem);
+  }
+
+  .final-cta-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .final-cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    color: var(--fond);
+    margin: 0 0 1.5rem;
+  }
+
+  .final-cta-highlight {
+    display: inline-block;
+    color: var(--fond);
+    background: var(--terracotta);
+    border-radius: 14px;
+    padding: 0.04em 0.22em 0.10em;
+    transform: rotate(-0.5deg);
+    transform-origin: center;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.12);
+  }
+
+  .final-cta-lead {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    line-height: 1.7;
+    color: rgba(245, 243, 238, 0.75);
+    margin: 0 0 2.25rem;
+  }
+
+  .final-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(160deg, #5A6B3D 0%, #3D4F28 100%);
+    color: var(--fond);
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.10) inset, 0 4px 20px -4px rgba(30, 42, 14, 0.40);
+    transition: filter 0.18s ease, box-shadow 0.18s ease, transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .final-cta-btn:hover {
+    filter: brightness(1.10);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.10) inset, 0 8px 28px -4px rgba(30, 42, 14, 0.50);
+    transform: translateY(-2px);
+  }
+
+  .final-cta-btn:active {
+    transform: translateY(0) scale(0.98);
+    filter: brightness(0.96);
+  }
+</style>
 

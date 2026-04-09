@@ -41,17 +41,20 @@
         <div class="why-mock why-mock--feed">
           <div class="mock-feed-item">
             <span class="mock-feed-dot mock-feed-dot--done"></span>
-            <span class="mock-msg-text">Relance envoyée — Dupont &amp; Fils</span>
+            <span class="mock-feed-num">12</span>
+            <span class="mock-msg-text mock-msg-text--bright">relances envoy&eacute;es ce mois</span>
             <span class="mock-feed-time">2h</span>
           </div>
           <div class="mock-feed-item">
             <span class="mock-feed-dot mock-feed-dot--done"></span>
-            <span class="mock-msg-text">Rappel envoyé — TechPro SAS</span>
+            <span class="mock-feed-num">4</span>
+            <span class="mock-msg-text mock-msg-text--bright">devis relancés aujourd'hui</span>
             <span class="mock-feed-time">5h</span>
           </div>
           <div class="mock-feed-item mock-feed-item--pending">
             <span class="mock-feed-dot mock-feed-dot--pending"></span>
-            <span class="mock-msg-text">Offre limitée — Lefebvre &amp; Co</span>
+            <span class="mock-feed-num mock-feed-num--pending">3</span>
+            <span class="mock-msg-text mock-msg-text--bright">actions planifi&eacute;es demain</span>
             <span class="mock-feed-time">demain</span>
           </div>
         </div>
@@ -286,15 +289,20 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.15);
   }
 
   .mock-feed-item {
     display: flex;
     align-items: center;
     gap: 8px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 6px 8px;
   }
 
-  .mock-feed-item--pending .mock-msg-text {
+  .mock-feed-item--pending .mock-msg-text:not(.mock-msg-text--bright) {
     color: rgba(255,255,255,0.35);
   }
 
@@ -308,10 +316,30 @@
   .mock-feed-dot--done    { background: #7A8C3A; }
   .mock-feed-dot--pending { background: rgba(255,255,255,0.20); border: 1px dashed rgba(255,255,255,0.30); }
 
+  .mock-feed-num {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 800;
+    color: #FFFFFF;
+    flex-shrink: 0;
+    min-width: 20px;
+  }
+
+  .mock-feed-num--pending {
+    color: #FFFFFF;
+  }
+
+  .mock-msg-text--bright {
+    font-family: var(--font-display);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 15px;
+  }
+
   .mock-feed-time {
     font-family: var(--font-mono);
     font-size: 10px;
-    color: rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.75);
     margin-left: auto;
     flex-shrink: 0;
   }

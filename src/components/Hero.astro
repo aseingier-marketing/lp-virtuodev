@@ -27,7 +27,7 @@
 
     <!-- Badge -->
     <div class="hero-badge">
-      Système commercial autonome
+      Système commercial TPE/PME
     </div>
 
     <!-- H1 -->
@@ -42,11 +42,11 @@
 
     <!-- CTAs -->
     <div class="hero-ctas">
-      <a href="#offre-fondateur" class="btn-primary">
-        Devenir Reccolteur
+      <a href="/formulaire" class="btn-primary">
+        Rejoindre Reccolt
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <a href="/demo" class="btn-secondary">
+      <a href="/formulaire#my-cal-inline-20min" class="btn-secondary">
         Réserver une démo
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -56,7 +56,7 @@
     <div class="hero-trust" aria-label="Garanties">
       <span>100 places fondateur</span>
       <span class="sep" aria-hidden="true">·</span>
-      <span>B2B . Artisan . Agence web . Sécurité</span>
+      <span>B2B/B2C : Artisan, agence, service</span>
     </div>
 
   </div>
@@ -83,7 +83,6 @@
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-    will-change: transform;
   }
 
   .blob-terracotta {
@@ -246,25 +245,29 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.9rem 1.65rem;
-    background: #4A5535;
+    background: linear-gradient(160deg, #5A6B3D 0%, #3D4F28 100%);
     color: var(--fond);
     font-family: var(--font-display);
     font-size: 0.875rem;
     font-weight: 600;
-    letter-spacing: 0.01em;
-    border-radius: 4px;
+    letter-spacing: 0.03em;
+    border-radius: 6px;
     text-decoration: none;
-    border: 1.5px solid transparent;
-    box-shadow: 0 4px 18px rgba(30, 42, 14, 0.24);
+    border: none;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.10) inset, 0 4px 20px -4px rgba(30, 42, 14, 0.40);
     transition:
-      background  0.2s ease,
-      box-shadow  0.2s ease,
-      transform   0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      filter      0.18s ease,
+      box-shadow  0.18s ease,
+      transform   0.15s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .btn-primary:hover {
-    background: #3a4229;
-    box-shadow: 0 8px 28px rgba(30, 42, 14, 0.32);
+    filter: brightness(1.10);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.10) inset, 0 8px 28px -4px rgba(30, 42, 14, 0.50);
     transform: translateY(-2px);
+  }
+  .btn-primary:active {
+    transform: translateY(0px) scale(0.98);
+    filter: brightness(0.96);
   }
   .btn-primary svg {
     transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
