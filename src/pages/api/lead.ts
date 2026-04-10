@@ -138,7 +138,7 @@ export const POST: APIRoute = async ({ request }) => {
           'Nom':          { rich_text:    [{ text: { content: nom } }] },
           'Société':      { rich_text:    [{ text: { content: societe } }] },
           'Email':        { email:        email },
-          'Téléphone':    { phone_number: tel },
+          ...(tel ? { 'Téléphone': { phone_number: tel } } : {}),
           'Message':      { rich_text:    message ? [{ text: { content: message } }] : [] },
           'Source':       { rich_text:    [{ text: { content: source } }] },
           'UTM Source':   { rich_text:    utmSource   ? [{ text: { content: utmSource } }]   : [] },
