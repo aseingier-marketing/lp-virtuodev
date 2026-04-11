@@ -153,4 +153,53 @@
   --accent-hover:  #5A6B32;
   --accent-dim:    rgba(122, 140, 58, 0.12);
   --accent-border: rgba(122, 140, 58, 0.30);
+  --accent-light:  #9AAB55;
+
+  /* ========================================
+     PALETTE ÉTENDUE — mappée sur Reccolt
+     Remplace les variables --blanc/--noir/--gris
+     de l'ancienne base Virtuodev
+     ======================================== */
+
+  /* Fonds sombres */
+  --noir-900: #1E2A0E;          /* = --bg-dark */
+  --noir-800: #253415;          /* légèrement plus clair */
+  --noir-700: #2A3B18;          /* = --bg-dark-card */
+  --noir-600: #354B20;          /* hover sur fond sombre */
+
+  /* Fonds clairs */
+  --blanc-100: #FFFFFF;         /* = --bg-card */
+  --blanc-300: #EDE9E1;         /* = --bg-elevated */
+
+  /* Gris (teintés vert pour cohérence Reccolt) */
+  --gris-200: rgba(245, 243, 238, 0.80);
+  --gris-300: rgba(245, 243, 238, 0.60);
+  --gris-500: rgba(74, 85, 53, 0.45);
+  --gris-600: rgba(74, 85, 53, 0.55);
+  --gris-700: #4A5535;
+
+  /* Textes sur fond sombre */
+  --text-dark-primary:   #F5F3EE;
+  --text-dark-secondary: rgba(245, 243, 238, 0.70);
+  --text-dark-muted:     rgba(245, 243, 238, 0.45);
+
+  /* Textes sur fond clair */
+  --text-light-primary:   #1E2A0E;
+  --text-light-secondary: #4A5535;
+  --text-light-muted:     rgba(74, 85, 53, 0.55);
+
+  /* Fonds sémantiques */
+  --bg-light:         #F5F3EE;
+  --bg-light-alt:     #EDE9E1;
+  --bg-light-card:    #FFFFFF;
+  --bg-dark-elevated: #2A3B18;
+
+  /* Bordures sémantiques */
+  --border-light:       rgba(30, 42, 14, 0.12);
+  --border-light-hover: rgba(30, 42, 14, 0.25);
+  --border-dark-hover:  rgba(245, 243, 238, 0.22);
+
+  /* Statut */
+  --success:     #5A8A3C;
+  --success-dim: rgba(90, 138, 60, 0.15);
 }
