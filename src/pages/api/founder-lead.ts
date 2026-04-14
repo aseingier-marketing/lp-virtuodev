@@ -96,29 +96,7 @@ export const POST: APIRoute = async ({ request }) => {
       `,
     });
 
-    // ── 2. Mail de confirmation à la personne ──────────────────
-    await resend.emails.send({
-      from: import.meta.env.RESEND_FROM_EMAIL,
-      to:   email,
-      subject: 'Merci pour votre intérêt',
-      html: `
-        <div style="font-family:Georgia,serif;max-width:480px;margin:0 auto;color:#111;font-size:15px;line-height:1.75;">
-          <p style="margin:0 0 16px;">Bonjour,</p>
-          <p style="margin:0 0 16px;">Merci pour votre intérêt.</p>
-          <p style="margin:0 0 16px;">Reccolt est destiné à toute entreprise qui a envie d'améliorer son système commercial. Pour vous l'expliquer, je fais des démonstrations de 10 minutes.</p>
-          <p style="margin:0 0 24px;">Vous pouvez réserver un créneau ou m'indiquer quand vous êtes disponibles.</p>
-          <p style="margin:0 0 24px;">
-            <a href="https://cal.com/a.seingier-virtuodev/20min"
-               style="background:#7A8C3A;color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-family:Georgia,serif;font-size:15px;display:inline-block;">
-              Réserver un créneau
-            </a>
-          </p>
-          <p style="margin:0;">Bien à vous,<br>L'équipe Reccolt</p>
-        </div>
-      `,
-    });
-
-    // ── 3. Notion ──────────────────────────────────────────────
+    // ── 2. Notion ──────────────────────────────────────────────
     if (import.meta.env.NOTION_API_KEY && import.meta.env.NOTION_DATABASE_ID) {
       await notion.pages.create({
         parent: { database_id: import.meta.env.NOTION_DATABASE_ID },

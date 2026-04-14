@@ -116,19 +116,12 @@ export const POST: APIRoute = async ({ request }) => {
     await resend.emails.send({
       from: import.meta.env.RESEND_FROM_EMAIL,
       to:   email,
-      subject: origin === 'reccolteur' ? `Bienvenue parmi les Reccolteurs, ${h(prenom)}` : `Bienvenue à Reccolt`,
-      html: origin === 'reccolteur' ? `
-        <div style="font-family:Georgia,serif;max-width:480px;margin:0 auto;color:#111;font-size:15px;line-height:1.75;">
-          <p style="margin:0 0 16px;">Bonjour ${h(prenom)},</p>
-          <p style="margin:0 0 16px;">Tu fais maintenant partie des Reccolteurs.</p>
-          <p style="margin:0 0 24px;">Je te tiendrai informé des actualités de la communauté, des prochaines conférences et des intervenants à venir.</p>
-          <p style="margin:0;">À très vite,<br>L'équipe Reccolt</p>
-        </div>
-      ` : `
+      subject: `Bienvenue à Reccolt`,
+      html: `
         <div style="font-family:Georgia,serif;max-width:480px;margin:0 auto;color:#111;font-size:15px;line-height:1.75;">
           <p style="margin:0 0 16px;">Bonjour ${h(prenom)},</p>
           <p style="margin:0 0 16px;">Merci pour ton intérêt.</p>
-          <p style="margin:0 0 24px;">Pour t'expliquer comment Reccolt peut être utile pour ton entreprise, je réalise des démonstrations de 10 minutes. Ci-dessous tu as mon calendrier pour prendre un rendez-vous, sinon tu peux répondre à ce mail avec tes disponibilités.</p>
+          <p style="margin:0 0 24px;">Pour t'expliquer comment l'employé IA Reccolt peut être utile pour ton entreprise, je réalise des démonstrations de 20 minutes. Ci-dessous tu as mon calendrier pour prendre un rendez-vous, sinon tu peux répondre à ce mail avec tes disponibilités.</p>
           <p style="margin:0 0 24px;">
             <a href="https://cal.com/a.seingier-virtuodev/20min" style="background:#7A8C3A;color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-family:Georgia,serif;font-size:15px;display:inline-block;">
               Choisir un créneau
@@ -155,7 +148,7 @@ export const POST: APIRoute = async ({ request }) => {
           'UTM Source':   { rich_text: utmSource   ? [{ text: { content: utmSource } }]   : [] },
           'UTM Medium':   { rich_text: utmMedium   ? [{ text: { content: utmMedium } }]   : [] },
           'UTM Campaign': { rich_text: utmCampaign ? [{ text: { content: utmCampaign } }] : [] },
-          'Statut':       { select:    { name: origin === 'reccolteur' ? 'Reccolteur' : 'Nouveau' } },
+          'Statut':       { select:    { name: 'Nouveau' } },
           'Date':         { date:      { start: createdAt } },
         },
       });
