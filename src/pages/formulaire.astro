@@ -41,21 +41,17 @@ import '../styles/global.css';
         <!-- Colonne gauche : texte -->
         <div class="demo-text-col">
           <h1 class="demo-title">
-            Rejoindre le projet <span class="demo-highlight">Reccolt</span>
+            <span class="demo-highlight">Reccolt</span> s'occupe de ton suivi commercial
           </h1>
 
-          <p class="demo-subtitle">
-            Rejoins les premières entreprises qui structurent leur suivi commercial sans recruter, sans complexité, sans changer leurs outils.
-          </p>
-
-          <ul class="demo-checklist">
+<ul class="demo-checklist">
             <li>
               <span class="demo-check-dot"></span>
               <span>Le bras droit commercial des <strong>TPE/PME</strong></span>
             </li>
             <li>
               <span class="demo-check-dot"></span>
-              <span>Pas de logiciel à apprendre, <strong>on s'adapte à tes outils</strong></span>
+              <span>Pas de logiciel à apprendre, <strong>l'employé IA s'adapte à tes outils</strong></span>
             </li>
             <li>
               <span class="demo-check-dot"></span>
@@ -112,13 +108,40 @@ import '../styles/global.css';
               <span class="field-error" id="email-error" role="alert">Adresse email invalide.</span>
             </div>
 
+            <div class="demo-fields-row">
+              <div class="demo-field">
+                <label for="demo-telephone">Téléphone</label>
+                <input
+                  type="tel"
+                  id="demo-telephone"
+                  name="telephone"
+                  placeholder="06 12 34 56 78"
+                  autocomplete="tel"
+                  required
+                >
+                <span class="field-error" id="telephone-error" role="alert">Téléphone requis.</span>
+              </div>
+              <div class="demo-field">
+                <label for="demo-entreprise">Nom d'entreprise</label>
+                <input
+                  type="text"
+                  id="demo-entreprise"
+                  name="entreprise"
+                  placeholder="Mon entreprise"
+                  autocomplete="organization"
+                  required
+                >
+                <span class="field-error" id="entreprise-error" role="alert">Nom d'entreprise requis.</span>
+              </div>
+            </div>
+
             <button type="submit" class="demo-submit">
               Je suis intéressé
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
 
             <p class="demo-reassurance">
-              Sans engagement. Je te réponds sous 24h.
+              Sans engagement. Je te réponds sous 48h.
             </p>
 
             <p class="demo-rgpd">
@@ -135,82 +158,6 @@ import '../styles/global.css';
               <span class="demo-success-sub">Tu pr&eacute;f&egrave;res choisir ton cr&eacute;neau maintenant&nbsp;? <a href="#reserver">R&eacute;serve directement ci-dessous &darr;</a></span>
             </div>
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── SECTION POURQUOI ── -->
-    <section class="pj-section">
-      <div class="pj-inner">
-
-        <div class="pj-label">
-          <span class="pj-label-line"></span>
-          <span class="pj-label-text">Le projet</span>
-        </div>
-
-        <div class="pj-grid">
-          <div class="pj-left">
-            <h2 class="pj-title">Pourquoi nous rejoindre <span class="pj-highlight">maintenant&nbsp;?</span></h2>
-          </div>
-          <div class="pj-right">
-            <div class="pj-card">
-              <p class="pj-body">Nous construisons Reccolt avec les premiers dirigeants qui rejoignent l&rsquo;aventure.<br>Votre présence dès maintenant a une valeur directe sur le produit final.</p>
-              <p class="pj-body">Vous ne souscrivez pas &agrave; un outil standard &mdash; vous participez &agrave; le fa&ccedil;onner selon vos besoins r&eacute;els du quotidien. Et vous b&eacute;n&eacute;ficiez d&rsquo;un tarif exclusif bloqu&eacute; &agrave; vie.</p>
-              <p class="pj-tagline">Ce n&rsquo;est pas un acc&egrave;s anticip&eacute;. C&rsquo;est une co-construction avec un tarif exclusif.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── SECTION AVANTAGES ── -->
-    <section class="av-section">
-      <div class="av-inner">
-
-        <div class="pj-label av-label">
-          <span class="pj-label-line av-label-line"></span>
-          <span class="pj-label-text av-label-text">Offre Fondateur</span>
-        </div>
-
-        <div class="av-head">
-          <h2 class="av-title">Vos avantages comme<br><span class="av-title-accent">membre fondateur</span></h2>
-          <p class="av-subtitle">Des bénéfices immédiats, et des réductions uniques.</p>
-        </div>
-
-        <div class="av-grid">
-
-          <!-- Card 1 — Diagnostic -->
-          <div class="av-card">
-            <div class="av-card-num">01</div>
-            <div class="av-card-body">
-              <h3 class="av-card-title">Le diagnostic Reccolt offert</h3>
-              <p class="av-card-desc">Vos opportunités commerciales identifiées, vos points de friction détectés. Un plan d'action personnalisé, prêt à appliquer.</p>
-              <div class="av-card-tag">Inclus · Offert</div>
-            </div>
-          </div>
-
-          <!-- Card 2 — Relance devis -->
-          <div class="av-card">
-            <div class="av-card-num">02</div>
-            <div class="av-card-body">
-              <h3 class="av-card-title">Vos devis non signés relancés</h3>
-              <p class="av-card-desc">Email et SMS ciblés sur 2 ans de devis dormants. On s'occupe de tout pour vous ramener des rendez-vous.</p>
-              <div class="av-card-tag">12 mois inclus</div>
-            </div>
-          </div>
-
-          <!-- Card 3 — Parrainage -->
-          <div class="av-card av-card--accent">
-            <div class="av-card-num av-card-num--accent">03</div>
-            <div class="av-card-body">
-              <h3 class="av-card-title">5 parrainages = accès à vie</h3>
-              <p class="av-card-desc">Parrainez 5 dirigeants et votre accès devient définitif. Pour ceux qui construisent avec nous.</p>
-              <div class="av-card-tag av-card-tag--accent">Accès à vie</div>
-            </div>
-          </div>
-
         </div>
 
       </div>
@@ -617,7 +564,7 @@ import '../styles/global.css';
 
   .demo-rgpd {
     font-family: var(--font-body);
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.60);
     margin-top: 0.25rem;
     line-height: 1.5;
@@ -1086,6 +1033,13 @@ import '../styles/global.css';
 </style>
 
 <script>
+  // Pré-remplir l'email depuis l'URL (?email=...)
+  const urlEmail = new URLSearchParams(window.location.search).get('email');
+  if (urlEmail) {
+    const emailField = document.getElementById('demo-email') as HTMLInputElement;
+    if (emailField) emailField.value = urlEmail;
+  }
+
   function getUTMParams() {
     const p = new URLSearchParams(window.location.search);
     return {
@@ -1103,14 +1057,18 @@ import '../styles/global.css';
     try { return new URL(ref).hostname; } catch { return 'direct'; }
   }
 
-  const form         = document.getElementById('demo-contact-form') as HTMLFormElement;
-  const prenomInput  = document.getElementById('demo-prenom')    as HTMLInputElement;
-  const nomInput     = document.getElementById('demo-nom')        as HTMLInputElement;
-  const emailInput   = document.getElementById('demo-email')      as HTMLInputElement;
-  const prenomError  = document.getElementById('prenom-error');
-  const nomError     = document.getElementById('nom-error');
-  const emailError   = document.getElementById('email-error');
-  const successBox   = document.getElementById('demo-success');
+  const form            = document.getElementById('demo-contact-form') as HTMLFormElement;
+  const prenomInput     = document.getElementById('demo-prenom')     as HTMLInputElement;
+  const nomInput        = document.getElementById('demo-nom')         as HTMLInputElement;
+  const emailInput      = document.getElementById('demo-email')       as HTMLInputElement;
+  const telephoneInput  = document.getElementById('demo-telephone')   as HTMLInputElement;
+  const entrepriseInput = document.getElementById('demo-entreprise')  as HTMLInputElement;
+  const prenomError     = document.getElementById('prenom-error');
+  const nomError        = document.getElementById('nom-error');
+  const emailError      = document.getElementById('email-error');
+  const telephoneError  = document.getElementById('telephone-error');
+  const entrepriseError = document.getElementById('entreprise-error');
+  const successBox      = document.getElementById('demo-success');
 
   const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
@@ -1119,9 +1077,11 @@ import '../styles/global.css';
     errEl?.classList.remove('visible');
   }
 
-  prenomInput.addEventListener('input', () => { if (prenomInput.value.trim()) clearError(prenomInput, prenomError); });
-  nomInput.addEventListener('input',    () => { if (nomInput.value.trim())    clearError(nomInput,    nomError);    });
-  emailInput.addEventListener('input',  () => { if (isValidEmail(emailInput.value)) clearError(emailInput, emailError); });
+  prenomInput.addEventListener('input',     () => { if (prenomInput.value.trim())          clearError(prenomInput,     prenomError);     });
+  nomInput.addEventListener('input',        () => { if (nomInput.value.trim())              clearError(nomInput,        nomError);        });
+  emailInput.addEventListener('input',      () => { if (isValidEmail(emailInput.value))     clearError(emailInput,      emailError);      });
+  telephoneInput.addEventListener('input',  () => { if (telephoneInput.value.trim())        clearError(telephoneInput,  telephoneError);  });
+  entrepriseInput.addEventListener('input', () => { if (entrepriseInput.value.trim())       clearError(entrepriseInput, entrepriseError); });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1143,6 +1103,16 @@ import '../styles/global.css';
       emailError?.classList.add('visible');
       valid = false;
     }
+    if (!telephoneInput.value.trim()) {
+      telephoneInput.classList.add('error');
+      telephoneError?.classList.add('visible');
+      valid = false;
+    }
+    if (!entrepriseInput.value.trim()) {
+      entrepriseInput.classList.add('error');
+      entrepriseError?.classList.add('visible');
+      valid = false;
+    }
 
     if (!valid) {
       form.querySelector('.error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1160,10 +1130,12 @@ import '../styles/global.css';
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          prenom: prenomInput.value.trim(),
-          nom:    nomInput.value.trim(),
-          email:  emailInput.value.trim(),
-          _trap:  trap,
+          prenom:     prenomInput.value.trim(),
+          nom:        nomInput.value.trim(),
+          email:      emailInput.value.trim(),
+          telephone:  telephoneInput.value.trim(),
+          entreprise: entrepriseInput.value.trim(),
+          _trap:      trap,
           source: detectSource(),
           ...utm,
         }),

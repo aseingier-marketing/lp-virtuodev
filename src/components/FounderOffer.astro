@@ -4,10 +4,10 @@
   <div class="cta-band-inner">
 
 <h2 class="cta-title reveal reveal-delay-1">
-      Acc&egrave;de &agrave; Reccolt en <span style="display:inline-block;position:relative;color:var(--fond);background:var(--terracotta);border-radius:14px;padding:0.04em 0.22em 0.10em;transform:rotate(-0.5deg);transform-origin:center;box-shadow:inset 0 -4px 0 rgba(0,0,0,0.12);">avant-premi&egrave;re</span>
+      R&eacute;serve ton <span style="display:inline-block;position:relative;color:var(--fond);background:var(--terracotta);border-radius:14px;padding:0.04em 0.22em 0.10em;transform:rotate(-0.5deg);transform-origin:center;box-shadow:inset 0 -4px 0 rgba(0,0,0,0.12);">employ&eacute; IA</span>
     </h2>
     <p class="cta-claim reveal reveal-delay-2">
-      Reccolt est le <em>premier</em> syst&egrave;me commercial con&ccedil;u pour les TPE/PME.
+      D&eacute;couvre les avantages pour ton entreprise
     </p>
 
     <form
@@ -34,16 +34,13 @@
       <p class="cta-social-proof">
         Les 100 premiers b&eacute;n&eacute;ficient d&rsquo;un tarif exclusif.
       </p>
-      <p class="cta-rgpd">
-        Tes donn&eacute;es sont utilis&eacute;es uniquement pour te recontacter dans le cadre de Reccolt.
-      </p>
     </form>
 
     <div class="form-success" id="form-success" role="status">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A8C3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
       <div>
         <p class="form-success-title">Bienvenue parmi les Reccolteurs.</p>
-        <p class="form-success-sub">Je reviens vers toi sous 24h pour poser les bases. En attendant, rejoins la communaut&eacute; &rarr; <a href="/reccolteurs">Les Reccolteurs</a></p>
+        <p class="form-success-sub">Je reviens vers toi sous 24h pour poser les bases.</p>
       </div>
     </div>
 
@@ -275,22 +272,11 @@
       return;
     }
 
-    const trap = (document.getElementById('offer-trap') as HTMLInputElement).value;
     const btn  = form!.querySelector('button[type="submit"]') as HTMLButtonElement;
     btn.disabled = true;
     btn.textContent = 'Envoi en cours\u2026';
 
-    try {
-      const utm = getUTMParams();
-      await fetch('/api/founder-lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: emailInput.value.trim(), _trap: trap, source: detectSource(), ...utm }),
-      });
-    } catch (_) {
-      // Fail silently
-    }
-
-    window.location.href = '/merci';
+    const email = encodeURIComponent(emailInput.value.trim());
+    window.location.href = `/formulaire?email=${email}`;
   });
 </script>
