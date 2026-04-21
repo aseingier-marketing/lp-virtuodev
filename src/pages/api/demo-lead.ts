@@ -123,7 +123,7 @@ export const POST: APIRoute = async ({ request }) => {
           <p style="margin:0 0 16px;">Merci pour ton intérêt.</p>
           <p style="margin:0 0 24px;">Pour t'expliquer comment l'employé IA Reccolt peut être utile pour ton entreprise, je réalise des démonstrations de 20 minutes. Ci-dessous tu as mon calendrier pour prendre un rendez-vous, sinon tu peux répondre à ce mail avec tes disponibilités.</p>
           <p style="margin:0 0 24px;">
-            <a href="https://cal.com/a.seingier-virtuodev/20min" style="background:#7A8C3A;color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-family:Georgia,serif;font-size:15px;display:inline-block;">
+            <a href="https://cal.com/a.seingier-reccolt/20min" style="background:#7A8C3A;color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-family:Georgia,serif;font-size:15px;display:inline-block;">
               Choisir un créneau
             </a>
           </p>

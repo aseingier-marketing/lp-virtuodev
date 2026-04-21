@@ -1,0 +1,54 @@
+---
+---
+<section class="motion-video-section" aria-label="Aperçu Reccolt">
+  <div class="motion-video-inner gs-hidden" data-gs-delay="0.05">
+    <div class="video-frame">
+    </div>
+  </div>
+</section>
+
+<style>
+  .motion-video-section {
+    position: relative;
+    z-index: 1;
+    background: var(--fond);
+    padding: 0 var(--px, 1.5rem) clamp(3rem, 6vw, 5rem);
+    display: flex;
+    justify-content: center;
+  }
+
+  .motion-video-inner {
+    width: 100%;
+    max-width: min(92vw, 900px);
+  }
+
+  .video-frame {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(30, 42, 14, 0.08),
+      0 8px 40px -8px rgba(30, 42, 14, 0.18),
+      0 32px 80px -16px rgba(30, 42, 14, 0.12);
+    background: #0e1208;
+  }
+
+  /* Scroll reveal */
+  .gs-hidden {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity  0.72s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .gs-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 640px) {
+    .video-frame {
+      border-radius: 10px;
+    }
+  }
+</style>

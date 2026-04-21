@@ -431,11 +431,8 @@
 
   /* En-tête */
   .s5-head-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: start;
     margin-bottom: 56px;
+    text-align: center;
   }
   .s5-heading {
     font-family: var(--font-display);
@@ -447,6 +444,9 @@
     margin: 0;
   }
   .s5-heading-accent { color: var(--terracotta); }
+  .s5-wavy {
+    color: var(--bordeaux);
+  }
   .s5-subhead {
     font-family: var(--font-body);
     font-size: clamp(15px, 1.4vw, 17px);
@@ -457,193 +457,175 @@
   }
   .s5-subhead strong { color: var(--texte); font-weight: 600; }
 
-  /* Grille 3 cartes */
-  .s5-layout {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: stretch;
-  }
-
-  /* Carte */
-  .s5-card {
-    background: #FFFFFF;
+  /* ── Tableau comparatif ── */
+  .s5-table-wrap {
     border: 1px solid var(--border);
     border-radius: 20px;
-    padding: 28px 24px 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(30,42,14,0.06);
+  }
+  .s5-table {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    box-shadow: 0 2px 12px rgba(30,42,14,0.04);
-    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1);
   }
-  .s5-card:hover {
-    border-color: rgba(122,140,58,0.30);
-    box-shadow: 0 8px 32px rgba(122,140,58,0.09);
-    transform: translateY(-2px);
-  }
-  .s5-card--alert {
-    border-color: rgba(201,125,85,0.22);
-  }
-  .s5-card--alert:hover {
-    border-color: rgba(201,125,85,0.42);
-    box-shadow: 0 8px 32px rgba(201,125,85,0.10);
-  }
-  .s5-card-body { display: flex; flex-direction: column; gap: 10px; }
-  .s5-card-title {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(16px, 1.5vw, 18px);
-    color: var(--texte);
-    letter-spacing: -0.02em;
-    line-height: 1.3;
-    margin: 0;
-  }
-  .s5-card-desc {
-    font-family: var(--font-body);
-    font-size: 14px;
-    color: var(--texte-secondaire);
-    line-height: 1.65;
-    margin: 0;
+  .s5-table-header,
+  .s5-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 1fr;
   }
 
-  /* Mock UI commun */
-  .s5-mock {
+  /* Header */
+  .s5-table-header {
+    border-bottom: 1px solid var(--border);
+  }
+  .s5-col-cat-head {
     background: var(--fond);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 12px;
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+    padding: 16px 28px;
+    border-right: 1px solid var(--border);
   }
-  .s5-mock--alert {
-    background: rgba(201,125,85,0.05);
-    border-color: rgba(201,125,85,0.20);
-  }
-  .s5-mock-ui-label {
-    font-family: var(--font-display);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-    color: var(--texte-secondaire);
-    opacity: 0.55;
-  }
-
-  /* Card 1 — Devis en attente */
-  .s5-quote-row {
+  .s5-col-before-head {
+    background: rgba(156,13,15,0.04);
+    padding: 16px 28px;
+    border-right: 1px solid rgba(156,13,15,0.10);
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 8px;
   }
-  .s5-quote-info { display: flex; flex-direction: column; gap: 2px; }
-  .s5-quote-name {
+  .s5-col-after-head {
+    background: rgba(122,140,58,0.06);
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .s5-col-label {
     font-family: var(--font-display);
-    font-size: 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .s5-col-label--before { color: var(--bordeaux); }
+  .s5-col-label--after  { color: var(--olive); }
+  .s5-label-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    flex-shrink: 0;
+  }
+  .s5-label-dot--before { background: var(--bordeaux); opacity: 0.6; }
+  .s5-label-dot--after  { background: var(--olive); }
+
+  /* Rows */
+  .s5-row {
+    border-bottom: 1px solid var(--border);
+    transition: filter 0.18s ease;
+  }
+  .s5-row:last-child { border-bottom: none; }
+  .s5-row:hover .s5-col-cat { background: rgba(30,42,14,0.05); }
+
+  .s5-row--result .s5-col-cat {
+    background: rgba(30,42,14,0.06);
+    border-top: 1px solid var(--border);
+  }
+  .s5-row--result .s5-col-before {
+    background: rgba(156,13,15,0.05);
+    border-top: 1px solid rgba(156,13,15,0.10);
+  }
+  .s5-row--result .s5-col-after {
+    background: rgba(122,140,58,0.08);
+    border-top: 1px solid rgba(122,140,58,0.18);
+    color: var(--olive);
+    font-weight: 600;
+  }
+
+  .s5-col-cat {
+    background: rgba(30,42,14,0.025);
+    border-right: 1px solid var(--border);
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.18s ease;
+  }
+  .s5-cat-accent {
+    display: block;
+    flex-shrink: 0;
+    width: 3px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--terracotta);
+    opacity: 0.5;
+  }
+  .s5-cat-label {
+    font-family: var(--font-display);
+    font-size: 15px;
     font-weight: 700;
     color: var(--texte);
     letter-spacing: -0.01em;
+    line-height: 1.3;
   }
-  .s5-quote-amount {
-    font-family: var(--font-mono);
-    font-size: 12.5px;
+
+  .s5-col-before {
+    background: rgba(156,13,15,0.02);
+    border-right: 1px solid rgba(156,13,15,0.08);
+    padding: 22px 28px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--texte-secondaire);
+    line-height: 1.55;
+    display: flex;
+    align-items: center;
+  }
+
+  .s5-col-after {
+    background: rgba(122,140,58,0.03);
+    padding: 22px 28px;
+    font-family: var(--font-body);
+    font-size: 14px;
     font-weight: 500;
-    color: var(--texte-secondaire);
+    color: var(--texte);
+    line-height: 1.55;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
-  .s5-status-badge {
-    font-family: var(--font-display);
-    font-size: 11px;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 999px;
+  .s5-check {
     flex-shrink: 0;
-    background: rgba(156,13,15,0.08);
-    color: var(--bordeaux);
-    border: 1px solid rgba(156,13,15,0.15);
-  }
-  .s5-timeline { display: flex; flex-direction: column; gap: 6px; }
-  .s5-timeline-track {
-    height: 4px;
-    background: rgba(30,42,14,0.08);
+    width: 20px;
+    height: 20px;
     border-radius: 999px;
-    overflow: hidden;
-  }
-  .s5-timeline-fill {
-    height: 100%;
-    width: 87%;
-    background: linear-gradient(90deg, var(--olive) 0%, var(--bordeaux) 100%);
-    border-radius: 999px;
-  }
-  .s5-timeline-labels {
-    display: flex;
-    justify-content: space-between;
-    font-family: var(--font-display);
-    font-size: 10.5px;
-    color: var(--texte-secondaire);
-  }
-  .s5-timeline-days { font-weight: 700; color: var(--bordeaux); }
-
-  /* Card 2 — Clients inactifs */
-  .s5-client-list { display: flex; flex-direction: column; gap: 7px; }
-  .s5-client-row {
+    background: rgba(122,140,58,0.12);
+    border: 1px solid rgba(122,140,58,0.25);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 6px 10px;
-    background: #FFFFFF;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    justify-content: center;
   }
-  .s5-client-name {
-    font-family: var(--font-display);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--texte);
-  }
-  .s5-client-delay {
-    font-family: var(--font-display);
-    font-size: 11.5px;
-    font-weight: 600;
-    color: var(--bordeaux);
-  }
-
-  /* Card 3 — Todo en retard */
-  .s5-todo-list { display: flex; flex-direction: column; gap: 7px; }
-  .s5-todo-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 6px 10px;
-    background: rgba(255,255,255,0.75);
-    border: 1px solid rgba(201,125,85,0.15);
-    border-radius: 8px;
-  }
-  .s5-todo-name {
-    font-family: var(--font-display);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--texte);
-  }
-  .s5-todo-late {
-    font-family: var(--font-display);
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--bordeaux);
-    background: rgba(156,13,15,0.07);
-    border: 1px solid rgba(156,13,15,0.13);
-    border-radius: 999px;
-    padding: 3px 9px;
-    white-space: nowrap;
+  .s5-check svg {
+    display: block;
   }
 
   @media (max-width: 768px) {
     .s5-section { padding: 72px 0 80px; }
     .s5-inner { padding: 0 20px; }
-    .s5-head-wrap { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
-    .s5-layout { grid-template-columns: 1fr; }
+    .s5-head-wrap { margin-bottom: 40px; }
+    .s5-table-header { display: none; }
+    .s5-table-header,
+    .s5-row { grid-template-columns: 1fr; }
+    .s5-col-cat {
+      border-right: none;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      background: rgba(30,42,14,0.04);
+    }
+    .s5-col-before {
+      border-right: none;
+      border-bottom: 1px solid rgba(156,13,15,0.08);
+      padding: 14px 20px;
+    }
+    .s5-col-after {
+      padding: 14px 20px;
+    }
   }
 </style>
 
@@ -710,90 +692,66 @@
       <span class="s4-label-text">Pourquoi</span>
     </div>
 
-    <!-- En-tête 2 colonnes -->
+    <!-- En-tête pleine largeur -->
     <div class="gs-hidden s5-head-wrap" data-gs="s5" data-gs-delay="0.06">
-      <h2 class="s5-heading">L&rsquo;assistant commercial des <span style="display:inline-block; position:relative; color:var(--fond); background:var(--terracotta); border-radius:14px; padding:0.04em 0.22em 0.10em; transform:rotate(-0.5deg); transform-origin:center; box-shadow:inset 0 -4px 0 rgba(0,0,0,0.12);">TPE/PME</span></h2>
-      <p class="s5-subhead">Les grandes entreprises ont des équipes qui relancent, fidélisent et font des offres promotionelles.<br>Les dirigeants et commerciaux de TPE/PME, eux, font ça entre deux rendez-vous. Ou pas du tout. <strong>Reccolt est conçu pour eux.</strong></p>
+      <h2 class="s5-heading">Embaucher c&rsquo;est du <span class="s5-wavy">temps</span>, de l&rsquo;<span class="s5-wavy">argent</span> et du <span class="s5-wavy">risque</span>. <span style="display:inline-block; position:relative; color:var(--fond); background:var(--terracotta); border-radius:14px; padding:0.04em 0.22em 0.10em; transform:rotate(-0.5deg); transform-origin:center; box-shadow:inset 0 -4px 0 rgba(0,0,0,0.12);">Reccolt</span> c&rsquo;est flexible, sans contrat ni stress.</h2>
     </div>
 
-    <!-- 3 cartes -->
-    <div class="s5-layout">
+    <!-- Tableau comparatif -->
+    <div class="s5-table-wrap gs-hidden" data-gs="s5" data-gs-delay="0.1">
+      <div class="s5-table">
 
-      <!-- Card 1 — Devis en attente -->
-      <div class="gs-hidden s5-card" data-gs="s5" data-gs-delay="0.1">
-        <div class="s5-card-body">
-          <h3 class="s5-card-title">Ce devis que tu as envoy&eacute; il y a 3 mois.</h3>
-          <p class="s5-card-desc">Il t&rsquo;avait dit qu&rsquo;il r&eacute;fl&eacute;chissait. Tu t&rsquo;es dit que tu rappellerais. Tu ne sais m&ecirc;me plus si le projet est encore d&rsquo;actualit&eacute;.</p>
-        </div>
-        <div class="s5-mock">
-          <span class="s5-mock-ui-label">Suivi devis</span>
-          <div class="s5-quote-row">
-            <div class="s5-quote-info">
-              <span class="s5-quote-name">Martin B.</span>
-              <span class="s5-quote-amount">3 400 &euro;</span>
-            </div>
-            <span class="s5-status-badge">87 j. sans r&eacute;ponse</span>
+        <!-- Header -->
+        <div class="s5-table-header">
+          <div class="s5-col-cat-head"></div>
+          <div class="s5-col-before-head">
+            <span class="s5-label-dot s5-label-dot--before"></span>
+            <span class="s5-col-label s5-col-label--before">Avant Reccolt</span>
           </div>
-          <div class="s5-quote-row">
-            <div class="s5-quote-info">
-              <span class="s5-quote-name">Garcia SARL</span>
-              <span class="s5-quote-amount">6 100 &euro;</span>
-            </div>
-            <span class="s5-status-badge">54 j. sans r&eacute;ponse</span>
+          <div class="s5-col-after-head">
+            <span class="s5-label-dot s5-label-dot--after"></span>
+            <span class="s5-col-label s5-col-label--after">Après Reccolt</span>
           </div>
         </div>
+
+        <!-- Rows -->
+        <div class="s5-row">
+          <div class="s5-col-cat"><span class="s5-cat-label">Relance devis</span></div>
+          <div class="s5-col-before">Manuel, 2 ou 3 relances</div>
+          <div class="s5-col-after">Relance automatique au bon moment</div>
+        </div>
+        <div class="s5-row">
+          <div class="s5-col-cat"><span class="s5-cat-label">Relance facture</span></div>
+          <div class="s5-col-before">Tu relances à la main, souvent trop tard</div>
+          <div class="s5-col-after">Relances programmées, sans friction</div>
+        </div>
+        <div class="s5-row">
+          <div class="s5-col-cat"><span class="s5-cat-label">Stratégie commerciale</span></div>
+          <div class="s5-col-before">Tu réagis, tu n&rsquo;anticipes pas</div>
+          <div class="s5-col-after">Reccolt analyse et propose les bonnes actions</div>
+        </div>
+        <div class="s5-row">
+          <div class="s5-col-cat"><span class="s5-cat-label">Campagne fidélisation</span></div>
+          <div class="s5-col-before">Tes idées ne partent jamais</div>
+          <div class="s5-col-after">Rédigées et envoyées sans toi</div>
+        </div>
+        <div class="s5-row">
+          <div class="s5-col-cat"><span class="s5-cat-label">Charge mentale</span></div>
+          <div class="s5-col-before">Tu gères tout, tout le temps</div>
+          <div class="s5-col-after">Tu te concentres sur ton métier</div>
+        </div>
+        <div class="s5-row">
+          <div class="s5-col-cat"><span class="s5-cat-label">Coût</span></div>
+          <div class="s5-col-before">35–50k€/an pour un commercial</div>
+          <div class="s5-col-after">Une fraction du coût, sans engagement</div>
+        </div>
+        <div class="s5-row s5-row--result">
+          <div class="s5-col-cat"><span class="s5-cat-label">Résultat</span></div>
+          <div class="s5-col-before">Des opportunités manquées chaque semaine</div>
+          <div class="s5-col-after">Aucune opportunité ne tombe dans l&rsquo;oubli</div>
+        </div>
+
       </div>
-
-      <!-- Card 2 — Clients inactifs -->
-      <div class="gs-hidden s5-card" data-gs="s5" data-gs-delay="0.18">
-        <div class="s5-card-body">
-          <h3 class="s5-card-title">Tu cherches de nouveaux clients. Les anciens, eux, attendent.</h3>
-          <p class="s5-card-desc">Des clients satisfaits qui auraient rachet&eacute; et parrain&eacute;. Il suffisait d&rsquo;&ecirc;tre pr&eacute;sent au bon moment. Ce chiffre est dans ta base. Il dort.</p>
-        </div>
-        <div class="s5-mock">
-          <span class="s5-mock-ui-label">Clients inactifs</span>
-          <div class="s5-client-list">
-            <div class="s5-client-row">
-              <span class="s5-client-name">Dupont R.</span>
-              <span class="s5-client-delay">Relance parrainage</span>
-            </div>
-            <div class="s5-client-row">
-              <span class="s5-client-name">Lefebvre &amp; Co</span>
-              <span class="s5-client-delay">Relance entretien</span>
-            </div>
-            <div class="s5-client-row">
-              <span class="s5-client-name">Sophie M.</span>
-              <span class="s5-client-delay">Relance promo &eacute;t&eacute;</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 — Campagnes non lancées -->
-      <div class="gs-hidden s5-card s5-card--alert" data-gs="s5" data-gs-delay="0.26">
-        <div class="s5-card-body">
-          <h3 class="s5-card-title">Tu sais ce qu&rsquo;il faudrait faire. T&rsquo;as pas le temps de le faire.</h3>
-          <p class="s5-card-desc">Une promo &eacute;t&eacute;, une offre de rentr&eacute;e, un email pour les f&ecirc;tes. Les id&eacute;es sont l&agrave;. Elles n&rsquo;ont jamais &eacute;t&eacute; envoy&eacute;es.</p>
-        </div>
-        <div class="s5-mock s5-mock--alert">
-          <span class="s5-mock-ui-label">Campagnes en attente</span>
-          <div class="s5-todo-list">
-            <div class="s5-todo-row">
-              <span class="s5-todo-name">Promo &eacute;t&eacute;</span>
-              <span class="s5-todo-late">Jamais envoy&eacute;e</span>
-            </div>
-            <div class="s5-todo-row">
-              <span class="s5-todo-name">Offre de rentr&eacute;e</span>
-              <span class="s5-todo-late">Jamais envoy&eacute;e</span>
-            </div>
-            <div class="s5-todo-row">
-              <span class="s5-todo-name">Email fid&eacute;lit&eacute;</span>
-              <span class="s5-todo-late">Jamais envoy&eacute;e</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
 
   </div>

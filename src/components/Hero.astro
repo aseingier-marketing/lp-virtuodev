@@ -32,19 +32,19 @@
 
     <!-- H1 -->
     <h1 class="hero-title">
-      Le bras droit commercial<br>qu'il te <span class="hero-highlight">manquait</span>
+      Délègue tes actions commerciales à ton <span class="hero-highlight">employé IA</span>
     </h1>
 
     <!-- Sous-titre -->
     <p class="hero-sub">
-      Reccolt est un employé IA qui se connecte à tes outils, analyse ton activité, planifie les bonnes actions commerciales et les exécute pour toi.
+      Reccolt se connecte à tes outils, analyse ton activité commerciale, te propose des actions, puis les exécute. Comme un employé, mais sans CDI.
     </p>
 
     <!-- CTAs -->
     <div class="hero-ctas">
-      <a href="/formulaire" class="btn-primary">
-        Rejoindre Reccolt
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <a href="#motion" class="btn-primary">
+        Découvre Reccolt
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </a>
       <a href="/formulaire#my-cal-inline-20min" class="btn-secondary">
         Réserver une démo
@@ -54,11 +54,27 @@
 
     <!-- Trust -->
     <div class="hero-trust" aria-label="Garanties">
-      <span>IA hébergée en France</span>
+      <span>🇫🇷 IA hébergée en France</span>
       <span class="sep" aria-hidden="true">·</span>
       <span>Conforme RGPD</span>
       <span class="sep" aria-hidden="true">·</span>
       <span>Données confidentielles</span>
+    </div>
+
+    <!-- Motion video -->
+    <div id="motion" class="hero-video" aria-label="Démonstration Reccolt">
+      <div class="hero-video-frame">
+        <div class="hero-video-wrapper">
+          <iframe
+            src="https://player.vimeo.com/video/1185072716?title=0&byline=0&portrait=0&badge=0&autopause=0&autoplay=1&muted=1&loop=1&player_id=0&app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            title="reccolt_motion"
+          ></iframe>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -77,7 +93,7 @@
     justify-content: center;
     overflow: hidden;
     background: var(--fond);
-    padding: clamp(7rem, 16vw, 11rem) var(--px, 1.5rem) clamp(5rem, 10vw, 8rem);
+    padding: clamp(4rem, 10vw, 6.5rem) var(--px, 1.5rem) clamp(3rem, 6vw, 5rem);
   }
 
   /* ---- Blobs ---- */
@@ -323,6 +339,33 @@
 
   .hero-trust .sep { opacity: 0.4; }
 
+  /* ---- Video ---- */
+  .hero-video {
+    margin-top: 3rem;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(22px);
+    animation: fade-up 0.72s cubic-bezier(0.16, 1, 0.3, 1) 0.56s forwards;
+  }
+
+  .hero-video-frame {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(30, 42, 14, 0.08),
+      0 8px 40px -8px rgba(30, 42, 14, 0.18),
+      0 32px 80px -16px rgba(30, 42, 14, 0.12);
+    background: #0e1208;
+  }
+
+  .hero-video-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+  }
+
+  .hero-video-wrapper iframe {
+    border-radius: 16px;
+  }
 
   /* ---- Responsive ---- */
   @media (max-width: 640px) {
@@ -336,6 +379,12 @@
     }
     .hero-title {
       letter-spacing: -0.025em;
+    }
+    .hero-video-frame {
+      border-radius: 10px;
+    }
+    .hero-video-wrapper iframe {
+      border-radius: 10px;
     }
   }
 </style>
